@@ -1,0 +1,172 @@
+<!-- https://codepen.io/Taluska/pen/ZExJabE?editors=0010 -->
+
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="_assets/_css/documents.css">
+            <title>Prontuário Digital - Documentos</title>
+        </head>
+        <body>
+            <div class="video-bg">
+                <video width="320" height="240" autoplay loop muted>
+                    <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="user_img">
+                <img src="../db_imgs/_profile.pictures/bento_profile.jpg" height="100" width="100" alt="profile">
+            </div>
+            <div class="user_details">
+                <h5>DOCUMENTOS DO ALUNO</h5>
+                <span>BENTO</span>
+                <span>R.A.: 123.456.789-0</span>
+                <p>Maternal 2-C Integral</p>
+                <a href="../index/index.html">INÍCIO</a>
+                <hr>
+            </div>
+            <article class="tabs content--flow">
+                <aside class="sidebar">
+                    <nav role="tablist" class="tab__navigation">
+                        <button role="tab" aria-selected="true" class="tab__button" id="1">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-pencil-alt"></i>
+                            </span>
+                            <span class="text__for--tab">Matrícula</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="2">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-clipboard-check"></i>
+                            </span>
+                            <span class="text__for--tab">Autorizações</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="3">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-plus-square"></i>
+                            </span>
+                            <span class="text__for--tab">Atestados</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="4">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-clipboard"></i>
+                            </span>
+                            <span class="text__for--tab">Laudos</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="5">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-tag"></i>
+                            </span>
+                            <span class="text__for--tab">Outros</span>
+                        </button>
+                    </nav>
+                </aside>
+                <main class="content__area">
+                    <div class="tab__content">
+                        <div role="tabpanel" aria-labelledby="1">
+                            <section class="tab_inner">
+                                <div class="container">
+                                    <!-- Slider -->
+                                    <div class="tab_inner_slider">
+                                        <a class="link">Certidão de nascimento</a>
+                                        <a class="link">Comprovante de residência</a>
+                                        <a class="link">Carteira de Vacinação</a>
+                                        <a class="link">Documento do responsável</a>
+                                        <a class="link">Cartão do SUS</a>
+                                        <a class="link">Declaração de Transferencia</a>
+                                    </div>
+                                    <!-- Certidão de nascimento -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de Nascimento"/>
+                                    </div>
+                                    <!-- Comprovante de residência -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência"/>
+                                    </div>
+                                    <!-- Carteira de Vacinação -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação"/>
+                                    </div>
+                                    <!-- Documento do responsável -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DocResp.RG-CPF.Pai.Frente.jpg" alt="Documento do responsável"/>
+                                    </div>
+                                    <!-- Cartão do SUS -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.SUS.Frente.jpg" alt="Cartão do SUS"/>
+                                    </div>
+                                    <!-- Declaração de Transferencia -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DecTransf.PG.01-01-2023.Frente.png" alt="Declaração de transferência"/>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="2" hidden>
+                            <section class="tab_inner">
+                                <div class="container">
+                                    <!-- Slider -->
+                                    <div class="tab_inner_slider">
+                                        <a class="link">Certidão de nascimento</a>
+                                        <a class="link">Comprovante de residência</a>
+                                        <a class="link">Carteira de Vacinação</a>
+                                        <a class="link">Documento do responsável</a>
+                                        <a class="link">Cartão do SUS</a>
+                                        <a class="link">Declaração de Transferencia</a>
+                                    </div>
+                                    <!-- Certidão de nascimento -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de Nascimento"/>
+                                    </div>
+                                    <!-- Comprovante de residência -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência"/>
+                                    </div>
+                                    <!-- Carteira de Vacinação -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação"/>
+                                    </div>
+                                    <!-- Documento do responsável -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DocResp.RG-CPF.Pai.Frente.jpg" alt="Documento do responsável"/>
+                                    </div>
+                                    <!-- Cartão do SUS -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.SUS.Frente.jpg" alt="Cartão do SUS"/>
+                                    </div>
+                                    <!-- Declaração de Transferencia -->
+                                    <div class="docsDigitals">
+                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DecTransf.PG.01-01-2023.Frente.png" alt="Declaração de transferência"/>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="3" hidden>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="4" hidden>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="5" hidden>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt tempora vero et tempore ipsa.
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </article>
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+            </div>
+            <script src="_assets/_js/docs.js" defer></script>
+            <footer></footer>
+        </body>
+    </html>
