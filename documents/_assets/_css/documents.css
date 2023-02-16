@@ -306,11 +306,14 @@ article {
 .content__area {
     display: flex;
     flex-grow: 999;
-    max-height: 22rem;
-    justify-content: start;
+    height: 20rem;
+    justify-content: flex-start;
     flex-basis: calc((var(--flex-flow) - var(--fullSize)) * 999);
     position: relative;
     overflow: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .tab__content {
@@ -353,82 +356,20 @@ footer {
     margin-top: 25px;
 }
 
-.container {
-    display: flex;
-    max-width: 18ch;
-    margin: 0 auto;
-}
-
 .header {
     font-size: 18px;
     text-align: center;
     font-weight: bold;
 }
 
-.tab_inner_slider {
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-05);
-    height: var(--fullSize);
-    font-size: 1rem;
-    justify-content: center;
-}
-
-.link:is(.active) {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    flex: auto;
-    gap: 0.55rem;
-    border: none;
-    outline: none;
-    background: var(--accent-blue);
-    color: var(--text-clr);
-    font-weight: 600;
-    align-items: center;
-    padding: 5px;
-}
-
-.link:not(.active) {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    flex: auto;
-    gap: 0.55rem;
-    border: none;
-    background-color: hsl(207, 100%, 100%);
-    color: var(--accent-dark);
-    outline: 1px solid #0003;
-    font-weight: 600;
-    align-items: center;
-    padding: 5px;
-}
-
-.link:not(.active):hover {
-    font-size: 18px;
-    color: var(--text-clr);
-}
-
-.docsDigitals {
-    margin: 20px 0;
-    grid-template: repeat(1, 250px)/repeat(3, 1fr);
-    gap: 10px;
-    justify-content: space-around;
-}
-
-.docsDigitals img{
-    width: 200px;
-    position: absolute;
-    margin-left: 300px;
+.content__area img{
+    width: 15%;
+    position: relative;
+    margin-left: 3px;
     object-fit: cover;
 }
 
-.docsDigitals img:hover {
+.content__area img:hover {
     opacity: 0.7;
 }
 

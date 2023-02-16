@@ -15,38 +15,6 @@ function hideTabContent(e) {
 }
 buttons.forEach(function (button) { return button.addEventListener("click", hideTabContent); });
 
-var content = document.querySelectorAll('.docsDigitals');
-var tab = document.querySelectorAll('.link');
-var slider = document.querySelector('.tab_inner_slider');
-function hideTabContentDocs() {
-    content.forEach(function (item) {
-        item.style.display = 'none';
-    });
-    tab.forEach(function (item) {
-        item.classList.remove('active');
-    });
-}
-function showTabContentDocs(i) {
-    if (i === void 0) {
-        i = 0;
-    }
-    content[i].style.display = 'flex';
-    tab[i].classList.add('active');
-}
-hideTabContentDocs();
-showTabContentDocs();
-slider.addEventListener("click", function (e) {
-    var target = e.target;
-    if (target) {
-        tab.forEach(function (item, i) {
-            if (target == item) {
-                hideTabContentDocs();
-                showTabContentDocs(i);
-            }
-        });
-    }
-});
-
 // Get the modal
 var modal = document.getElementById('myModal');
 
