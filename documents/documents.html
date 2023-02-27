@@ -8,6 +8,9 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="_assets/_css/documents.css">
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+            <script src="https://unpkg.com/vuex"></script>
             <title>Prontuário Digital - Documentos</title>
         </head>
         <body>
@@ -92,6 +95,12 @@
                             <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação"/>
                         </div>
                         <div role="tabpanel" aria-labelledby="5" hidden>
+                            <div id="app" class="container">
+                                <card src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg">
+                                    <h3 slot="header">Carteira de Vacinação</h3>
+                                    <p>Atualizado em 27/02/2023</p>
+                                </card>
+                            </div>
                             <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de Nascimento"/>
                             <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência"/>
                         </div>
@@ -103,6 +112,7 @@
                 <img class="modal-content" id="img01">
                 <div id="caption"></div>
             </div>
+            <script src="_assets/_js/cards.js"></script>
             <script src="_assets/_js/docs.js" defer></script>
             <footer></footer>
         </body>
