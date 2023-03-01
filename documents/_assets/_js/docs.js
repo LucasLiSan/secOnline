@@ -1,4 +1,3 @@
-/*Work in progress*/
 var buttons = document.querySelectorAll('[role="tab"]');
 var tabPanel = Array.from(document.querySelectorAll('[role="tabpanel"]'));
 function hideTabContent(e) {
