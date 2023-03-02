@@ -162,10 +162,16 @@ hr {
   margin-bottom: 20px;
 }
 
+.btn-actions {
+  display: flex;
+}
+
 .social-media-icons, .social-media-icons-2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .contacts1 {
