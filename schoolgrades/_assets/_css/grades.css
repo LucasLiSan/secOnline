@@ -43,7 +43,7 @@ button:focus {
 .card .left .wordmark {
   opacity: 0.2;
   transform: rotate(-90deg) scale(1.2);
-  margin-left: -90px;
+  margin-left: -70px;
 }
 
 .card .right {
@@ -59,7 +59,7 @@ button:focus {
 .card .right .bimestre {
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-30%, -50%);
 }
 
 .card .right .boletim {
@@ -73,13 +73,13 @@ button:focus {
 .card .right .boletim h1 {
   font-weight: 800;
   line-height: 46px;
-  font-size: 40px;
+  font-size: 39px;
   margin-bottom: 15px;
 }
 
 .card .right .boletim h2 {
   font-weight: 300;
-  font-size: 32px;
+  font-size: 15px;
   letter-spacing: 1.6px;
   margin-bottom: 30px;
 }
@@ -148,7 +148,6 @@ button:focus {
   height: 80px;
   border-radius: 50%;
   border: 2px solid #cb1f40;
-  border-top-color: transparent;
   transform: rotate(-45deg) translate(-50%, -50%);
   position: absolute;
 }
