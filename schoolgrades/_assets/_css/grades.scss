@@ -65,7 +65,7 @@ button:focus {
 .card .right .boletim {
   width: 300px;
   height: 300px;
-  margin: 50px 0 0 235px;
+  margin: 25px 0 0 235px;
   color: #fff;
   font-family: "Open Sans", sans-serif;
 }
@@ -74,18 +74,18 @@ button:focus {
   font-weight: 800;
   line-height: 46px;
   font-size: 39px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .card .right .boletim h2 {
   font-weight: 300;
   font-size: 15px;
   letter-spacing: 1.6px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .card .right .boletim .details {
-  height: 145px;
+  height: 290px;
 }
 
 .card .right .boletim .details .notas,
@@ -96,7 +96,6 @@ button:focus {
 
 .card .right .boletim .details .notas {
   border-right: 1px solid #cb1f40;
-  padding: 30px 0;
 }
 
 .card .right .boletim .details .frequencia {
@@ -148,7 +147,7 @@ button:focus {
   height: 80px;
   border-radius: 50%;
   border: 2px solid #cb1f40;
-  transform: rotate(-45deg) translate(-50%, -50%);
+  transform: rotate(-45deg) translate(-52%, -53%);
   position: absolute;
 }
 
@@ -157,7 +156,6 @@ button:focus {
   line-height: normal;
   font-size: 12px;
   letter-spacing: 3px;
-  margin-bottom: 15px;
 }
 
 .card .right .boletim p {
