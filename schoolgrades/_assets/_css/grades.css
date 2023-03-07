@@ -1,14 +1,165 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
 
-* {
-  box-sizing: border-box;
+:root {
+  --accent-blue: #BE3455;
+  --accent-dark: #c6d1dd;
+  --text-clr: hsl(200, 11%, 5%);
+  --space-025: 0.25rem;
+  --space-05: 0.5rem;
+  --space-075: 0.75rem;
+  --space-1: 1rem;
+  --space-125: 1.25rem;
+  --space-15: 1.5rem;
+  --space-2: 2rem;
+  --width-max: 50rem;
+  --width-min: 22.5rem;
+  --fullSize: 100%;
+  --fullHeight: 100vh;
+  --flex-flow: 38rem;
+  --padding--flow: calc(var(--fullSize) - var(--space-2));
+  --theme-bg-color: rgba(16 18 27 / 40%);
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  -webkit-appearance: none;
+  width: 0;
+  height: 8px;
+}
+
+.video-bg {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+body {
+  display: flex;
+  min-block-size: 40vh;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  color: #000000;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: url(https://wallpapershome.com/images/wallpapers/macos-big-sur-1280x720-dark-wwdc-2020-22655.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.user_img {
+  position: absolute;
+  top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.user_img::before {
+  content: "";
+  position: absolute;
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  border-radius: 50%;
+  background: linear-gradient(45deg, deeppink, deepskyblue);
+  box-shadow: 0px 0px 18px -6px #fff200;
+  animation: animate 1s linear infinite;
+}
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.user_img img {
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.user_details {
+  display: flex;
+  position: absolute;
+  top: 15%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.user_details h5 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.user_details span {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.user_details p {
+  margin: 12px 12px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid darkgray;
+  background: darkgray;
+  margin-bottom: 25px;
+}
+
+.user_details a {
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff00cc, #333399);
+  color: white;
+  padding: 10px 30px;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 14px;
+  box-shadow: 0px 6px 22px -6px gray;
+  transition: 0.3s ease-in-out;
+}
+
+.user_details a:hover {
+  background: transparent;
 }
 
 button {
@@ -24,11 +175,12 @@ button:focus {
   width: 892px;
   height: auto;
   position: absolute;
-  top: 50%;
+  top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
+  z-index: 3;
 }
 
 .card .left {
@@ -116,6 +268,7 @@ button:focus {
   font-size: 14px;
   padding: 0 24px;
   color: #fff;
+  margin-left: 20px;
 }
 
 .card .right .boletim i.fav {
@@ -176,13 +329,16 @@ button:focus {
   border: 1px solid #cb1f40;
 }
 
-.card .right .boletim p:nth-of-type(4) {
+.card .right .boletim p:nth-of-type(4n) {
   border: 1px solid #cb1f40;
 }
 
 @media screen and (max-width: 576px) {
   .card {
     transform: rotate(90deg) scale(0.7) translate(calc(50% - 25vh), 50%);
-    position: static;
+    position: absolute;
+    top: 27%;
+    left: 5%;
+
   }
 }/*# sourceMappingURL=grades.css.map */
