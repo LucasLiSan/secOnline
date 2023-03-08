@@ -1,6 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -10,6 +17,33 @@
 
 body {
     background-color: #111845;
+}
+
+.card {
+    width: 892px;
+    height: auto;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.card .left {
+    width: 480px;
+    height: 553px;
+    background: #cc3843;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+}
+
+.card .left .wordmark {
+    opacity: 0.2;
+    transform: rotate(-90deg) scale(1.2);
+    margin-left: -70px;
 }
 
 .background-img {
