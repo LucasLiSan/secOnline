@@ -71,11 +71,12 @@ body {
 }
 
 .user_img {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .user_img::before {
@@ -104,14 +105,15 @@ body {
 
 .user_details {
   display: flex;
-  position: relative;
-  top: 15px;
+  position: absolute;
+  top: 15%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 12px;
   text-align: center;
   color: #ffffff;
+  z-index: 2;
 }
 
 .user_details h5 {
@@ -178,6 +180,7 @@ button:focus {
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
+  z-index: 3;
 }
 
 .card .left {
@@ -211,130 +214,119 @@ button:focus {
   transform: translate(-30%, -50%);
 }
 
-.card .right .boletim {
-  width: 300px;
-  height: 300px;
-  margin: 25px 0 0 235px;
-  color: #fff;
-  font-family: "Open Sans", sans-serif;
+.btns {
+  margin-left: 241px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  min-height: 479px;
 }
 
-.card .right .boletim h1 {
-  font-weight: 800;
-  line-height: 46px;
-  font-size: 39px;
-  margin-bottom: 5px;
-}
-
-.card .right .boletim h2 {
-  font-weight: 300;
-  font-size: 15px;
-  letter-spacing: 1.6px;
-  margin-bottom: 10px;
-}
-
-.card .right .boletim .details {
-  height: 290px;
-}
-
-.card .right .boletim .details .notas,
-.card .right .boletim .details .frequencia {
-  width: 50%;
-  float: left;
-}
-
-.card .right .boletim .details .notas {
-  border-right: 1px solid #cb1f40;
-}
-
-.card .right .boletim .details .frequencia {
-  text-align: center;
-}
-
-.card .right .boletim .details .frequencia h4 {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.card .right .boletim button {
-  height: 48px;
-  background: #cb2140;
-  border-radius: 90px;
-  font-weight: 300;
-  line-height: 35px;
-  font-size: 14px;
-  padding: 0 24px;
-  color: #fff;
-  margin-left: 20px;
-}
-
-.card .right .boletim i.fav {
-  font-size: 12px;
-  margin: 0 12px 0 24px;
-  color: #cb2140;
-}
-
-.card .right .boletim a {
-  font-size: 12px;
-  color: #fff;
-  opacity: 0.3;
-  text-decoration: none;
-}
-
-.card .right .boletim h3 {
-  width: 80px;
-  height: 80px;
-  font-weight: 300;
-  line-height: 80px;
-  font-size: 16px;
-  margin-left: 30px;
+button {
   position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+  width: 343px;
 }
 
-.card .right .boletim h3:after {
-  content: "";
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #cb1f40;
-  transform: rotate(-45deg) translate(-52%, -53%);
+button:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  animation: box 3s infinite;
+}
+
+button::before {
+  content: '';
   position: absolute;
+  inset: 2px;
+  background: #272822;
 }
 
-.card .right .boletim h4 {
-  font-weight: bold;
-  line-height: normal;
-  font-size: 12px;
-  letter-spacing: 3px;
+button span {
+  position: relative;
+  z-index: 1;
 }
 
-.card .right .boletim p {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-  text-align: center;
-  font-weight: 300;
-  line-height: 28px;
-  font-size: 14px;
-  border-radius: 50%;
-  transition: 0.3s linear;
-  border: 1px solid transparent;
-  cursor: pointer;
+button i {
+  position: absolute;
+  inset: 0;
+  display: block;
 }
 
-.card .right .boletim p:hover {
-  border: 1px solid #cb1f40;
+button i::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
 }
 
-.card .right .boletim p:nth-of-type(4n) {
-  border: 1px solid #cb1f40;
+button:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
 }
 
-@media screen and (max-width: 576px) {
-  .card {
-    transform: rotate(90deg) scale(0.7) translate(calc(50% - 25vh), 50%);
-    position: absolute;
-    top: 27%;
-    left: 5%;
+button i::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+button:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
   }
-}/*# sourceMappingURL=grades.css.map */
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+
+  100% {
+    box-shadow: #27272c;
+  }
+}
+
+  /*# sourceMappingURL=docrequest.css.map */
