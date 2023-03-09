@@ -233,7 +233,7 @@ button {
   text-transform: uppercase;
   border: none;
   letter-spacing: 0.1rem;
-  font-size: 1rem;
+  height: 60px;
   padding: 1rem 3rem;
   transition: 0.2s;
   width: 343px;
