@@ -42,3 +42,12 @@ $(document).ready(function(){
         $("#request-choice").attr("src", "../db_imgs/_pictures/test.png");
     });
 });
+
+$(document).ready(function(){
+    $("#Bt6").mouseenter(function(){
+        $("#request-choice").attr("src", "../db_imgs/_pictures/desk-chair.png");
+    });
+    $("#Bt6").mouseleave(function(){
+        $("#request-choice").attr("src", "../db_imgs/_pictures/test.png");
+    });
+});
