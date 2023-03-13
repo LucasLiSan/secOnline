@@ -36,7 +36,7 @@ Written by:
                 <span>BENTO</span>
                 <span>R.A.: 123.456.789-0</span>
                 <p>Maternal 2-C Integral</p>
-                <a href="../index/index.html">INÍCIO</a>
+                <a href="../index/index.php">INÍCIO</a>
                 <hr>
             </div>
             <article class="tabs content--flow">
