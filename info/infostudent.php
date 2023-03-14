@@ -17,9 +17,23 @@ Written by:
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <link rel="stylesheet" href="_assets/_css/infostudent.css">
             <title>Prontuário Digital - Informação do aluno</title>
             <script src="_assets/_js/infostudent.js" defer></script>
+            <?php 
+                $nome = "Bento de Lima";
+                $nasc = "27/05/2019";
+                $age = "3";
+                $race = "Branco";
+                $sex = "Masculino";
+                $bloodType = "O+";
+                $filiacao_1 = "Karina Dias";
+                $filiacao_2 = "Lucas de Lima";
+                $nacional = "Brasil";
+                $city = "Registro";
+                $uf = "SP";
+            ?>
         </head>
         <body>
             <div class="video-bg">
@@ -79,12 +93,53 @@ Written by:
                         <div role="tabpanel" aria-labelledby="1">
                             <h1 class="title">GERAL</h1>
                             <span class="span-tag"><i class="fas fa-home"></i></span>
-                            
-                            <p class="text">
-                                Just A basic tab navigation example, nothing fancy.
-                                And as always, if you find some improvements or bugs, please let me know!
-                            </p>
-                        </div>
+                            <div class="wrapper">
+                                <div class="registration_form">
+                                    <form>
+                                        <div class="form_wrap">
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="name">Nome</label>
+                                                    <input type="text" id="name">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="birth">Data de nascimento</label>
+                                                    <input type="date" name="birth" id="birth">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="age">Idade</label>
+                                                    <input type="text" name="age" id="age">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label>Sexo</label>
+                                                <ul>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="gender" value="male" class="input_radio">
+                                                            <span>Masculino</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="gender" value="female" class="input_radio">
+                                                            <span>Feminino</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label for="city">Cidade</label>
+                                                <input type="text" id="city">
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label for="country">País</label>
+                                                <input type="text" id="country">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         <div role="tabpanel" aria-labelledby="2" hidden>
                             <h1 class="title">DOCUMENTOS</h1>
                             <span class="span-tag"><i class="fas fa-id-card"></i></span>

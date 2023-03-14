@@ -79,11 +79,53 @@ Written by:
                         <div role="tabpanel" aria-labelledby="1">
                             <h1 class="title">GERAL</h1>
                             <span class="span-tag"><i class="fas fa-home"></i></span>
-                            
-                            <p class="text">
-                                Just A basic tab navigation example, nothing fancy.
-                                And as always, if you find some improvements or bugs, please let me know!
-                            </p>
+                            <div class="wrapper">
+                                <div class="registration_form">
+                                    <form>
+                                        <div class="form_wrap">
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="name">Nome</label>
+                                                    <input type="text" id="name">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label id="#birth_label" for="birth">Data de nascimento</label>
+                                                    <input type="date" name="birth" id="birth">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="age">Idade</label>
+                                                    <input type="text" name="age" id="age">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label>Sexo</label>
+                                                <ul>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="gender" value="male" class="input_radio">
+                                                            <span>Masculino</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="gender" value="female" class="input_radio">
+                                                            <span>Feminino</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label for="city">Cidade</label>
+                                                <input type="text" id="city">
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label for="country">País</label>
+                                                <input type="text" id="country">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div role="tabpanel" aria-labelledby="2" hidden>
                             <h1 class="title">DOCUMENTOS</h1>

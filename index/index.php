@@ -55,7 +55,6 @@ Written by:
                             <a href="../schoolgrades/schoolgrades.php" class="rend1"><i class="fas fa-microscope"></i></a>
                             <p>RENDIMENTO</p>
                         </li>
-                        
                     </ul>
                     <ul class="social-media-icons-2">
                         <li>
