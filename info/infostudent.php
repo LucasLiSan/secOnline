@@ -68,6 +68,12 @@ Written by:
                         </button>
                         <button role="tab" aria-selected="false" class="tab__button" id="5">
                             <span class="icon__for--tab">
+                                <i class="fas fa-clipboard"></i>
+                            </span>
+                            <span class="text__for--tab">Uniformes</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="6">
+                            <span class="icon__for--tab">
                                 <i class="fas fa-school"></i>
                             </span>
                             <span class="text__for--tab">Matrículas</span>
@@ -523,7 +529,7 @@ Written by:
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
+                                                <div class="input_wrap" style="display: none;">
                                                     <label>Laudo</label>
                                                     <ul>
                                                         <li>
@@ -540,9 +546,9 @@ Written by:
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
+                                                <div class="input_wrap" style="display: none;">
                                                     <label for="deficienciaTipo">Deficiência</label>
-                                                    <input type="text" id="nameTwins" name="deficienciaTipo">
+                                                    <input type="text" id="deficienciaTipo" name="deficienciaTipo">
                                                 </div>
                                             </div>
                                             <div class="input_grp">
@@ -569,7 +575,7 @@ Written by:
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
+                                                <div class="input_wrap" style="display: none;">
                                                     <label>Laudo</label>
                                                     <ul>
                                                         <li>
@@ -586,147 +592,147 @@ Written by:
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
-                                                    <label for="deficienciaTipo">Alergias</label>
-                                                    <input type="text" id="nameTwins" name="deficienciaTipo">
+                                                <div class="input_wrap" style="display: none;">
+                                                    <label for="AlergiasTipo">Alergias</label>
+                                                    <input type="text" id="AlergiasTipo" name="AlergiasTipo">
                                                 </div>
                                             </div>
                                             <div class="input_grp">
                                                 <div class="input_wrap">
-                                                    <label>Deficiência</label>
+                                                    <label>Doença crônica</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="sim" class="input_radio">
+                                                                <input type="radio" name="cronica" value="sim" class="input_radio">
                                                                 <span>Sim</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="nao" class="input_radio">
+                                                                <input type="radio" name="cronica" value="nao" class="input_radio">
                                                                 <span>Não</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="sim" class="input_radio">
+                                                                <input type="radio" name="cronica" value="sim" class="input_radio">
                                                                 <span>Investig.</span>
                                                             </label>
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
+                                                <div class="input_wrap" style="display: none;">
                                                     <label>Laudo</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficienciaLaudo" value="sim" class="input_radio">
+                                                                <input type="radio" name="dcronicaLaudo" value="sim" class="input_radio">
                                                                 <span>Sim</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficienciaLaudo" value="nao" class="input_radio">
+                                                                <input type="radio" name="cronicaLaudo" value="nao" class="input_radio">
                                                                 <span>Não</span>
                                                             </label>
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
-                                                    <label for="deficienciaTipo">Deficiência</label>
-                                                    <input type="text" id="nameTwins" name="deficienciaTipo">
+                                                <div class="input_wrap" style="display: none;">
+                                                    <label for="cronicaTipo">Doença crônica</label>
+                                                    <input type="text" id="cronicaTipo" name="cronicaTipo">
                                                 </div>
                                             </div>
                                             <div class="input_grp">
                                                 <div class="input_wrap">
-                                                    <label>Deficiência</label>
+                                                    <label>Restição alimentar</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="sim" class="input_radio">
+                                                                <input type="radio" name="restritaliment" value="sim" class="input_radio">
                                                                 <span>Sim</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="nao" class="input_radio">
+                                                                <input type="radio" name="restritaliment" value="nao" class="input_radio">
                                                                 <span>Não</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="sim" class="input_radio">
+                                                                <input type="radio" name="restritaliment" value="sim" class="input_radio">
                                                                 <span>Investig.</span>
                                                             </label>
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
+                                                <div class="input_wrap" style="display: none;">
                                                     <label>Laudo</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficienciaLaudo" value="sim" class="input_radio">
+                                                                <input type="radio" name="restritalimentLaudo" value="sim" class="input_radio">
                                                                 <span>Sim</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficienciaLaudo" value="nao" class="input_radio">
+                                                                <input type="radio" name="restritalimentLaudo" value="nao" class="input_radio">
                                                                 <span>Não</span>
                                                             </label>
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
-                                                    <label for="deficienciaTipo">Deficiência</label>
-                                                    <input type="text" id="nameTwins" name="deficienciaTipo">
+                                                <div class="input_wrap" style="display: none;">
+                                                    <label for="restritalimentLaudo">Alimentos</label>
+                                                    <input type="text" id="restritalimentLaudo" name="restritalimentLaudo">
                                                 </div>
                                             </div>
                                             <div class="input_grp">
                                                 <div class="input_wrap">
-                                                    <label>Deficiência</label>
+                                                    <label>Educação física</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="sim" class="input_radio">
+                                                                <input type="radio" name="educfisic" value="sim" class="input_radio">
                                                                 <span>Sim</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="nao" class="input_radio">
+                                                                <input type="radio" name="educfisic" value="nao" class="input_radio">
                                                                 <span>Não</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficiencia" value="sim" class="input_radio">
+                                                                <input type="radio" name="educfisic" value="sim" class="input_radio">
                                                                 <span>Investig.</span>
                                                             </label>
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
+                                                <div class="input_wrap" style="display: none;">
                                                     <label>Laudo</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficienciaLaudo" value="sim" class="input_radio">
+                                                                <input type="radio" name="educfisicLaudo" value="sim" class="input_radio">
                                                                 <span>Sim</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="deficienciaLaudo" value="nao" class="input_radio">
+                                                                <input type="radio" name="educfisicLaudo" value="nao" class="input_radio">
                                                                 <span>Não</span>
                                                             </label>
                                                         </li>
                                                     </ul>  
                                                 </div>
-                                                <div class="input_wrap">
-                                                    <label for="deficienciaTipo">Deficiência</label>
-                                                    <input type="text" id="nameTwins" name="deficienciaTipo">
+                                                <div class="input_wrap" style="display: none;">
+                                                    <label for="educfisicmotivo">Motivo</label>
+                                                    <input type="text" id="educfisicmotivo" name="educfisicmotivo">
                                                 </div>
                                             </div>
                                         </div>
@@ -756,6 +762,13 @@ Written by:
                             </p>
                         </div>
                         <div role="tabpanel" aria-labelledby="5" hidden>
+                            <h1 class="title">UNIFORMES</h1>
+                            <span class="span-tag"><i class="fas fa-clipboard"></i></span>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="6" hidden>
                             <h1 class="title">MATRÍCULAS ANTERIORES</h1>
                             <span class="span-tag"><i class="fas fa-school"></i></span>
                             <p class="text">
