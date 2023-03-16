@@ -13,3 +13,5 @@ function hideTabContent(e) {
     tabPanels.hidden = false;
 }
 buttons.forEach(function (button) { return button.addEventListener("click", hideTabContent); });
+
+

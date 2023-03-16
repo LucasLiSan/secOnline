@@ -287,7 +287,7 @@ article {
 .content__area {
   display: flex;
   flex-grow: 999;
-  max-height: 20rem;
+  max-height: 32rem;
   justify-content: start;
   flex-basis: calc((var(--flex-flow) - var(--fullSize)) * 999);
   position: relative;
@@ -339,6 +339,7 @@ article {
 
 .form_wrap {
   margin-top: 35px;
+  width: 530px;
 }
 
 .form_wrap .input_wrap {
@@ -358,6 +359,10 @@ article {
 .form_wrap .input_grp {
   display: flex;
   justify-content: space-between;
+}
+
+.input_grp_pair {
+  display: flex;
 }
 
 .form_wrap input {
@@ -381,7 +386,7 @@ article {
 }
 
 .form_wrap input[type=text]:focus {
-  border-color: #ebd0ce;
+  border-color: #e20808;
 }
 
 .form_wrap ul {

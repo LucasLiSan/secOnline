@@ -28,51 +28,69 @@ Written by:
                Your browser does not support the video tag.
                </video>
             </div>
-            <div class="user_img">
+            <div class="user_img" title="Bento">
                 <img src="../db_imgs/_profile.pictures/bento_profile.jpg" height="100" width="100" alt="profile">
             </div>
             <div class="user_details">
                 <h5>INFORMAÇÕES DO ALUNO</h5>
                 <span>BENTO</span>
                 <span>R.A.: 123.456.789-0</span>
-                <p>Maternal 2-C Integral</p>
-                <a href="../index/index.html">INÍCIO</a>
+                <p title="Turma e turno.">Maternal 2-C Integral</p>
+                <a href="../index/index.php" title="Voltar para a pagina inicial.">INÍCIO</a>
                 <hr>
             </div>
             <article class="tabs content--flow">
                 <aside class="sidebar">
                     <nav role="tablist" class="tab__navigation">
-                        <button role="tab" aria-selected="true" class="tab__button" id="1">
+                        <button role="tab" aria-selected="false" class="tab__button" id="1" title="Informações rápidas do aluno.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-home"></i>
                             </span>
                             <span class="text__for--tab">Geral</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="2">
+                        <button role="tab" aria-selected="true" class="tab__button" id="2" title="Documentos do aluno.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-id-card"></i>
                             </span>
                             <span class="text__for--tab">Documentos</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="3">
+                        <button role="tab" aria-selected="false" class="tab__button" id="3" title="Endereço do aluno.">
+                            <span class="icon__for--tab">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </span>
+                            <span class="text__for--tab">Endereço</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="4" title="Telefones de contato.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-phone"></i>
                             </span>
                             <span class="text__for--tab">Contatos</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="4">
+                        <button role="tab" aria-selected="false" class="tab__button" id="5" title="Autorizações de projetos, entradas e saídas e autorizações gerais.">
                             <span class="icon__for--tab">
-                                <i class="fas fa-clipboard"></i>
+                                <i class="fas fa-file-signature"></i>
                             </span>
                             <span class="text__for--tab">Autorizações</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="5">
+                        <button role="tab" aria-selected="false" class="tab__button" id="6" title="Tamanho do uniforme utilizado.">
                             <span class="icon__for--tab">
-                                <i class="fas fa-clipboard"></i>
+                                <i class="fas fa-tshirt"></i>
                             </span>
                             <span class="text__for--tab">Uniformes</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="6">
+                        <button role="tab" aria-selected="false" class="tab__button" id="7" title="Alergias, restrições alimentares, atendimentos diferenciais.">
+                            <span class="icon__for--tab">
+                                <i class="fas fa-clipboard"></i>
+                            </span>
+                            <span class="text__for--tab">Informações adicionais</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="8" title="Histórico escolar do aluno.">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-graduation-cap"></i>
+                            </span>
+                            <span class="text__for--tab">Histórico</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="9" title="Escolas anteriormente frequentadas.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-school"></i>
                             </span>
@@ -82,7 +100,7 @@ Written by:
                 </aside>
                 <main class="content__area">
                     <div class="tab__content">
-                        <div role="tabpanel" aria-labelledby="1">
+                        <div role="tabpanel" aria-labelledby="1" hidden>
                             <h1 class="title">GERAL</h1>
                             <span class="span-tag"><i class="fas fa-home"></i></span>
                             <div class="wrapper">
@@ -505,6 +523,233 @@ Written by:
                                                     <input type="text" id="nameTwins" name="nameTwins" style="width: 346px;">
                                                 </div>
                                             </div>
+                                            <div class="input_wrap">
+                                                <label>Transporte escolar</label>
+                                                <ul>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="transport" value="sim" class="input_radio">
+                                                            <span>Sim</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="transport" value="nao" class="input_radio">
+                                                            <span>Não</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label>Bolsa família</label>
+                                                <ul>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="bolsaF" value="sim" class="input_radio">
+                                                            <span>Sim</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="bolsaF" value="nao" class="input_radio">
+                                                            <span>Não</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="2">
+                            <h1 class="title">DOCUMENTOS</h1>
+                            <span class="span-tag"><i class="fas fa-id-card"></i></span>
+                            <div class="wrapper">
+                                <div class="registration_form">
+                                    <form>
+                                        <div class="form_wrap">
+                                            <div class="input_grp">
+                                                <div class="input_grp_pair">
+                                                    <div class="input_wrap">
+                                                        <label for="ra">R.A.</label>
+                                                        <input type="ra" id="numRa">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="ra">DIG.</label>
+                                                        <input type="ra_dg" id="DgRa" style="width:40px;">
+                                                    </div>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="inep">INEP</label>
+                                                    <input type="inep" id="numInep">
+                                                </div>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="sus">SUS</label>
+                                                    <input type="sus" id="numSus">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="nCross">CROSS</label>
+                                                    <input type="nCross" id="numCross">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="nis">NIS</label>
+                                                    <input type="nis" id="numNis">
+                                                </div>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_grp_pair">
+                                                    <div class="input_wrap">
+                                                        <label for="rg">R.G.</label>
+                                                        <input type="rg" id="numRg">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="rg_dg">DIG.</label>
+                                                        <input type="rg_dg" id="DgRg" style="width:40px;">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="rg_Exp">Expedição</label>
+                                                        <input type="rg_Exp" id="RGOrg" style="width:110px;">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin: 0 16px 0 16px;">
+                                                        <label for="rg_orgExp">Orgão</label>
+                                                        <input type="rg_orgExp" id="RGExpOrg" style="width:88px;">
+                                                    </div>
+                                                    <div class="input_wrap">
+                                                        <label for="rg_org_uf">UF</label>
+                                                        <select id="RGExpOrgUF" name="rg_org_uf" style="height: 37px; width: 64px; border-radius: 3px;">
+                                                            <option value="">SELECIONE...</option>
+                                                            <option value="AC">AC</option>
+                                                            <option value="AL">AL</option>
+                                                            <option value="AP">AP</option>
+                                                            <option value="AM">AM</option>
+                                                            <option value="BA">BA</option>
+                                                            <option value="CE">CE</option>
+                                                            <option value="DF">DF</option>
+                                                            <option value="ES">ES</option>
+                                                            <option value="GO">GO</option>
+                                                            <option value="MA">MA</option>
+                                                            <option value="MT">MT</option>
+                                                            <option value="MS">MS</option>
+                                                            <option value="MG">MG</option>
+                                                            <option value="PA">PA</option>
+                                                            <option value="PB">PB</option>
+                                                            <option value="PR">PR</option>
+                                                            <option value="PE">PE</option>
+                                                            <option value="PI">PI</option>
+                                                            <option value="RJ">RJ</option>
+                                                            <option value="RN">RN</option>
+                                                            <option value="RS">RS</option>
+                                                            <option value="RO">RO</option>
+                                                            <option value="RR">RR</option>
+                                                            <option value="SC">SC</option>
+                                                            <option value="SP">SP</option>
+                                                            <option value="SE">SE</option>
+                                                            <option value="TO">TO</option>
+                                                            <option value="EX">EX</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_grp_pair">
+                                                    <div class="input_wrap">
+                                                        <label for="cpf">C.P.F.</label>
+                                                        <input type="cpf" id="numCpf">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="cpf_dg">DIG.</label>
+                                                        <input type="cpf_dg" id="cpfDg" style="width: 40px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_grp_pair">
+                                                    <div class="input_wrap">
+                                                        <label>Modelo novo</label>
+                                                        <ul>
+                                                            <li>
+                                                                <label class="radio_wrap">
+                                                                    <input type="radio" name="certidNasc" value="sim" class="input_radio">
+                                                                    <span>Sim</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="radio_wrap">
+                                                                    <input type="radio" name="certidNasc" value="nao" class="input_radio">
+                                                                    <span>Não</span>
+                                                                </label>
+                                                            </li>
+                                                        </ul>  
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="certidMatric">Matrícula Certidão</label>
+                                                        <input type="text" id="certidMatric" name="certidMatric" style="width: 353px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="input_grp" style="display:none;">
+                                                <div class="input_grp_pair">
+                                                    <div class="input_wrap">
+                                                        <label for="cnlivro">Livro</label>
+                                                        <input type="cnlivro" id="cnLivro" style="width: 116px;">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="cnfolha">Folha</label>
+                                                        <input type="cnfolha" id="cnFolha" style="width: 116px;">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="cnnum">Número</label>
+                                                        <input type="cnnum" id="cnNum" style="width: 116px;">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="cndtregist">Data do registro</label>
+                                                        <input type="date" name="cndtregist" id="cnDtRegist" style="height: 37px; width: 139px; border-radius: 3px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="3" hidden>
+                            <h1 class="title">ENDEREÇO</h1>
+                            <span class="span-tag"><i class="fas fa-map-marked-alt"></i></i></span>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt tempora vero et tempore ipsa exercitationem esse officiis eum molestiae facilis impedit cum, voluptas architecto.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="4" hidden>
+                            <h1 class="title">CONTATOS</h1>
+                            <span class="span-tag"><i class="fas fa-phone"></i></span>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="5" hidden>
+                            <h1 class="title">AUTORIZAÇÕES</h1>
+                            <span class="span-tag"><i class="fas fa-file-signature"></i></span>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="6" hidden>
+                            <h1 class="title">UNIFORMES</h1>
+                            <span class="span-tag"><i class="fas fa-tshirt"></i></span>
+                            <p class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="7" hidden>
+                            <h1 class="title">INFOS ADICIONAIS</h1>
+                            <span class="span-tag"><i class="fas fa-clipboard"></i></span>
+                            <div class="wrapper">
+                                <div class="registration_form">
+                                    <form>
+                                        <div class="form_wrap">
                                             <div class="input_grp">
                                                 <div class="input_wrap">
                                                     <label>Deficiência</label>
@@ -740,35 +985,14 @@ Written by:
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="2" hidden>
-                            <h1 class="title">DOCUMENTOS</h1>
-                            <span class="span-tag"><i class="fas fa-id-card"></i></span>
+                        <div role="tabpanel" aria-labelledby="8" hidden>
+                            <h1 class="title">HISTÓRICO ESCOLAR</h1>
+                            <span class="span-tag"><i class="fas fa-graduation-cap"></i></span>
                             <p class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt tempora vero et tempore ipsa exercitationem esse officiis eum molestiae facilis impedit cum, voluptas architecto.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt tempora vero et tempore ipsa.
                             </p>
                         </div>
-                        <div role="tabpanel" aria-labelledby="3" hidden>
-                            <h1 class="title">CONTATOS</h1>
-                            <span class="span-tag"><i class="fas fa-phone"></i></span>
-                            <p class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi iste nemo debitis porro quisquam incidunt.
-                            </p>
-                        </div>
-                        <div role="tabpanel" aria-labelledby="4" hidden>
-                            <h1 class="title">AUTORIZAÇÕES</h1>
-                            <span class="span-tag"><i class="fas fa-clipboard"></i></span>
-                            <p class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div role="tabpanel" aria-labelledby="5" hidden>
-                            <h1 class="title">UNIFORMES</h1>
-                            <span class="span-tag"><i class="fas fa-clipboard"></i></span>
-                            <p class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div role="tabpanel" aria-labelledby="6" hidden>
+                        <div role="tabpanel" aria-labelledby="9" hidden>
                             <h1 class="title">MATRÍCULAS ANTERIORES</h1>
                             <span class="span-tag"><i class="fas fa-school"></i></span>
                             <p class="text">
