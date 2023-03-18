@@ -72,11 +72,11 @@ Written by:
                             </span>
                             <span class="text__for--tab">Autorizações</span>
                         </button>
-                        <button role="tab" aria-selected="true" class="tab__button" id="6" title="Tamanho do uniforme utilizado.">
+                        <button role="tab" aria-selected="false" class="tab__button" id="6" title="Tamanho do uniforme utilizado.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-tshirt"></i>
                             </span>
-                            <span class="text__for--tab">Uniformes</span>
+                            <span class="text__for--tab">Uniforme</span>
                         </button>
                         <button role="tab" aria-selected="false" class="tab__button" id="7" title="Alergias, restrições alimentares, atendimentos diferenciais.">
                             <span class="icon__for--tab">
@@ -84,7 +84,7 @@ Written by:
                             </span>
                             <span class="text__for--tab">Informações adicionais</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="8" title="Histórico escolar do aluno.">
+                        <button role="tab" aria-selected="true" class="tab__button" id="8" title="Histórico escolar do aluno.">
                             <span class="icon__for--tab">
                             <i class="fas fa-graduation-cap"></i>
                             </span>
@@ -1627,146 +1627,325 @@ Written by:
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="6">
-                            <h1 class="title">UNIFORMES</h1>
+                        <div role="tabpanel" aria-labelledby="6" hidden>
+                            <h1 class="title">UNIFORME</h1>
                             <span class="span-tag"><i class="fas fa-tshirt"></i></span>
                             <div class="wrapper">
                                 <div class="registration_form">
                                     <form>
                                         <div class="form_wrap">
-                                            <div class="input_grp">
-                                                <div class="input_wrap">
-                                                    <label>Camiseta de mangas curtas</label>
-                                                    <ul style="width: 440px;">
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="04" class="input_radio">
-                                                                <span>04</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="06" class="input_radio">
-                                                                <span>06</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="08" class="input_radio">
-                                                                <span>08</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="10" class="input_radio">
-                                                                <span>10</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="12" class="input_radio">
-                                                                <span>12</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="14" class="input_radio">
-                                                                <span>14</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="16" class="input_radio">
-                                                                <span>16</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="P" class="input_radio">
-                                                                <span>P</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="M" class="input_radio">
-                                                                <span>M</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniCam" value="G" class="input_radio">
-                                                                <span>G</span>
-                                                            </label>
-                                                        </li>
-                                                    </ul>  
-                                                </div>
+                                            <div class="input_wrap">
+                                                <label>Camiseta de mangas curtas</label>
+                                                <ul style="width: 440px;">
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="04" class="input_radio">
+                                                            <span>04</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="06" class="input_radio">
+                                                            <span>06</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="08" class="input_radio">
+                                                            <span>08</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="10" class="input_radio">
+                                                            <span>10</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="12" class="input_radio">
+                                                            <span>12</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="14" class="input_radio">
+                                                            <span>14</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="16" class="input_radio">
+                                                            <span>16</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="P" class="input_radio">
+                                                            <span>P</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="M" class="input_radio">
+                                                            <span>M</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCam" value="G" class="input_radio">
+                                                            <span>G</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
                                             </div>
-                                            <div class="input_grp">
-                                                <div class="input_wrap">
-                                                    <label>Bermudas unissex</label>
-                                                    <ul style="width: 440px;">
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="04" class="input_radio">
-                                                                <span>04</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="06" class="input_radio">
-                                                                <span>06</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="08" class="input_radio">
-                                                                <span>08</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="10" class="input_radio">
-                                                                <span>10</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="12" class="input_radio">
-                                                                <span>12</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="14" class="input_radio">
-                                                                <span>14</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="16" class="input_radio">
-                                                                <span>16</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="P" class="input_radio">
-                                                                <span>P</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="M" class="input_radio">
-                                                                <span>M</span>
-                                                            </label>
-                                                        </li>
-                                                        <li>
-                                                            <label class="radio_wrap">
-                                                                <input type="radio" name="UniBer" value="G" class="input_radio">
-                                                                <span>G</span>
-                                                            </label>
-                                                        </li>
-                                                    </ul>  
-                                                </div>
+                                            <div class="input_wrap">
+                                                <label>Bermudas unissex</label>
+                                                <ul style="width: 440px;">
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="04" class="input_radio">
+                                                            <span>04</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="06" class="input_radio">
+                                                            <span>06</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="08" class="input_radio">
+                                                            <span>08</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="10" class="input_radio">
+                                                            <span>10</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="12" class="input_radio">
+                                                            <span>12</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="14" class="input_radio">
+                                                            <span>14</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="16" class="input_radio">
+                                                            <span>16</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="P" class="input_radio">
+                                                            <span>P</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="M" class="input_radio">
+                                                            <span>M</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniBer" value="G" class="input_radio">
+                                                            <span>G</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label>Jaqueta unissex</label>
+                                                <ul style="width: 440px;">
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="04" class="input_radio">
+                                                            <span>04</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="06" class="input_radio">
+                                                            <span>06</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="08" class="input_radio">
+                                                            <span>08</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="10" class="input_radio">
+                                                            <span>10</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="12" class="input_radio">
+                                                            <span>12</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="14" class="input_radio">
+                                                            <span>14</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="16" class="input_radio">
+                                                            <span>16</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="P" class="input_radio">
+                                                            <span>P</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="M" class="input_radio">
+                                                            <span>M</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniJaq" value="G" class="input_radio">
+                                                            <span>G</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label>Calça unissex</label>
+                                                <ul style="width: 440px;">
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="04" class="input_radio">
+                                                            <span>04</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="06" class="input_radio">
+                                                            <span>06</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="08" class="input_radio">
+                                                            <span>08</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="10" class="input_radio">
+                                                            <span>10</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="12" class="input_radio">
+                                                            <span>12</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="14" class="input_radio">
+                                                            <span>14</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="16" class="input_radio">
+                                                            <span>16</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="P" class="input_radio">
+                                                            <span>P</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="M" class="input_radio">
+                                                            <span>M</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniCalca" value="G" class="input_radio">
+                                                            <span>G</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
+                                            </div>
+                                            <div class="input_wrap">
+                                                <label>Meia</label>
+                                                <ul style="width: 440px;">
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="BB" class="input_radio">
+                                                            <span>BB</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="PP" class="input_radio">
+                                                            <span>PP</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="P" class="input_radio">
+                                                            <span>P</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="M" class="input_radio">
+                                                            <span>M</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="G" class="input_radio">
+                                                            <span>G</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="GG" class="input_radio">
+                                                            <span>GG</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="XGG" class="input_radio">
+                                                            <span>XGG</span>
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="radio_wrap">
+                                                            <input type="radio" name="UniMeia" value="ADULTO" class="input_radio">
+                                                            <span>ADULTO</span>
+                                                        </label>
+                                                    </li>
+                                                </ul>  
                                             </div>
                                         </div>
                                     </form>
@@ -2010,12 +2189,24 @@ Written by:
                                                     <input type="text" id="educfisicmotivo" name="educfisicmotivo">
                                                 </div>
                                             </div>
+                                            <div class="input_grp">
+                                                <div class="input_grp_pair">
+                                                    <div class="input_wrap">
+                                                        <label for="height">Altura</label>
+                                                        <input type="text" name="height" id="studentHeight">
+                                                    </div>
+                                                    <div class="input_wrap" style="margin-left: 16px;">
+                                                        <label for="weight">Peso</label>
+                                                        <input type="text" name="weight" id="studentWeight">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="8" hidden>
+                        <div role="tabpanel" aria-labelledby="8">
                             <h1 class="title">HISTÓRICO ESCOLAR</h1>
                             <span class="span-tag"><i class="fas fa-graduation-cap"></i></span>
                             <div class="wrapper">
@@ -2023,6 +2214,22 @@ Written by:
                                     <form>
                                         <div class="form_wrap">
                                             <div class="input_grp">
+                                                <div class="input_grp">
+                                                    <div class="input_grp_pair">
+                                                        <div class="input_wrap">
+                                                            <label for="year">Ano</label>
+                                                            <input type="text" id="yearHist" style="width: 75px;">
+                                                        </div>
+                                                        <div class="input_wrap" style="margin-left: 16px;">
+                                                            <label for="schoolYear">Série</label>
+                                                            <input type="text" id="schoolYearHist" style="width: 90px;">
+                                                        </div>
+                                                        <div class="input_wrap" style="margin-left: 16px;">
+                                                            <label for="ue">U.E.</label>
+                                                            <input type="text" id="ueHist" style="width: 330px;">
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
