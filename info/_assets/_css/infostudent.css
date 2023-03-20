@@ -346,10 +346,6 @@ article {
   margin-bottom: 15px;
 }
 
-.form_wrap .input_wrap:last-child {
-  margin-bottom: 0;
-}
-
 .form_wrap .input_wrap label {
   display: block;
   margin-bottom: 3px;
@@ -361,8 +357,35 @@ article {
   justify-content: space-between;
 }
 
+.input_wrap h2 {
+  color: #fff;
+  font-size: 22px;
+}
+
+.input_wrap h3 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.input_wrap h4 {
+  color: #fff;
+}
+
 .input_grp_pair {
   display: flex;
+}
+
+.input_grps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.input_wrap_i {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .form_wrap input {
