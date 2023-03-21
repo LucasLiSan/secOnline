@@ -36,7 +36,7 @@ Written by:
                 <span>BENTO</span>
                 <span>R.A.: 123.456.789-0</span>
                 <p title="Turma e turno.">Maternal 2-C Integral</p>
-                <a href="../index/index.html" title="Voltar para a pagina inicial.">INÍCIO</a>
+                <a href="../index/index.php" title="Voltar para a pagina inicial.">INÍCIO</a>
                 <hr>
             </div>
             <article class="tabs content--flow">
@@ -84,13 +84,13 @@ Written by:
                             </span>
                             <span class="text__for--tab">Informações adicionais</span>
                         </button>
-                        <button role="tab" aria-selected="true" class="tab__button" id="8" title="Histórico escolar do aluno.">
+                        <button role="tab" aria-selected="false" class="tab__button" id="8" title="Histórico escolar do aluno.">
                             <span class="icon__for--tab">
                             <i class="fas fa-graduation-cap"></i>
                             </span>
                             <span class="text__for--tab">Histórico</span>
                         </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="9" title="Escolas anteriormente frequentadas.">
+                        <button role="tab" aria-selected="true" class="tab__button" id="9" title="Escolas anteriormente frequentadas.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-school"></i>
                             </span>
@@ -2206,29 +2206,315 @@ Written by:
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="8">
+                        <div role="tabpanel" aria-labelledby="8" hidden>
                             <h1 class="title">HISTÓRICO ESCOLAR</h1>
                             <span class="span-tag"><i class="fas fa-graduation-cap"></i></span>
                             <div class="wrapper">
                                 <div class="registration_form">
                                     <form>
                                         <div class="form_wrap">
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h4>2019: 1º ANO - A</h4>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h2>BASE COMUM CURRICULAR</h2>
+                                            </div>
                                             <div class="input_grp">
-                                                <div class="input_grp">
-                                                    <div class="input_grp_pair">
-                                                        <div class="input_wrap">
-                                                            <label for="year">Ano</label>
-                                                            <input type="text" id="yearHist" style="width: 75px;">
-                                                        </div>
-                                                        <div class="input_wrap" style="margin-left: 16px;">
-                                                            <label for="schoolYear">Série</label>
-                                                            <input type="text" id="schoolYearHist" style="width: 90px;">
-                                                        </div>
-                                                        <div class="input_wrap" style="margin-left: 16px;">
-                                                            <label for="ue">U.E.</label>
-                                                            <input type="text" id="ueHist" style="width: 330px;">
-                                                        </div>
-                                                    </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">L.O.E.</label>
+                                                    <input type="text" id="schoolYearHistLoe1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEducF">Educ. F.</label>
+                                                    <input type="text" id="schoolYearHistEducF1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesArt">Artes</label>
+                                                    <input type="text" id="schoolYearHistArt1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesScienc">Ciências</label>
+                                                    <input type="text" id="schoolYearHistScienc1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesHist">Hist.</label>
+                                                    <input type="text" id="schoolYearHistHist1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesGeo">Geo</label>
+                                                    <input type="text" id="schoolYearHistGeo1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesMat">Mat.</label>
+                                                    <input type="text" id="schoolYearHistMat1" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap" style="display: none;">
+                                                <h4>PARTE DIVERSIFICADA</h4>
+                                            </div>
+                                            <div class="input_grp" style="display: none;">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEng">Inglês</label>
+                                                    <input type="text" id="schoolYearHistEng1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesSpan">Espanhol</label>
+                                                    <input type="text" id="schoolYearHistLoe1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Informatica</label>
+                                                    <input type="text" id="schoolYearHistLoe1" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Religião</label>
+                                                    <input type="text" id="schoolYearHistLoe1" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h4>2020: 2º ANO - A</h4>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h2>BASE COMUM CURRICULAR</h2>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">L.O.E.</label>
+                                                    <input type="text" id="schoolYearHistLoe2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEducF">Educ. F.</label>
+                                                    <input type="text" id="schoolYearHistEducF2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesArt">Artes</label>
+                                                    <input type="text" id="schoolYearHistArt2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesScienc">Ciências</label>
+                                                    <input type="text" id="schoolYearHistScienc2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesHist">Hist.</label>
+                                                    <input type="text" id="schoolYearHistHist2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesGeo">Geo</label>
+                                                    <input type="text" id="schoolYearHistGeo2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesMat">Mat.</label>
+                                                    <input type="text" id="schoolYearHistMat2" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap" style="display: none;">
+                                                <h4>PARTE DIVERSIFICADA</h4>
+                                            </div>
+                                            <div class="input_grp" style="display: none;">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEng">Inglês</label>
+                                                    <input type="text" id="schoolYearHistEng2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesSpan">Espanhol</label>
+                                                    <input type="text" id="schoolYearHistLoe2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Informatica</label>
+                                                    <input type="text" id="schoolYearHistLoe2" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Religião</label>
+                                                    <input type="text" id="schoolYearHistLoe2" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h4>2021: 3º ANO - A</h4>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h2>BASE COMUM CURRICULAR</h2>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">L.O.E.</label>
+                                                    <input type="text" id="schoolYearHistLoe3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEducF">Educ. F.</label>
+                                                    <input type="text" id="schoolYearHistEducF3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesArt">Artes</label>
+                                                    <input type="text" id="schoolYearHistArt3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesScienc">Ciências</label>
+                                                    <input type="text" id="schoolYearHistScienc3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesHist">Hist.</label>
+                                                    <input type="text" id="schoolYearHistHist3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesGeo">Geo</label>
+                                                    <input type="text" id="schoolYearHistGeo3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesMat">Mat.</label>
+                                                    <input type="text" id="schoolYearHistMat3" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap" style="display: none;">
+                                                <h4>PARTE DIVERSIFICADA</h4>
+                                            </div>
+                                            <div class="input_grp" style="display: none;">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEng">Inglês</label>
+                                                    <input type="text" id="schoolYearHistEng3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesSpan">Espanhol</label>
+                                                    <input type="text" id="schoolYearHistLoe3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Informatica</label>
+                                                    <input type="text" id="schoolYearHistLoe3" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Religião</label>
+                                                    <input type="text" id="schoolYearHistLoe3" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h4>2022: 4º ANO - A</h4>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h2>BASE COMUM CURRICULAR</h2>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">L.O.E.</label>
+                                                    <input type="text" id="schoolYearHistLoe4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEducF">Educ. F.</label>
+                                                    <input type="text" id="schoolYearHistEducF4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesArt">Artes</label>
+                                                    <input type="text" id="schoolYearHistArt4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesScienc">Ciências</label>
+                                                    <input type="text" id="schoolYearHistScienc4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesHist">Hist.</label>
+                                                    <input type="text" id="schoolYearHistHist4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesGeo">Geo</label>
+                                                    <input type="text" id="schoolYearHistGeo4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesMat">Mat.</label>
+                                                    <input type="text" id="schoolYearHistMat4" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap" style="display: none;">
+                                                <h4>PARTE DIVERSIFICADA</h4>
+                                            </div>
+                                            <div class="input_grp" style="display: none;">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEng">Inglês</label>
+                                                    <input type="text" id="schoolYearHistEng4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesSpan">Espanhol</label>
+                                                    <input type="text" id="schoolYearHistLoe4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Informatica</label>
+                                                    <input type="text" id="schoolYearHistLoe4" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Religião</label>
+                                                    <input type="text" id="schoolYearHistLoe4" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h4>2023: 5º ANO - A</h4>
+                                            </div>
+                                            <div class="input_wrap">
+                                                <h2>BASE COMUM CURRICULAR</h2>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">L.O.E.</label>
+                                                    <input type="text" id="schoolYearHistLoe5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEducF">Educ. F.</label>
+                                                    <input type="text" id="schoolYearHistEducF5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesArt">Artes</label>
+                                                    <input type="text" id="schoolYearHistArt5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesScienc">Ciências</label>
+                                                    <input type="text" id="schoolYearHistScienc5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesHist">Hist.</label>
+                                                    <input type="text" id="schoolYearHistHist5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesGeo">Geo</label>
+                                                    <input type="text" id="schoolYearHistGeo5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesMat">Mat.</label>
+                                                    <input type="text" id="schoolYearHistMat5" style="width: 55px;">
+                                                </div>
+                                            </div>
+                                            <div class="input_wrap" style="display: none;">
+                                                <h4>PARTE DIVERSIFICADA</h4>
+                                            </div>
+                                            <div class="input_grp" style="display: none;">
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesEng">Inglês</label>
+                                                    <input type="text" id="schoolYearHistEng5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesSpan">Espanhol</label>
+                                                    <input type="text" id="schoolYearHistLoe5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Informatica</label>
+                                                    <input type="text" id="schoolYearHistLoe5" style="width: 55px;">
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="schoolGradesLoe">Religião</label>
+                                                    <input type="text" id="schoolYearHistLoe5" style="width: 55px;">
                                                 </div>
                                             </div>
                                         </div>
@@ -2236,15 +2522,457 @@ Written by:
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="9" hidden>
+                        <div role="tabpanel" aria-labelledby="9">
                             <h1 class="title">MATRÍCULAS ANTERIORES</h1>
                             <span class="span-tag"><i class="fas fa-school"></i></span>
                             <div class="wrapper">
                                 <div class="registration_form">
                                     <form>
                                         <div class="form_wrap">
-                                            <div class="input_grp">
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
                                             </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2013" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Berçário 1-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="INTEGRAL" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2013" readonly>
+                                                </div>
+                                                <div class="input_wrap" style="text-align: center;">
+                                                    <label for="MatricOut">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2013" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2014" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Berçário 2-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="INTEGRAL" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2014" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2014" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2015" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Maternal 1-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="INTEGRAL" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2015" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2015" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2016" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Maternal 2-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="INTEGRAL" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2016" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2016" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2017" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Jardim 1-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Manhã" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2017" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2017" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2018" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Jardim 2-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Tarde" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2018" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2018" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2019" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="1º Ano-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Manhã" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2019" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2019" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2020" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2º Ano-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Manhã" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2020" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2020" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2021" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="3º Ano-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Manhã" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2021" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2021" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2022" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="4º Ano-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Manhã" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2022" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2022" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="input_wrap" style="margin-bottom: 5px;">
+                                                <h3>EMEB PROFESSOR FERNANDO SERGIO DE CAMPOS MACHADO</h3>
+                                            </div>
+                                            <div class="input_grp">
+                                                <div class="input_wrap">
+                                                    <label for="MatricYear" style="text-align: center;">Ano</label>
+                                                    <input type="text" class="matricValues" style="width: 55px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="2023" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurma" style="text-align: center;">Turma</label>
+                                                    <input type="text" class="matricValues" style="width: 100px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="5º Ano-A" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricTurno" style="text-align: center;">Turno</label>
+                                                    <input type="text" class="matricValues" style="width: 95px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="Manhã" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricIn" style="text-align: center;">Entrada</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="06/02/2023" readonly>
+                                                </div>
+                                                <div class="input_wrap">
+                                                    <label for="MatricOut" style="text-align: center;">Saída</label>
+                                                    <input type="text" class="matricValues" style="width: 88px; background-color: transparent; color:white; border-color:transparent; text-align: center;" value="16/12/2023" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="input_grps">
+                                                <div class="input_wrap" title="Encerrada" style="display:none;">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-power-off matricFinals" style="color: red;"><span>Encerrada</span></i>
+                                                </div>
+                                                <div class="input_wrap" title="Em curso">
+                                                    <label for="MatricSituac" style="text-align: center;">Situação</label>
+                                                    <i class="fas fa-hourglass-half" style="color:yellow"><span>Em curso</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Aprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-check matricFinals" style="color: green;"><span>Aprovado</span></i>
+                                                </div>
+                                                <div class="input_wrap" style="margin-left: 16px; display:none;" title="Reprovado">
+                                                    <label for="MatricRend" style="text-align: center;">Rendimento</label>
+                                                    <i class="fas fa-times" style="color: red;"><span>Reprovado</span></i>
+                                                </div>
+                                            </div>
+                                            <hr>
                                         </div>
                                     </form>
                                 </div>
