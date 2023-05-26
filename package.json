@@ -1,5 +1,15 @@
 {
+  "name": "qrcodereader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "typescript": "^4.9.4"
+    "html5-qrcode": "^2.3.8"
   }
 }
