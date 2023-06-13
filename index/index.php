@@ -26,6 +26,9 @@ Written by:
             <script src="https://kit.fontawesome.com/aeb0f33aae.js" crossorigin="anonymous"></script>
             <title>Prontuário Digital</title>
         </head>
+        <?php 
+            $rm = htmlspecialchars($_GET["rm"]);
+        ?>
         <body>
             <div class="video-bg">
                 <video width="320" height="240" autoplay loop muted>
@@ -39,7 +42,7 @@ Written by:
                 </div>
                 <div class="user_details">
                     <h5>PRONTUÁRIO DIGITAL</h5>
-                    <span>BENTO</span>
+                    <span><?php echo $rm ?></span>
                     <span>R.A.: 123.456.789-0</span>
                     <p>Maternal 2-C Integral</p>
                     <a href="#">EMERGÊNCIA</a>
