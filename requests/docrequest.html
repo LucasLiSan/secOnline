@@ -57,6 +57,7 @@ Written by:
                         <button class="selection" id="Bt6" style="--clr:#ffff00"><span>SOLICITAÇÃO DE TROCA DE PERÍODO</span><i></i></button>
                         <button class="selection" id="Bt4" style="--clr:#8A2BE2"><span>SOLICITAÇÃO DE ENCAMINHAMENTOS</span><i></i></button>
                         <button class="selection" id="Bt5" style="--clr:#E22F2B"><span>SOLICITAÇÃO DE HISTÓRICO</span><i></i></button>
+                        <button class="selection" id="Bt5" style="--clr:#607D8B"><span>SOLICITAÇÃO DE RELATÓRIO PEDAGÓGICO</span><i></i></button>
                     </div>
                 </div>  
             </div>
