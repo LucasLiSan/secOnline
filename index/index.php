@@ -10,15 +10,12 @@ Written by:
 -->
 
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-                integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-                crossorigin="anonymous"
-            />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -71,21 +68,21 @@ Written by:
                 <div class="btn-actions">
                     <ul class="social-media-icons">
                         <li>
-                            <a href="../info/infostudent.php" class="contacts1"><i class="fas fa-mobile-alt"></i></a>
+                            <a href="../info/infostudent.php<?php echo "?rm=".$rm ?>" class="contacts1"><i class="fas fa-mobile-alt"></i></a>
                             <p>INFOS</p>
                         </li>
                         <li>
-                            <a href="../schoolgrades/schoolgrades.php" class="rend1"><i class="fas fa-microscope"></i></a>
+                            <a href="../schoolgrades/schoolgrades.php<?php echo "?rm=".$rm ?>" class="rend1"><i class="fas fa-microscope"></i></a>
                             <p>RENDIMENTO</p>
                         </li>
                     </ul>
                     <ul class="social-media-icons-2">
                         <li>
-                            <a href="../documents/documents.php" class="docs1"><i class="fas fa-book-open"></i></a>
+                            <a href="../documents/documents.php<?php echo "?rm=".$rm ?>" class="docs1"><i class="fas fa-book-open"></i></a>
                             <p>DOCUMENTOS</p>
                         </li>
                         <li>
-                            <a href="../requests/docrequest.php" class="solicit1"><i class="fas fa-file"></i></a>
+                            <a href="../requests/docrequest.php<?php echo "?rm=".$rm ?>" class="solicit1"><i class="fas fa-file"></i></a>
                             <p>SOLICITAÇÕES</p>
                         </li>
                     </ul>
