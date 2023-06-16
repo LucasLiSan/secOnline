@@ -26,8 +26,24 @@ Written by:
             <script src="https://kit.fontawesome.com/aeb0f33aae.js" crossorigin="anonymous"></script>
             <title>Prontuário Digital</title>
         </head>
-        <?php 
-            $rm = htmlspecialchars($_GET["rm"]);
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, 'pgdatabase');
+
+            // Check connection
+            if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+            echo "Connected successfully";
+        ?>
+        <?php
+            $rm = htmlspecialchars($_GET['rm']);
+            $dados = "SELECT nome, ra, ra_dg, turma, periodo FROM alunos WHERE rm='$rm'";
+            $result = $conn->query($dados);
         ?>
         <body>
             <div class="video-bg">
@@ -42,9 +58,13 @@ Written by:
                 </div>
                 <div class="user_details">
                     <h5>PRONTUÁRIO DIGITAL</h5>
-                    <span><?php echo $rm ?></span>
-                    <span>R.A.: 123.456.789-0</span>
-                    <p>Maternal 2-C Integral</p>
+                    <?php
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<span>".$row['nome']."</span>";
+                            echo "<span>"."R.A.: ".$row['ra']."-".$row['ra_dg']."</span>";
+                            echo "<p>".$row['turma']." ".$row['periodo']."</p>";
+                        }
+                    ?>
                     <a href="#">EMERGÊNCIA</a>
                 </div>
                 <hr>
