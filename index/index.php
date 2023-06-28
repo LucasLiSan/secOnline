@@ -33,33 +33,32 @@ Written by:
 
             // Check connection
             if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+                die("Connection failed: " . $conn->connect_error);
             }
             echo "Connected successfully";
-        ?>
-        <?php
+
             $rm = htmlspecialchars($_GET['rm']);
-            $dados = "SELECT nome, ra, ra_dg, turma, periodo FROM alunos WHERE rm='$rm'";
-            $result = $conn->query($dados);
+            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
+            $resultBasic = $conn->query($dadosBasic);
         ?>
         <body>
             <div class="video-bg">
                 <video width="320" height="240" autoplay loop muted>
-                 <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
-               Your browser does not support the video tag.
+                    <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                </video>
             </div>
             <div class="profile_card">
                 <div class="user_img">
-                    <img src="../db_imgs/_profile.pictures/bento_profile.jpg" height="100" width="100" alt="profile">
+                    <img src="../db_imgs/_profile.pictures/profilePic.<?php echo $rm ?>.jpg" height="100" width="100" alt="profile">
                 </div>
                 <div class="user_details">
                     <h5>PRONTUÁRIO DIGITAL</h5>
                     <?php
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<span>".$row['nome']."</span>";
-                            echo "<span>"."R.A.: ".$row['ra']."-".$row['ra_dg']."</span>";
-                            echo "<p>".$row['turma']." ".$row['periodo']."</p>";
+                        while ($row = mysqli_fetch_assoc($resultBasic)) {
+                            echo "<span>".$row['nomeAluno']."</span>";
+                            echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
+                            //echo "<p>".$row['turma']." ".$row['periodo']."</p>";
                         }
                     ?>
                     <a href="#">EMERGÊNCIA</a>

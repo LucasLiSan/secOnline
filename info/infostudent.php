@@ -11,46 +11,60 @@ Written by:
 -->
 
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="_assets/_css/infostudent.css">
-            <?php
-                $host = 'localhost';
-                $user = 'root';
-                $pass = '';
-                $db = 'pgdatabase';
-
-                $mysqli = new mysqli($host, $user, $pass, $db);         
-            ?>
             <title>Prontuário Digital - Informação do aluno</title>
             <script src="_assets/_js/infostudent.js" defer></script>
         </head>
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, 'pgdatabase');
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            echo "Connected successfully";
+
+            $rm = htmlspecialchars($_GET['rm']);
+            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
+            $resultBasic = $conn->query($dadosBasic);
+        ?>
         <body>
             <div class="video-bg">
                 <video width="320" height="240" autoplay loop muted>
-                 <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
-               Your browser does not support the video tag.
+                    <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                </video>
             </div>
             <div class="user_img" title="Bento">
-                <img src="../db_imgs/_profile.pictures/bento_profile.jpg" height="100" width="100" alt="profile">
+                <img src="../db_imgs/_profile.pictures/profilePic.<?php echo $rm ?>.jpg" height="100" width="100" alt="profile">
             </div>
             <div class="user_details">
                 <h5>INFORMAÇÕES DO ALUNO</h5>
-                <span>BENTO</span>
-                <span>R.A.: 123.456.789-0</span>
-                <p title="Turma e turno.">Maternal 2-C Integral</p>
-                <a href="../index/index.php" title="Voltar para a pagina inicial.">INÍCIO</a>
+                <?php
+                    while ($row = mysqli_fetch_assoc($resultBasic)) {
+                        echo "<span>".$row['nomeAluno']."</span>";
+                        echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
+                        //echo "<p>".$row['turma']." ".$row['periodo']."</p>";
+                    }
+                ?>
+                <a href="../index/index.php<?php echo "?rm=".$rm ?>" title="Voltar para a pagina inicial.">INÍCIO</a>
                 <hr>
             </div>
             <article class="tabs content--flow">
                 <aside class="sidebar">
                     <nav role="tablist" class="tab__navigation">
-                        <button role="tab" aria-selected="false" class="tab__button" id="1" title="Informações rápidas do aluno.">
+                        <button role="tab" aria-selected="true" class="tab__button" id="1" title="Informações rápidas do aluno.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-home"></i>
                             </span>
@@ -98,7 +112,7 @@ Written by:
                             </span>
                             <span class="text__for--tab">Histórico</span>
                         </button>
-                        <button role="tab" aria-selected="true" class="tab__button" id="9" title="Escolas anteriormente frequentadas.">
+                        <button role="tab" aria-selected="false" class="tab__button" id="9" title="Escolas anteriormente frequentadas.">
                             <span class="icon__for--tab">
                                 <i class="fas fa-school"></i>
                             </span>
@@ -108,7 +122,7 @@ Written by:
                 </aside>
                 <main class="content__area">
                     <div class="tab__content">
-                        <div role="tabpanel" aria-labelledby="1" hidden>
+                        <div role="tabpanel" aria-labelledby="1">
                             <h1 class="title">GERAL</h1>
                             <span class="span-tag"><i class="fas fa-home"></i></span>
                             <div class="wrapper">
@@ -2530,7 +2544,7 @@ Written by:
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="9">
+                        <div role="tabpanel" aria-labelledby="9" hidden>
                             <h1 class="title">MATRÍCULAS ANTERIORES</h1>
                             <span class="span-tag"><i class="fas fa-school"></i></span>
                             <div class="wrapper">

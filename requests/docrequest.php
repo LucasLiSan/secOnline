@@ -14,7 +14,7 @@ Written by:
 -->
 
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +27,24 @@ Written by:
             <script src="_assets/_js/docrequest.js" type="text/javascript"></script>
             <title>Prontuário Digital - Solicitação de documentos</title>
         </head>
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, 'pgdatabase');
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            echo "Connected successfully";
+
+            $rm = htmlspecialchars($_GET['rm']);
+            $dados = "SELECT nome, ra, ra_dg, turma, periodo FROM alunos WHERE rm='$rm'";
+            $result = $conn->query($dados);
+        ?>
         <body>
             <div class="video-bg">
                 <video width="320" height="240" autoplay loop muted>
@@ -35,14 +53,18 @@ Written by:
                 </video>
             </div>
             <div class="user_img">
-                <img src="../db_imgs/_profile.pictures/bento_profile.jpg" height="100" width="100" alt="profile">
+                <img src="../db_imgs/_profile.pictures/profilePic.<?php echo $rm ?>.jpg" height="100" width="100" alt="profile">
             </div>
             <div class="user_details">
                 <h5>SOLICITAÇÃO DE DOCUMENTOS</h5>
-                <span>BENTO</span>
-                <span>R.A.: 123.456.789-0</span>
-                <p>Maternal 2-C Integral</p>
-                <a href="../index/index.php">INÍCIO</a>
+                <?php
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<span>".$row['nome']."</span>";
+                        echo "<span>"."R.A.: ".$row['ra']."-".$row['ra_dg']."</span>";
+                        echo "<p>".$row['turma']." ".$row['periodo']."</p>";
+                    }
+                ?>
+                <a href="../index/index.php<?php echo "?rm=".$rm ?>">INÍCIO</a>
                 <hr>
             </div>
             <div class="card">
