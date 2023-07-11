@@ -40,6 +40,8 @@ Written by:
             $rm = htmlspecialchars($_GET['rm']);
             $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
             $resultBasic = $conn->query($dadosBasic);
+            $dadosSala = "SELECT turma, periodo FROM matricula WHERE rm='$rm'";
+            $resultSala = $conn->query($dadosSala);
         ?>
         <body>
             <div class="video-bg">
@@ -58,7 +60,9 @@ Written by:
                         while ($row = mysqli_fetch_assoc($resultBasic)) {
                             echo "<span>".$row['nomeAluno']."</span>";
                             echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
-                            //echo "<p>".$row['turma']." ".$row['periodo']."</p>";
+                        }
+                        while ($row = mysqli_fetch_assoc($resultSala)) {
+                            echo "<p>".$row['turma']." ".$row['periodo']."</p>";
                         }
                     ?>
                     <a href="#">EMERGÊNCIA</a>

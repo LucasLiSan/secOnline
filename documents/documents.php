@@ -36,8 +36,10 @@ Written by:
             echo "Connected successfully";
 
             $rm = htmlspecialchars($_GET['rm']);
-            $dados = "SELECT nome, ra, ra_dg, turma, periodo FROM alunos WHERE rm='$rm'";
-            $result = $conn->query($dados);
+            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
+            $resultBasic = $conn->query($dadosBasic);
+            $dadosSala = "SELECT turma, periodo FROM matricula WHERE rm='$rm'";
+            $resultSala = $conn->query($dadosSala);
         ?>
         <body>
             <div class="video-bg">
@@ -52,9 +54,11 @@ Written by:
             <div class="user_details">
                 <h5>DOCUMENTOS DO ALUNO</h5>
                 <?php
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<span>".$row['nome']."</span>";
-                        echo "<span>"."R.A.: ".$row['ra']."-".$row['ra_dg']."</span>";
+                    while ($row = mysqli_fetch_assoc($resultBasic)) {
+                        echo "<span>".$row['nomeAluno']."</span>";
+                        echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
+                    }
+                    while ($row = mysqli_fetch_assoc($resultSala)) {
                         echo "<p>".$row['turma']." ".$row['periodo']."</p>";
                     }
                 ?>
