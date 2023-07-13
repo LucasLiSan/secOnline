@@ -93,7 +93,6 @@ html {
 	background: #001729;
     margin: 0px -25px;
     padding-left: 25px;
-    margin-bottom: 15px;
     text-transform: uppercase;
     font-weight: 200;
 }
@@ -101,6 +100,7 @@ html {
 .com-p {
     margin: 0px;
     color:var(--lightwhite);
+    text-transform: uppercase;
 }
 
 .com-i {
