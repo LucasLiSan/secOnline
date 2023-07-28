@@ -36,10 +36,107 @@ Written by:
             echo "Connected successfully";
 
             $rm = htmlspecialchars($_GET['rm']);
-            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
+
+            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno, dataNascAluno, sexoAluno, inepAluno, cidadeNascAluno, UFNascAluno, paisNascAluno, nacionalidade, racaCorAluno, sexoAluno, filiacao1Aluno, filiacao2Aluno FROM infoBasicaAlunos WHERE rm='$rm'";
             $resultBasic = $conn->query($dadosBasic);
-            $dadosSala = "SELECT turma, periodo FROM matricula WHERE rm='$rm'";
+
+            $dadosSala = "SELECT turma, periodo, situacao FROM matricula WHERE rm='$rm'";
             $resultSala = $conn->query($dadosSala);
+
+            $dadosAdicionais ="SELECT quilombola, gemeo, nomeGemeo, bolsaFamilia, nascidoExterior, usoIMG, projetoMomComDeus, deficiencia, tDeficiencia, deficienciaLaudo, alergia, tAlergia, alergiaLaudo, doencaCronica, tDoencaCronica, doencaCronicaLaudo, restriAlimentar, tRestriAlimentar, restriAlimentarLaudo, educFisica, educFisicaLaudo, altura, peso FROM infoAdicionalAlunos WHERE rm='$rm'";
+            $resultAdicional = $conn->query($dadosAdicionais);
+
+            $dadosEndContSaid = "SELECT endAlunoRua,endAlunoNum,endAlunoBairro,endAlunoComplemento,endAlunoPontRef,endAlunoCidade,endAlunoUF,endAlunoZona,transporteEscolar,endAlunoGeo,distanciaEscola,telFixoAluno_1,PropTelFixoAluno_1,telFixoAluno_2,PropTelFixoAluno_2,telFixoAluno_3,PropTelFixoAluno_3,celAluno_1,PropCelAluno_1,WhatsCelAluno_1,celAluno_2,PropCelAluno_2,WhatsCelAluno_2,celAluno_3,PropCelAluno_3,WhatsCelAluno_3,celAluno_4,PropCelAluno_4,WhatsCelAluno_4,celAluno_5,PropCelAluno_5,WhatsCelAluno_5,celAluno_6,PropCelAluno_6,WhatsCelAluno_6,celAluno_7,PropCelAluno_7,WhatsCelAluno_7,celAluno_8,PropCelAluno_8,WhatsCelAluno_8,celAluno_9,PropCelAluno_9,WhatsCelAluno_9,celAluno_10,PropCelAluno_10,WhatsCelAluno_10,irSolo,pessoaAutoriz_1,pessoaAutoriz_2,pessoaAutoriz_3,pessoaAutoriz_4,pessoaAutoriz_5,pessoaAutoriz_6,pessoaAutoriz_7,pessoaAutoriz_8,pessoaAutoriz_9,pessoaAutoriz_10 FROM enderecoContatoSaidaAluno WHERE rm='$rm'";
+            $resultEndContSaid = $conn->query($dadosEndContSaid);
+
+            if ($resultBasic->num_rows > 0 && $resultSala->num_rows > 0) {
+
+                $dadosAluno = $resultBasic->fetch_assoc();
+                $dadosMatricula = $resultSala->fetch_assoc();
+                $dadosAdicionalAluno = $resultAdicional->fetch_assoc();
+                $dadosEnderecoAluno = $resultEndContSaid->fetch_assoc();
+            
+                $nomeAluno = $dadosAluno["nomeAluno"];
+                $raAluno = $dadosAluno["raAluno"];
+                $dgRaAluno = $dadosAluno["dgRaAluno"];
+                $dataNascAluno = $dadosAluno["dataNascAluno"];
+                $sexoAluno = $dadosAluno["sexoAluno"];
+                $racaCorAluno = $dadosAluno["racaCorAluno"];
+                $turma = $dadosMatricula["turma"];
+                $periodo = $dadosMatricula["periodo"];
+
+            } else {
+                echo "Nenhum resultado encontrado.";
+            }
+            
+            $dataNasc = new DateTime($dataNascAluno);
+            $dataAtual = new DateTime();
+            $diferenca = $dataNasc->diff($dataAtual);
+            $idade = $diferenca->y;
+
+            if ($sexoAluno === 'MASCULINO') {
+                $masc = 'checked';
+                $fem = '';
+            } elseif ($sexoAluno === 'FEMININO') {
+                $masc = '';
+                $fem = 'checked';
+            } else {
+                $masc = '';
+                $fem = '';
+            }
+
+            if ($racaCorAluno === 'AMARELA') {
+                $amarelo = 'selected';
+                $branco = '';
+                $indio = '';
+                $pardo = '';
+                $preto = '';
+                $ndecl = '';
+            } elseif ($racaCorAluno === 'BRANCA') {
+                $amarelo = '';
+                $branco = 'selected';
+                $indio = '';
+                $pardo = '';
+                $preto = '';
+                $ndecl = '';
+            } elseif ($racaCorAluno === 'INDIGENA') {
+                $amarelo = '';
+                $branco = '';
+                $indio = 'selected';
+                $pardo = '';
+                $preto = '';
+                $ndecl = '';
+            } elseif ($racaCorAluno === 'PARDA') {
+                $amarelo = '';
+                $branco = '';
+                $indio = '';
+                $pardo = 'selected';
+                $preto = '';
+                $ndecl = '';
+            } elseif ($racaCorAluno === 'PRETA') {
+                $amarelo = '';
+                $branco = '';
+                $indio = '';
+                $pardo = '';
+                $preto = 'selected';
+                $ndecl = '';
+            } elseif ($racaCorAluno === 'NAO DECLARADA') {
+                $amarelo = '';
+                $branco = '';
+                $indio = '';
+                $pardo = '';
+                $preto = '';
+                $ndecl = 'selected';
+            } else {
+                $amarelo = '';
+                $branco = '';
+                $indio = '';
+                $pardo = '';
+                $preto = '';
+                $ndecl = '';
+            }
+            
+            $conn->close();
         ?>
         <body>
             <div class="video-bg">
@@ -53,15 +150,9 @@ Written by:
             </div>
             <div class="user_details">
                 <h5>INFORMAÇÕES DO ALUNO</h5>
-                <?php
-                    while ($row = mysqli_fetch_assoc($resultBasic)) {
-                        echo "<span>".$row['nomeAluno']."</span>";
-                        echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
-                    }
-                    while ($row = mysqli_fetch_assoc($resultSala)) {
-                        echo "<p>".$row['turma']." ".$row['periodo']."</p>";
-                    }
-                ?>
+                <span><?php echo $nomeAluno; ?></span>
+                <span>R.A.: <?php echo $raAluno; ?>-<?php echo $dgRaAluno; ?></span>
+                <p><?php echo $turma; ?> <?php echo $periodo; ?></p>
                 <a href="../index/index.php<?php echo "?rm=".$rm ?>" title="Voltar para a pagina inicial.">INÍCIO</a>
                 <hr>
             </div>
@@ -135,7 +226,7 @@ Written by:
                                         <div class="form_wrap">
                                             <div class="input_wrap">
                                                 <label for="name">Nome</label>
-                                                <input type="text" id="name" name="name" value="">
+                                                <input type="text" id="name" name="name" value="<?php echo $nomeAluno; ?>" readonly>
                                             </div>
                                             <div class="input_wrap" style="display: none;">
                                                 <label for="name">Nome Social</label>
@@ -148,24 +239,24 @@ Written by:
                                             <div class="input_grp">
                                                 <div class="input_wrap">
                                                     <label id="#birth_label" for="birth">Data de nascimento</label>
-                                                    <input type="date" name="birth" id="birth">
+                                                    <input type="date" name="birth" id="birth" value="<?php echo $dataNascAluno; ?>" readonly>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="age">Idade</label>
-                                                    <input type="text" name="age" id="age">
+                                                    <input type="text" name="age" id="age" value="<?php echo $idade; ?>" readonly>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label>Sexo</label>
                                                     <ul>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="gender" value="male" class="input_radio">
+                                                                <input type="radio" name="gender" value="male" class="input_radio" <?php echo $masc; ?>>
                                                                 <span>Masculino</span>
                                                             </label>
                                                         </li>
                                                         <li>
                                                             <label class="radio_wrap">
-                                                                <input type="radio" name="gender" value="female" class="input_radio">
+                                                                <input type="radio" name="gender" value="female" class="input_radio" <?php echo $fem; ?>>
                                                                 <span>Feminino</span>
                                                             </label>
                                                         </li>
@@ -177,12 +268,12 @@ Written by:
                                                     <label for="DescricaoRacaCor">Raça/Cor</label>
                                                     <select id="DescricaoRacaCor" name="DescricaoRacaCor">
                                                         <option value="">SELECIONE...</option>
-                                                        <option value="1" title="Branca">Branca</option>
-                                                        <option value="2" title="Preta">Preta</option>
-                                                        <option value="4" title="Amarela">Amarela</option>
-                                                        <option value="3" title="Parda">Parda</option>
-                                                        <option value="5" title="Indigena">Indigena</option>
-                                                        <option value="6" title="NÃO DECLARADA">NÃO DECLARADA</option>
+                                                        <option value="1" title="Branca" <?php echo $branco; ?>>Branca</option>
+                                                        <option value="2" title="Preta" <?php echo $preto; ?>>Preta</option>
+                                                        <option value="4" title="Amarela" <?php echo $amarelo; ?>>Amarela</option>
+                                                        <option value="3" title="Parda" <?php echo $pardo; ?>>Parda</option>
+                                                        <option value="5" title="Indigena" <?php echo $indio; ?>>Indigena</option>
+                                                        <option value="6" title="NÃO DECLARADA" <?php echo $ndecl; ?>>NÃO DECLARADA</option>
                                                     </select>
                                                 </div>
                                                 <div class="input_wrap">

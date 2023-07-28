@@ -42,6 +42,21 @@ Written by:
             $resultBasic = $conn->query($dadosBasic);
             $dadosSala = "SELECT turma, periodo FROM matricula WHERE rm='$rm'";
             $resultSala = $conn->query($dadosSala);
+
+            if ($resultBasic->num_rows > 0 && $resultSala->num_rows > 0) {
+
+                $dadosAluno = $resultBasic->fetch_assoc();
+                $dadosMatricula = $resultSala->fetch_assoc();
+            
+                $nomeAluno = $dadosAluno["nomeAluno"];
+                $raAluno = $dadosAluno["raAluno"];
+                $dgRaAluno = $dadosAluno["dgRaAluno"];
+                $turma = $dadosMatricula["turma"];
+                $periodo = $dadosMatricula["periodo"];
+            } else {
+                echo "Nenhum resultado encontrado.";
+            }
+            $conn->close();
         ?>
         <body>
             <div class="video-bg">
@@ -56,15 +71,9 @@ Written by:
                 </div>
                 <div class="user_details">
                     <h5>PRONTUÁRIO DIGITAL</h5>
-                    <?php
-                        while ($row = mysqli_fetch_assoc($resultBasic)) {
-                            echo "<span>".$row['nomeAluno']."</span>";
-                            echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
-                        }
-                        while ($row = mysqli_fetch_assoc($resultSala)) {
-                            echo "<p>".$row['turma']." ".$row['periodo']."</p>";
-                        }
-                    ?>
+                    <span><?php echo $nomeAluno; ?></span>
+                    <span>R.A.: <?php echo $raAluno; ?>-<?php echo $dgRaAluno; ?></span>
+                    <p><?php echo $turma; ?> <?php echo $periodo; ?></p>
                     <a href="#">EMERGÊNCIA</a>
                 </div>
                 <hr>
