@@ -49,12 +49,16 @@ Written by:
             $dadosEndContSaid = "SELECT endAlunoRua,endAlunoNum,endAlunoBairro,endAlunoComplemento,endAlunoPontRef,endAlunoCidade,endAlunoUF,endAlunoZona,transporteEscolar,endAlunoGeo,distanciaEscola,telFixoAluno_1,PropTelFixoAluno_1,telFixoAluno_2,PropTelFixoAluno_2,telFixoAluno_3,PropTelFixoAluno_3,celAluno_1,PropCelAluno_1,WhatsCelAluno_1,celAluno_2,PropCelAluno_2,WhatsCelAluno_2,celAluno_3,PropCelAluno_3,WhatsCelAluno_3,celAluno_4,PropCelAluno_4,WhatsCelAluno_4,celAluno_5,PropCelAluno_5,WhatsCelAluno_5,celAluno_6,PropCelAluno_6,WhatsCelAluno_6,celAluno_7,PropCelAluno_7,WhatsCelAluno_7,celAluno_8,PropCelAluno_8,WhatsCelAluno_8,celAluno_9,PropCelAluno_9,WhatsCelAluno_9,celAluno_10,PropCelAluno_10,WhatsCelAluno_10,irSolo,pessoaAutoriz_1,pessoaAutoriz_2,pessoaAutoriz_3,pessoaAutoriz_4,pessoaAutoriz_5,pessoaAutoriz_6,pessoaAutoriz_7,pessoaAutoriz_8,pessoaAutoriz_9,pessoaAutoriz_10 FROM enderecoContatoSaidaAluno WHERE rm='$rm'";
             $resultEndContSaid = $conn->query($dadosEndContSaid);
 
+            $dadosDocsAluno = "SELECT rgAluno, dgRgAluno, expeRgAluno, OrgExpeRgAluno, UfExpeRgAluno, cpfAluno, cpfDgAluno, nis, susAluno, crossAluno, certidNascModel,matricCertidNasc, certidNascLivro, certidNascFolha, certidNascNum, certidNascUfComarca, certidNascDistritoComarca,certidNascMunicComarca, certidNascDataRegist, dataInBrasil FROM documentosAluno WHERE rm='$rm'";
+            $resultDocsAlunos = $conn->query($dadosDocsAluno);
+
             if ($resultBasic->num_rows > 0 && $resultSala->num_rows > 0) {
 
                 $dadosAluno = $resultBasic->fetch_assoc();
                 $dadosMatricula = $resultSala->fetch_assoc();
                 $dadosAdicionalAluno = $resultAdicional->fetch_assoc();
                 $dadosEnderecoAluno = $resultEndContSaid->fetch_assoc();
+                $dadosDocumentosAluno = $resultDocsAlunos->fetch_assoc();
             
                 $nomeAluno = $dadosAluno["nomeAluno"]; $raAluno = $dadosAluno["raAluno"]; $dgRaAluno = $dadosAluno["dgRaAluno"]; $dataNascAluno = $dadosAluno["dataNascAluno"]; $sexoAluno = $dadosAluno["sexoAluno"]; $racaCorAluno = $dadosAluno["racaCorAluno"]; $inepAluno = $dadosAluno["inepAluno"]; $cidadeNascAluno = $dadosAluno["cidadeNascAluno"]; $UFNascAluno = $dadosAluno["UFNascAluno"]; $paisNascAluno = $dadosAluno["paisNascAluno"]; $nacionalidade = $dadosAluno["nacionalidade"]; $filiacao1Aluno = $dadosAluno["filiacao1Aluno"]; $filiacao2Aluno = $dadosAluno["filiacao2Aluno"];
 
@@ -63,6 +67,8 @@ Written by:
                 $quilombola = $dadosAdicionalAluno["quilombola"]; $gemeo = $dadosAdicionalAluno["gemeo"]; $nomeGemeo = $dadosAdicionalAluno["nomeGemeo"]; $bolsaFamilia = $dadosAdicionalAluno["bolsaFamilia"]; $nascidoExterior = $dadosAdicionalAluno["nascidoExterior"]; $usoIMG = $dadosAdicionalAluno["usoIMG"]; $projetoMomComDeus = $dadosAdicionalAluno["projetoMomComDeus"]; $deficiencia = $dadosAdicionalAluno["deficiencia"]; $tDeficiencia = $dadosAdicionalAluno["tDeficiencia"]; $deficienciaLaudo = $dadosAdicionalAluno["deficienciaLaudo"]; $alergia = $dadosAdicionalAluno["alergia"]; $tAlergia = $dadosAdicionalAluno["tAlergia"]; $alergiaLaudo = $dadosAdicionalAluno["alergiaLaudo"]; $doencaCronica = $dadosAdicionalAluno["doencaCronica"]; $tDoencaCronica = $dadosAdicionalAluno["tDoencaCronica"]; $doencaCronicaLaudo = $dadosAdicionalAluno["doencaCronicaLaudo"]; $restriAlimentar = $dadosAdicionalAluno["restriAlimentar"]; $tRestriAlimentar = $dadosAdicionalAluno["tRestriAlimentar"]; $restriAlimentarLaudo = $dadosAdicionalAluno["restriAlimentarLaudo"]; $educFisica = $dadosAdicionalAluno["educFisica"]; $educFisicaLaudo = $dadosAdicionalAluno["educFisicaLaudo"]; $altura = $dadosAdicionalAluno["altura"]; $peso = $dadosAdicionalAluno["peso"]; $tSangue = $dadosAdicionalAluno["tSangue"];
 
                 $endAlunoRua = $dadosEnderecoAluno["endAlunoRua"]; $endAlunoNum = $dadosEnderecoAluno["endAlunoNum"]; $endAlunoBairro = $dadosEnderecoAluno["endAlunoBairro"]; $endAlunoComplemento = $dadosEnderecoAluno["endAlunoComplemento"]; $endAlunoPontRef = $dadosEnderecoAluno["endAlunoPontRef"]; $endAlunoCidade = $dadosEnderecoAluno["endAlunoCidade"]; $endAlunoUF = $dadosEnderecoAluno["endAlunoUF"]; $endAlunoZona = $dadosEnderecoAluno["endAlunoZona"]; $transporteEscolar = $dadosEnderecoAluno["transporteEscolar"]; $endAlunoGeo = $dadosEnderecoAluno["endAlunoGeo"]; $distanciaEscola = $dadosEnderecoAluno["distanciaEscola"]; $telFixoAluno_1  = $dadosEnderecoAluno["telFixoAluno_1"]; $PropTelFixoAluno_1 = $dadosEnderecoAluno["PropTelFixoAluno_1"]; $telFixoAluno_2 = $dadosEnderecoAluno["telFixoAluno_2"]; $PropTelFixoAluno_2 = $dadosEnderecoAluno["PropTelFixoAluno_2"]; $telFixoAluno_3 = $dadosEnderecoAluno["telFixoAluno_3"]; $PropTelFixoAluno_3 = $dadosEnderecoAluno["PropTelFixoAluno_3"]; $celAluno_1 = $dadosEnderecoAluno["celAluno_1"]; $PropCelAluno_1 = $dadosEnderecoAluno["PropCelAluno_1"]; $WhatsCelAluno_1 = $dadosEnderecoAluno["WhatsCelAluno_1"]; $celAluno_2 = $dadosEnderecoAluno["celAluno_2"]; $PropCelAluno_2 = $dadosEnderecoAluno["PropCelAluno_2"]; $WhatsCelAluno_2 = $dadosEnderecoAluno["WhatsCelAluno_2"]; $celAluno_3 = $dadosEnderecoAluno["celAluno_3"]; $PropCelAluno_3 = $dadosEnderecoAluno["PropCelAluno_3"]; $WhatsCelAluno_3 = $dadosEnderecoAluno["WhatsCelAluno_3"]; $celAluno_4 = $dadosEnderecoAluno["celAluno_4"]; $PropCelAluno_4 = $dadosEnderecoAluno["PropCelAluno_4"]; $WhatsCelAluno_4 = $dadosEnderecoAluno["WhatsCelAluno_4"]; $celAluno_5 = $dadosEnderecoAluno["celAluno_5"]; $PropCelAluno_5 = $dadosEnderecoAluno["PropCelAluno_5"]; $WhatsCelAluno_5 = $dadosEnderecoAluno["WhatsCelAluno_5"]; $celAluno_6 = $dadosEnderecoAluno["celAluno_6"]; $PropCelAluno_6 = $dadosEnderecoAluno["PropCelAluno_6"]; $WhatsCelAluno_6 = $dadosEnderecoAluno["WhatsCelAluno_6"]; $celAluno_7 = $dadosEnderecoAluno["celAluno_7"]; $PropCelAluno_7 = $dadosEnderecoAluno["PropCelAluno_7"]; $WhatsCelAluno_7 = $dadosEnderecoAluno["WhatsCelAluno_7"]; $celAluno_8 = $dadosEnderecoAluno["celAluno_8"]; $PropCelAluno_8 = $dadosEnderecoAluno["PropCelAluno_8"]; $WhatsCelAluno_8 = $dadosEnderecoAluno["WhatsCelAluno_8"]; $celAluno_9 = $dadosEnderecoAluno["celAluno_9"]; $PropCelAluno_9 = $dadosEnderecoAluno["PropCelAluno_9"]; $WhatsCelAluno_9 = $dadosEnderecoAluno["WhatsCelAluno_9"]; $celAluno_10 = $dadosEnderecoAluno["celAluno_10"]; $PropCelAluno_10 = $dadosEnderecoAluno["PropCelAluno_10"]; $WhatsCelAluno_10 = $dadosEnderecoAluno["WhatsCelAluno_10"]; $irSolo = $dadosEnderecoAluno["irSolo"]; $pessoaAutoriz_1 = $dadosEnderecoAluno["pessoaAutoriz_1"]; $pessoaAutoriz_2 = $dadosEnderecoAluno["pessoaAutoriz_2"]; $pessoaAutoriz_3 = $dadosEnderecoAluno["pessoaAutoriz_3"]; $pessoaAutoriz_4 = $dadosEnderecoAluno["pessoaAutoriz_4"]; $pessoaAutoriz_5 = $dadosEnderecoAluno["pessoaAutoriz_5"]; $pessoaAutoriz_6 = $dadosEnderecoAluno["pessoaAutoriz_6"]; $pessoaAutoriz_7 = $dadosEnderecoAluno["pessoaAutoriz_7"]; $pessoaAutoriz_8 = $dadosEnderecoAluno["pessoaAutoriz_8"]; $pessoaAutoriz_9 = $dadosEnderecoAluno["pessoaAutoriz_9"]; $pessoaAutoriz_10 = $dadosEnderecoAluno["pessoaAutoriz_10"];
+
+                $rgAluno = $dadosDocumentosAluno["rgAluno"]; $dgRgAluno = $dadosDocumentosAluno["dgRgAluno"]; $expeRgAluno = $dadosDocumentosAluno["expeRgAluno"]; $OrgExpeRgAluno = $dadosDocumentosAluno["OrgExpeRgAluno"]; $UfExpeRgAluno = $dadosDocumentosAluno["UfExpeRgAluno"]; $cpfAluno = $dadosDocumentosAluno["cpfAluno"]; $cpfDgAluno = $dadosDocumentosAluno["cpfDgAluno"]; $nisAluno = $dadosDocumentosAluno["nis"]; $susAluno = $dadosDocumentosAluno["susAluno"]; $crossAluno = $dadosDocumentosAluno["crossAluno"]; $certidNascModel = $dadosDocumentosAluno["certidNascModel"]; $matricCertidNasc = $dadosDocumentosAluno["matricCertidNasc"]; $certidNascLivro = $dadosDocumentosAluno["certidNascLivro"]; $certidNascFolha = $dadosDocumentosAluno["certidNascFolha"]; $certidNascNum = $dadosDocumentosAluno["certidNascNum"]; $certidNascUfComarca = $dadosDocumentosAluno["certidNascUfComarca"]; $certidNascDistritoComarca = $dadosDocumentosAluno["certidNascDistritoComarca"]; $certidNascMunicComarca = $dadosDocumentosAluno["certidNascMunicComarca"]; $certidNascDataRegist = $dadosDocumentosAluno["certidNascDataRegist"]; $dataInBrasil = $dadosDocumentosAluno["dataInBrasil"];
 
             } else {
                 echo "Nenhum resultado encontrado.";
@@ -148,6 +154,127 @@ Written by:
             } else {
                 $bfSim = ''; $bfNao = '';
             }
+
+            if ($certidNascModel === 'SIM') {
+                $certidaoSim = 'checked'; $certidaoNao = ''; $displayCertidao = 'style="display: none;"';
+            } elseif ($certidNascModel === 'NAO') {
+                $certidaoSim = ''; $certidaoNao = 'checked'; $displayCertidao = '';
+            } else {
+                $certidaoSim = ''; $certidaoNao = ''; $displayCertidao = 'style="display: none;"';
+            }
+
+            if ($nascidoExterior === 'SIM') {
+                $extNascSim = 'checked'; $extNascNao = ''; $displayExtNasc = ''; $displayDataIn = '';
+            } elseif ($nascidoExterior === 'NAO') {
+                $extNascSim = ''; $extNascNao = 'checked'; $displayExtNasc = 'style="margin-left: 16px; display:none;"'; $displayDataIn = 'style="margin-left: 48px; display:none;"';
+            } else {
+                $extNascSim = ''; $extNascNao = ''; $displayExtNasc = 'style="margin-left: 16px; display:none;"'; $displayDataIn = 'style="margin-left: 48px; display:none;"';
+            }
+
+            if ($endAlunoZona === 'RURAL') {
+                $rural = 'checked'; $urbana = '';
+            } elseif ($endAlunoZona === 'URBANA') {
+                $rural = ''; $urbana = 'checked';
+            } else {
+                $rural = ''; $urbana = '';
+            }
+
+            if ($WhatsCelAluno_1 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_1 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_2 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_2 === 'URBANA') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_3 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_3 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_4 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_4 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_5 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_5 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_6 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_6 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_7 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_7 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_8 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_8 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_9 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_9 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+            if ($WhatsCelAluno_10 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_10 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+
+            if ($irSolo === 'SIM') {
+                $irSoloSim = 'checked'; $irSoloNao = '';
+            } elseif ($irSolo === 'NÃO') {
+                $irSoloSim = ''; $irSoloNao = 'checked';
+            } else {
+                $irSoloSim = ''; $irSoloNao = '';
+            }
+
+            if ($usoIMG === 'SIM') {
+                $imgSim = 'checked'; $imgNao = '';
+            } elseif ($usoIMG === 'NÃO') {
+                $imgSim = ''; $imgNao = 'checked';
+            } else {
+                $imgSim = ''; $imgNao = '';
+            }
+
+            if ($WhatsCelAluno_10 === 'SIM') {
+                $whatSim = 'checked'; $whatNao = '';
+            } elseif ($WhatsCelAluno_10 === 'NÃO') {
+                $whatSim = ''; $whatNao = 'checked';
+            } else {
+                $whatSim = ''; $whatNao = '';
+            }
+
+
 
             $conn->close();
         ?>
@@ -329,7 +456,7 @@ Written by:
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="uf">UF</label>
-                                                    <input type="uf" id="uf" value="<?php echo $UFNascAluno; ?>" readonly>
+                                                    <input type="text" id="uf" value="<?php echo $UFNascAluno; ?>" readonly>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="paises">País</label>
@@ -421,83 +548,53 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="ra">R.A.</label>
-                                                        <input type="ra" id="numRa">
+                                                        <input type="ra" id="numRa" value="<?php echo $raAluno; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="ra">DIG.</label>
-                                                        <input type="ra_dg" id="DgRa" style="width:40px;">
+                                                        <input type="ra_dg" id="DgRa" style="width:40px;" value="<?php echo $dgRaAluno; ?>" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="inep">INEP</label>
-                                                    <input type="inep" id="numInep">
+                                                    <input type="inep" id="numInep" value="<?php echo $inepAluno; ?>" readonly>
                                                 </div>
                                             </div>
                                             <div class="input_grp">
                                                 <div class="input_wrap">
                                                     <label for="sus">SUS</label>
-                                                    <input type="sus" id="numSus">
+                                                    <input type="sus" id="numSus" value="<?php echo $susAluno; ?>" readonly>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="nCross">CROSS</label>
-                                                    <input type="nCross" id="numCross">
+                                                    <input type="nCross" id="numCross" value="<?php echo $crossAluno; ?>" readonly>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="nis">NIS</label>
-                                                    <input type="nis" id="numNis">
+                                                    <input type="nis" id="numNis" value="<?php echo $nisAluno; ?>" readonly>
                                                 </div>
                                             </div>
                                             <div class="input_grp">
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="rg">R.G.</label>
-                                                        <input type="rg" id="numRg">
+                                                        <input type="rg" id="numRg" value="<?php echo $rgAluno; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="rg_dg">DIG.</label>
-                                                        <input type="rg_dg" id="DgRg" style="width:40px;">
+                                                        <input type="rg_dg" id="DgRg" style="width:40px;" value="<?php echo $dgRgAluno; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="rg_Exp">Expedição</label>
-                                                        <input type="rg_Exp" id="RGOrg" style="width:110px;">
+                                                        <input type="rg_Exp" id="RGOrg" style="width:110px;" value="<?php echo $expeRgAluno; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin: 0 16px 0 16px;">
                                                         <label for="rg_orgExp">Orgão</label>
-                                                        <input type="rg_orgExp" id="RGExpOrg" style="width:88px;">
+                                                        <input type="rg_orgExp" id="RGExpOrg" style="width:88px;" value="<?php echo $OrgExpeRgAluno; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap">
                                                         <label for="rg_org_uf">UF</label>
-                                                        <select id="RGExpOrgUF" name="rg_org_uf" style="height: 37px; width: 64px; border-radius: 3px;">
-                                                            <option value="">SELECIONE...</option>
-                                                            <option value="AC">AC</option>
-                                                            <option value="AL">AL</option>
-                                                            <option value="AP">AP</option>
-                                                            <option value="AM">AM</option>
-                                                            <option value="BA">BA</option>
-                                                            <option value="CE">CE</option>
-                                                            <option value="DF">DF</option>
-                                                            <option value="ES">ES</option>
-                                                            <option value="GO">GO</option>
-                                                            <option value="MA">MA</option>
-                                                            <option value="MT">MT</option>
-                                                            <option value="MS">MS</option>
-                                                            <option value="MG">MG</option>
-                                                            <option value="PA">PA</option>
-                                                            <option value="PB">PB</option>
-                                                            <option value="PR">PR</option>
-                                                            <option value="PE">PE</option>
-                                                            <option value="PI">PI</option>
-                                                            <option value="RJ">RJ</option>
-                                                            <option value="RN">RN</option>
-                                                            <option value="RS">RS</option>
-                                                            <option value="RO">RO</option>
-                                                            <option value="RR">RR</option>
-                                                            <option value="SC">SC</option>
-                                                            <option value="SP">SP</option>
-                                                            <option value="SE">SE</option>
-                                                            <option value="TO">TO</option>
-                                                            <option value="EX">EX</option>
-                                                        </select>
+                                                        <input type="text" id="RGExpOrgUF" value="<?php echo $UfExpeRgAluno; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -505,11 +602,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="cpf">C.P.F.</label>
-                                                        <input type="cpf" id="numCpf">
+                                                        <input type="cpf" id="numCpf" value="<?php echo $cpfAluno; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="cpf_dg">DIG.</label>
-                                                        <input type="cpf_dg" id="cpfDg" style="width: 40px;">
+                                                        <input type="cpf_dg" id="cpfDg" style="width: 40px;" value="<?php echo $cpfDgAluno; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -520,13 +617,13 @@ Written by:
                                                         <ul>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="certidNasc" value="sim" class="input_radio">
+                                                                    <input type="radio" name="certidNasc" value="sim" class="input_radio" <?php echo $certidaoSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="certidNasc" value="nao" class="input_radio">
+                                                                    <input type="radio" name="certidNasc" value="nao" class="input_radio" <?php echo $certidaoNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -534,27 +631,27 @@ Written by:
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="certidMatric">Matrícula Certidão</label>
-                                                        <input type="text" id="certidMatric" name="certidMatric" style="width: 197px;">
+                                                        <input type="text" id="certidMatric" name="certidMatric" style="width: 197px;" value="<?php echo $matricCertidNasc; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="cndtregist">Data do registro</label>
-                                                        <input type="date" name="cndtregist" id="cnDtRegist" style="height: 37px; width: 139px; border-radius: 3px;">
+                                                        <input type="date" name="cndtregist" id="cnDtRegist" style="height: 37px; width: 139px; border-radius: 3px;" value="<?php echo $certidNascDataRegist; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="input_grp" style="display:none;">
+                                            <div class="input_grp" <?php echo $displayCertidao; ?>>
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="cnlivro">Livro</label>
-                                                        <input type="cnlivro" id="cnLivro" style="width: 116px;">
+                                                        <input type="cnlivro" id="cnLivro" style="width: 116px;" value="<?php echo $certidNascLivro; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="cnfolha">Folha</label>
-                                                        <input type="cnfolha" id="cnFolha" style="width: 116px;">
+                                                        <input type="cnfolha" id="cnFolha" style="width: 116px;" value="<?php echo $certidNascFolha; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="cnnum">Número</label>
-                                                        <input type="cnnum" id="cnNum" style="width: 116px;">
+                                                        <input type="cnnum" id="cnNum" style="width: 116px;" value="<?php echo $certidNascNum; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -565,276 +662,25 @@ Written by:
                                                         <ul>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="ExtNasc" value="sim" class="input_radio">
+                                                                    <input type="radio" name="ExtNasc" value="sim" class="input_radio" <?php echo $extNascSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="ExtNasc" value="nao" class="input_radio">
+                                                                    <input type="radio" name="ExtNasc" value="nao" class="input_radio" <?php echo $extNascNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
                                                         </ul>  
                                                     </div>
-                                                    <div class="input_wrap" style="margin-left: 16px; display:none;">
+                                                    <div class="input_wrap" <?php echo $displayExtNasc; ?>>
                                                         <label for="PaisNascExt">País</label>
-                                                        <select name="paises" id="country">
-                                                            <option value="" selected>SELECIONE...</option>
-                                                            <option value="Afeganistão">Afeganistão</option>
-                                                            <option value="África do Sul">África do Sul</option>
-                                                            <option value="Albânia">Albânia</option>
-                                                            <option value="Alemanha">Alemanha</option>
-                                                            <option value="Andorra">Andorra</option>
-                                                            <option value="Angola">Angola</option>
-                                                            <option value="Anguilla">Anguilla</option>
-                                                            <option value="Antilhas Holandesas">Antilhas Holandesas</option>
-                                                            <option value="Antárctida">Antárctida</option>
-                                                            <option value="Antígua e Barbuda">Antígua e Barbuda</option>
-                                                            <option value="Argentina">Argentina</option>
-                                                            <option value="Argélia">Argélia</option>
-                                                            <option value="Armênia">Armênia</option>
-                                                            <option value="Aruba">Aruba</option>
-                                                            <option value="Arábia Saudita">Arábia Saudita</option>
-                                                            <option value="Austrália">Austrália</option>
-                                                            <option value="Áustria">Áustria</option>
-                                                            <option value="Azerbaijão">Azerbaijão</option>
-                                                            <option value="Bahamas">Bahamas</option>
-                                                            <option value="Bahrein">Bahrein</option>
-                                                            <option value="Bangladesh">Bangladesh</option>
-                                                            <option value="Barbados">Barbados</option>
-                                                            <option value="Belize">Belize</option>
-                                                            <option value="Benim">Benim</option>
-                                                            <option value="Bermudas">Bermudas</option>
-                                                            <option value="Bielorrússia">Bielorrússia</option>
-                                                            <option value="Bolívia">Bolívia</option>
-                                                            <option value="Botswana">Botswana</option>
-                                                            <option value="Brunei">Brunei</option>
-                                                            <option value="Bulgária">Bulgária</option>
-                                                            <option value="Burkina Faso">Burkina Faso</option>
-                                                            <option value="Burundi">Burundi</option>
-                                                            <option value="Butão">Butão</option>
-                                                            <option value="Bélgica">Bélgica</option>
-                                                            <option value="Bósnia e Herzegovina">Bósnia e Herzegovina</option>
-                                                            <option value="Cabo Verde">Cabo Verde</option>
-                                                            <option value="Camarões">Camarões</option>
-                                                            <option value="Camboja">Camboja</option>
-                                                            <option value="Canadá">Canadá</option>
-                                                            <option value="Catar">Catar</option>
-                                                            <option value="Cazaquistão">Cazaquistão</option>
-                                                            <option value="Chade">Chade</option>
-                                                            <option value="Chile">Chile</option>
-                                                            <option value="China">China</option>
-                                                            <option value="Chipre">Chipre</option>
-                                                            <option value="Colômbia">Colômbia</option>
-                                                            <option value="Comores">Comores</option>
-                                                            <option value="Coreia do Norte">Coreia do Norte</option>
-                                                            <option value="Coreia do Sul">Coreia do Sul</option>
-                                                            <option value="Costa do Marfim">Costa do Marfim</option>
-                                                            <option value="Costa Rica">Costa Rica</option>
-                                                            <option value="Croácia">Croácia</option>
-                                                            <option value="Cuba">Cuba</option>
-                                                            <option value="Dinamarca">Dinamarca</option>
-                                                            <option value="Djibouti">Djibouti</option>
-                                                            <option value="Dominica">Dominica</option>
-                                                            <option value="Egito">Egito</option>
-                                                            <option value="El Salvador">El Salvador</option>
-                                                            <option value="Emirados Árabes Unidos">Emirados Árabes Unidos</option>
-                                                            <option value="Equador">Equador</option>
-                                                            <option value="Eritreia">Eritreia</option>
-                                                            <option value="Escócia">Escócia</option>
-                                                            <option value="Eslováquia">Eslováquia</option>
-                                                            <option value="Eslovênia">Eslovênia</option>
-                                                            <option value="Espanha">Espanha</option>
-                                                            <option value="Estados Federados da Micronésia">Estados Federados da Micronésia</option>
-                                                            <option value="Estados Unidos">Estados Unidos</option>
-                                                            <option value="Estônia">Estônia</option>
-                                                            <option value="Etiópia">Etiópia</option>
-                                                            <option value="Fiji">Fiji</option>
-                                                            <option value="Filipinas">Filipinas</option>
-                                                            <option value="Finlândia">Finlândia</option>
-                                                            <option value="França">França</option>
-                                                            <option value="Gabão">Gabão</option>
-                                                            <option value="Gana">Gana</option>
-                                                            <option value="Geórgia">Geórgia</option>
-                                                            <option value="Gibraltar">Gibraltar</option>
-                                                            <option value="Granada">Granada</option>
-                                                            <option value="Gronelândia">Gronelândia</option>
-                                                            <option value="Grécia">Grécia</option>
-                                                            <option value="Guadalupe">Guadalupe</option>
-                                                            <option value="Guam">Guam</option>
-                                                            <option value="Guatemala">Guatemala</option>
-                                                            <option value="Guernesei">Guernesei</option>
-                                                            <option value="Guiana">Guiana</option>
-                                                            <option value="Guiana Francesa">Guiana Francesa</option>
-                                                            <option value="Guiné">Guiné</option>
-                                                            <option value="Guiné Equatorial">Guiné Equatorial</option>
-                                                            <option value="Guiné-Bissau">Guiné-Bissau</option>
-                                                            <option value="Gâmbia">Gâmbia</option>
-                                                            <option value="Haiti">Haiti</option>
-                                                            <option value="Honduras">Honduras</option>
-                                                            <option value="Hong Kong">Hong Kong</option>
-                                                            <option value="Hungria">Hungria</option>
-                                                            <option value="Ilha Bouvet">Ilha Bouvet</option>
-                                                            <option value="Ilha de Man">Ilha de Man</option>
-                                                            <option value="Ilha do Natal">Ilha do Natal</option>
-                                                            <option value="Ilha Heard e Ilhas McDonald">Ilha Heard e Ilhas McDonald</option>
-                                                            <option value="Ilha Norfolk">Ilha Norfolk</option>
-                                                            <option value="Ilhas Cayman">Ilhas Cayman</option>
-                                                            <option value="Ilhas Cocos (Keeling)">Ilhas Cocos (Keeling)</option>
-                                                            <option value="Ilhas Cook">Ilhas Cook</option>
-                                                            <option value="Ilhas Feroé">Ilhas Feroé</option>
-                                                            <option value="Ilhas Geórgia do Sul e Sandwich do Sul">Ilhas Geórgia do Sul e Sandwich do Sul</option>
-                                                            <option value="Ilhas Malvinas">Ilhas Malvinas</option>
-                                                            <option value="Ilhas Marshall">Ilhas Marshall</option>
-                                                            <option value="Ilhas Menores Distantes dos Estados Unidos">Ilhas Menores Distantes dos Estados Unidos</option>
-                                                            <option value="Ilhas Salomão">Ilhas Salomão</option>
-                                                            <option value="Ilhas Virgens Americanas">Ilhas Virgens Americanas</option>
-                                                            <option value="Ilhas Virgens Britânicas">Ilhas Virgens Britânicas</option>
-                                                            <option value="Ilhas Åland">Ilhas Åland</option>
-                                                            <option value="Indonésia">Indonésia</option>
-                                                            <option value="Inglaterra">Inglaterra</option>
-                                                            <option value="Índia">Índia</option>
-                                                            <option value="Iraque">Iraque</option>
-                                                            <option value="Irlanda do Norte">Irlanda do Norte</option>
-                                                            <option value="Irlanda">Irlanda</option>
-                                                            <option value="Irã">Irã</option>
-                                                            <option value="Islândia">Islândia</option>
-                                                            <option value="Israel">Israel</option>
-                                                            <option value="Itália">Itália</option>
-                                                            <option value="Iêmen">Iêmen</option>
-                                                            <option value="Jamaica">Jamaica</option>
-                                                            <option value="Japão">Japão</option>
-                                                            <option value="Jersey">Jersey</option>
-                                                            <option value="Jordânia">Jordânia</option>
-                                                            <option value="Kiribati">Kiribati</option>
-                                                            <option value="Kuwait">Kuwait</option>
-                                                            <option value="Laos">Laos</option>
-                                                            <option value="Lesoto">Lesoto</option>
-                                                            <option value="Letônia">Letônia</option>
-                                                            <option value="Libéria">Libéria</option>
-                                                            <option value="Liechtenstein">Liechtenstein</option>
-                                                            <option value="Lituânia">Lituânia</option>
-                                                            <option value="Luxemburgo">Luxemburgo</option>
-                                                            <option value="Líbano">Líbano</option>
-                                                            <option value="Líbia">Líbia</option>
-                                                            <option value="Macau">Macau</option>
-                                                            <option value="Macedônia">Macedônia</option>
-                                                            <option value="Madagáscar">Madagáscar</option>
-                                                            <option value="Malawi">Malawi</option>
-                                                            <option value="Maldivas">Maldivas</option>
-                                                            <option value="Mali">Mali</option>
-                                                            <option value="Malta">Malta</option>
-                                                            <option value="Malásia">Malásia</option>
-                                                            <option value="Marianas Setentrionais">Marianas Setentrionais</option>
-                                                            <option value="Marrocos">Marrocos</option>
-                                                            <option value="Martinica">Martinica</option>
-                                                            <option value="Mauritânia">Mauritânia</option>
-                                                            <option value="Maurícia">Maurícia</option>
-                                                            <option value="Mayotte">Mayotte</option>
-                                                            <option value="Moldávia">Moldávia</option>
-                                                            <option value="Mongólia">Mongólia</option>
-                                                            <option value="Montenegro">Montenegro</option>
-                                                            <option value="Montserrat">Montserrat</option>
-                                                            <option value="Moçambique">Moçambique</option>
-                                                            <option value="Myanmar">Myanmar</option>
-                                                            <option value="México">México</option>
-                                                            <option value="Mônaco">Mônaco</option>
-                                                            <option value="Namíbia">Namíbia</option>
-                                                            <option value="Nauru">Nauru</option>
-                                                            <option value="Nepal">Nepal</option>
-                                                            <option value="Nicarágua">Nicarágua</option>
-                                                            <option value="Nigéria">Nigéria</option>
-                                                            <option value="Niue">Niue</option>
-                                                            <option value="Noruega">Noruega</option>
-                                                            <option value="Nova Caledônia">Nova Caledônia</option>
-                                                            <option value="Nova Zelândia">Nova Zelândia</option>
-                                                            <option value="Níger">Níger</option>
-                                                            <option value="Omã">Omã</option>
-                                                            <option value="Palau">Palau</option>
-                                                            <option value="Palestina">Palestina</option>
-                                                            <option value="Panamá">Panamá</option>
-                                                            <option value="Papua-Nova Guiné">Papua-Nova Guiné</option>
-                                                            <option value="Paquistão">Paquistão</option>
-                                                            <option value="Paraguai">Paraguai</option>
-                                                            <option value="País de Gales">País de Gales</option>
-                                                            <option value="Países Baixos">Países Baixos</option>
-                                                            <option value="Peru">Peru</option>
-                                                            <option value="Pitcairn">Pitcairn</option>
-                                                            <option value="Polinésia Francesa">Polinésia Francesa</option>
-                                                            <option value="Polônia">Polônia</option>
-                                                            <option value="Porto Rico">Porto Rico</option>
-                                                            <option value="Portugal">Portugal</option>
-                                                            <option value="Quirguistão">Quirguistão</option>
-                                                            <option value="Quênia">Quênia</option>
-                                                            <option value="Reino Unido">Reino Unido</option>
-                                                            <option value="República Centro-Africana">República Centro-Africana</option>
-                                                            <option value="República Checa">República Checa</option>
-                                                            <option value="República Democrática do Congo">República Democrática do Congo</option>
-                                                            <option value="República do Congo">República do Congo</option>
-                                                            <option value="República Dominicana">República Dominicana</option>
-                                                            <option value="Reunião">Reunião</option>
-                                                            <option value="Romênia">Romênia</option>
-                                                            <option value="Ruanda">Ruanda</option>
-                                                            <option value="Rússia">Rússia</option>
-                                                            <option value="Saara Ocidental">Saara Ocidental</option>
-                                                            <option value="Saint Martin">Saint Martin</option>
-                                                            <option value="Saint-Barthélemy">Saint-Barthélemy</option>
-                                                            <option value="Saint-Pierre e Miquelon">Saint-Pierre e Miquelon</option>
-                                                            <option value="Samoa Americana">Samoa Americana</option>
-                                                            <option value="Samoa">Samoa</option>
-                                                            <option value="Santa Helena, Ascensão e Tristão da Cunha">Santa Helena, Ascensão e Tristão da Cunha</option>
-                                                            <option value="Santa Lúcia">Santa Lúcia</option>
-                                                            <option value="Senegal">Senegal</option>
-                                                            <option value="Serra Leoa">Serra Leoa</option>
-                                                            <option value="Seychelles">Seychelles</option>
-                                                            <option value="Singapura">Singapura</option>
-                                                            <option value="Somália">Somália</option>
-                                                            <option value="Sri Lanka">Sri Lanka</option>
-                                                            <option value="Suazilândia">Suazilândia</option>
-                                                            <option value="Sudão">Sudão</option>
-                                                            <option value="Suriname">Suriname</option>
-                                                            <option value="Suécia">Suécia</option>
-                                                            <option value="Suíça">Suíça</option>
-                                                            <option value="Svalbard e Jan Mayen">Svalbard e Jan Mayen</option>
-                                                            <option value="São Cristóvão e Nevis">São Cristóvão e Nevis</option>
-                                                            <option value="São Marino">São Marino</option>
-                                                            <option value="São Tomé e Príncipe">São Tomé e Príncipe</option>
-                                                            <option value="São Vicente e Granadinas">São Vicente e Granadinas</option>
-                                                            <option value="Sérvia">Sérvia</option>
-                                                            <option value="Síria">Síria</option>
-                                                            <option value="Tadjiquistão">Tadjiquistão</option>
-                                                            <option value="Tailândia">Tailândia</option>
-                                                            <option value="Taiwan">Taiwan</option>
-                                                            <option value="Tanzânia">Tanzânia</option>
-                                                            <option value="Terras Austrais e Antárticas Francesas">Terras Austrais e Antárticas Francesas</option>
-                                                            <option value="Território Britânico do Oceano Índico">Território Britânico do Oceano Índico</option>
-                                                            <option value="Timor-Leste">Timor-Leste</option>
-                                                            <option value="Togo">Togo</option>
-                                                            <option value="Tonga">Tonga</option>
-                                                            <option value="Toquelau">Toquelau</option>
-                                                            <option value="Trinidad e Tobago">Trinidad e Tobago</option>
-                                                            <option value="Tunísia">Tunísia</option>
-                                                            <option value="Turcas e Caicos">Turcas e Caicos</option>
-                                                            <option value="Turquemenistão">Turquemenistão</option>
-                                                            <option value="Turquia">Turquia</option>
-                                                            <option value="Tuvalu">Tuvalu</option>
-                                                            <option value="Ucrânia">Ucrânia</option>
-                                                            <option value="Uganda">Uganda</option>
-                                                            <option value="Uruguai">Uruguai</option>
-                                                            <option value="Uzbequistão">Uzbequistão</option>
-                                                            <option value="Vanuatu">Vanuatu</option>
-                                                            <option value="Vaticano">Vaticano</option>
-                                                            <option value="Venezuela">Venezuela</option>
-                                                            <option value="Vietname">Vietname</option>
-                                                            <option value="Wallis e Futuna">Wallis e Futuna</option>
-                                                            <option value="Zimbabwe">Zimbabwe</option>
-                                                            <option value="Zâmbia">Zâmbia</option>
-                                                        </select>
+                                                        <input type="paises" id="country" value="<?php echo $paisNascAluno; ?>" readonly>
                                                     </div>
-                                                    <div class="input_wrap" style="margin-left: 48px; display:none;">
+                                                    <div class="input_wrap" <?php echo $displayDataIn; ?>>
                                                         <label for="EnterBr">Data da entrada</label>
-                                                        <input type="date" name="EnterBr" id="EnterBr" style="height: 37px; width: 139px; border-radius: 3px;">
+                                                        <input type="date" name="EnterBr" id="EnterBr" style="height: 37px; width: 139px; border-radius: 3px;" value="<?php echo $dataInBrasil; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -854,27 +700,27 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="EnderecoRua">Rua</label>
-                                                        <input type="EnderecoRua" id="NomeRua" style="width: 293px;">
+                                                        <input type="EnderecoRua" id="NomeRua" style="width: 293px;" value="<?php echo $endAlunoRua; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin: 0 16px 0 16px;">
                                                         <label for="EnderecoNum">Nº.</label>
-                                                        <input type="EnderecoNum" id="NumCasa" style="width:40px;">
+                                                        <input type="EnderecoNum" id="NumCasa" style="width:40px;" value="<?php echo $endAlunoNum; ?>" readonly>
                                                     </div>
                                                 </div>
                                                 <div class="input_wrap">
                                                     <label for="enderecoBairro">Bairro</label>
-                                                    <input type="enderecoBairro" id="BairroCasa">
+                                                    <input type="enderecoBairro" id="BairroCasa" value="<?php echo $endAlunoBairro; ?>" readonly>
                                                 </div>
                                             </div>
                                             <div class="input_grp">
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="EnderecoCompl">Complemento</label>
-                                                        <input type="EnderecoCompl" id="ComplementoCsa" style="width: 293px;">
+                                                        <input type="EnderecoCompl" id="ComplementoCsa" style="width: 293px;" value="<?php echo $endAlunoComplemento; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="EnderecoPtRef">Ponto de referência</label>
-                                                        <input type="EnderecoPtRef" id="Refer" style="width:223px;">
+                                                        <input type="EnderecoPtRef" id="Refer" style="width:223px;" value="<?php echo $endAlunoPontRef; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -882,54 +728,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="city">Cidade</label>
-                                                        <input type="text" id="city">
+                                                        <input type="text" id="city" value="<?php echo $endAlunoCidade; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="uf">UF</label>
-                                                        <select id="uf" name="uf" style="width:113px;">
-                                                            <option value="">SELECIONE...</option>
-                                                            <option value="AC">AC</option>
-                                                            <option value="AL">AL</option>
-                                                            <option value="AP">AP</option>
-                                                            <option value="AM">AM</option>
-                                                            <option value="BA">BA</option>
-                                                            <option value="CE">CE</option>
-                                                            <option value="DF">DF</option>
-                                                            <option value="ES">ES</option>
-                                                            <option value="GO">GO</option>
-                                                            <option value="MA">MA</option>
-                                                            <option value="MT">MT</option>
-                                                            <option value="MS">MS</option>
-                                                            <option value="MG">MG</option>
-                                                            <option value="PA">PA</option>
-                                                            <option value="PB">PB</option>
-                                                            <option value="PR">PR</option>
-                                                            <option value="PE">PE</option>
-                                                            <option value="PI">PI</option>
-                                                            <option value="RJ">RJ</option>
-                                                            <option value="RN">RN</option>
-                                                            <option value="RS">RS</option>
-                                                            <option value="RO">RO</option>
-                                                            <option value="RR">RR</option>
-                                                            <option value="SC">SC</option>
-                                                            <option value="SP">SP</option>
-                                                            <option value="SE">SE</option>
-                                                            <option value="TO">TO</option>
-                                                            <option value="EX">EX</option>
-                                                        </select>
+                                                        <input type="text" id="uf" value="<?php echo $endAlunoUF; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Localização</label>
                                                         <ul>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="ExtNasc" value="sim" class="input_radio">
+                                                                    <input type="radio" name="ExtNasc" value="sim" class="input_radio" <?php echo $rural; ?>>
                                                                     <span>Rural</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="ExtNasc" value="nao" class="input_radio">
+                                                                    <input type="radio" name="ExtNasc" value="nao" class="input_radio" <?php echo $urbana; ?>>
                                                                     <span>Urbana</span>
                                                                 </label>
                                                             </li>
@@ -944,13 +760,13 @@ Written by:
                                                         <ul>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="Transport" value="sim" class="input_radio">
+                                                                    <input type="radio" name="Transport" value="sim" class="input_radio" <?php echo $transporteEscolarSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="Transport" value="nao" class="input_radio">
+                                                                    <input type="radio" name="Transport" value="nao" class="input_radio" <?php echo $transporteEscolarNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -958,11 +774,11 @@ Written by:
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="EnderecoGeo">Geolocalização</label>
-                                                        <input type="EnderecoGeo" id="GeoCsa" style="width: 193px;">
+                                                        <input type="EnderecoGeo" id="GeoCsa" style="width: 193px;" value="<?php echo $endAlunoGeo; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="EnderecoDistEsc">Distância da escola</label>
-                                                        <input type="EnderecoDistEsc" id="DistEscola" style="width:140px;">
+                                                        <input type="EnderecoDistEsc" id="DistEscola" style="width:140px;" value="<?php echo $distanciaEscola; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -982,11 +798,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="TelFix1">Telone Fixo-1</label>
-                                                        <input type="TelFix1" id="TelFixo1" style="width: 155px;">
+                                                        <input type="TelFix1" id="TelFixo1" style="width: 155px;" value="<?php echo $telFixoAluno_1; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="TelFix1Prop">Proprietário</label>
-                                                        <input type="TelFix1Prop" id="PropTelFixo1" style="width:255px;">
+                                                        <input type="TelFix1Prop" id="PropTelFixo1" style="width:255px;" value="<?php echo $PropTelFixoAluno_1; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -994,11 +810,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="TelFix2">Telone Fixo-2</label>
-                                                        <input type="TelFix2" id="TelFixo2" style="width: 155px;">
+                                                        <input type="TelFix2" id="TelFixo2" style="width: 155px;" value="<?php echo $telFixoAluno_2; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="TelFix2Prop">Proprietário</label>
-                                                        <input type="TelFix2Prop" id="PropTelFixo2" style="width:255px;">
+                                                        <input type="TelFix2Prop" id="PropTelFixo2" style="width:255px;" value="<?php echo $PropTelFixoAluno_2; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1006,11 +822,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="TelFix3">Telone Fixo-3</label>
-                                                        <input type="TelFix3" id="TelFixo3" style="width: 155px;">
+                                                        <input type="TelFix3" id="TelFixo3" style="width: 155px;" value="<?php echo $telFixoAluno_3; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="TelFix3Prop">Proprietário</label>
-                                                        <input type="TelFix3Prop" id="PropTelFixo3" style="width:255px;">
+                                                        <input type="TelFix3Prop" id="PropTelFixo3" style="width:255px;" value="<?php echo $PropTelFixoAluno_3; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1018,24 +834,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel1">Celular-1</label>
-                                                        <input type="Cel1" id="mobile1" style="width: 155px;">
+                                                        <input type="Cel1" id="mobile1" style="width: 155px;" value="<?php echo $celAluno_1; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel1Prop">Proprietário</label>
-                                                        <input type="Cel1Prop" id="Propmobile1" style="width:255px;">
+                                                        <input type="Cel1Prop" id="Propmobile1" style="width:255px;" value="<?php echo $PropCelAluno_1; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1047,24 +863,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel2">Celular-2</label>
-                                                        <input type="Cel2" id="mobile2" style="width: 155px;">
+                                                        <input type="Cel2" id="mobile2" style="width: 155px;" value="<?php echo $celAluno_2; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel2Prop">Proprietário</label>
-                                                        <input type="Cel2Prop" id="Propmobile2" style="width:255px;">
+                                                        <input type="Cel2Prop" id="Propmobile2" style="width:255px;" value="<?php echo $PropCelAluno_2; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1076,24 +892,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel3">Celular-3</label>
-                                                        <input type="Cel3" id="mobile3" style="width: 155px;">
+                                                        <input type="Cel3" id="mobile3" style="width: 155px;" value="<?php echo $celAluno_3; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel3Prop">Proprietário</label>
-                                                        <input type="Cel3Prop" id="Propmobile3" style="width:255px;">
+                                                        <input type="Cel3Prop" id="Propmobile3" style="width:255px;" value="<?php echo $PropCelAluno_3; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1105,24 +921,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel4">Celular-4</label>
-                                                        <input type="Cel4" id="mobile4" style="width: 155px;">
+                                                        <input type="Cel4" id="mobile4" style="width: 155px;" value="<?php echo $celAluno_4; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel4Prop">Proprietário</label>
-                                                        <input type="Cel4Prop" id="Propmobile4" style="width:255px;">
+                                                        <input type="Cel4Prop" id="Propmobile4" style="width:255px;" value="<?php echo $PropCelAluno_4; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1134,24 +950,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel5">Celular-5</label>
-                                                        <input type="Cel5" id="mobile5" style="width: 155px;">
+                                                        <input type="Cel5" id="mobile5" style="width: 155px;" value="<?php echo $celAluno_5; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel5Prop">Proprietário</label>
-                                                        <input type="Cel5Prop" id="Propmobile5" style="width:255px;">
+                                                        <input type="Cel5Prop" id="Propmobile5" style="width:255px;" value="<?php echo $PropCelAluno_5; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1163,24 +979,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel6">Celular-6</label>
-                                                        <input type="Cel6" id="mobile6" style="width: 155px;">
+                                                        <input type="Cel6" id="mobile6" style="width: 155px;" value="<?php echo $celAluno_6; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel6Prop">Proprietário</label>
-                                                        <input type="Cel6Prop" id="Propmobile6" style="width:255px;">
+                                                        <input type="Cel6Prop" id="Propmobile6" style="width:255px;" value="<?php echo $PropCelAluno_6; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1192,24 +1008,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel7">Celular-7</label>
-                                                        <input type="Cel7" id="mobile7" style="width: 155px;">
+                                                        <input type="Cel7" id="mobile7" style="width: 155px;" value="<?php echo $celAluno_7; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel7Prop">Proprietário</label>
-                                                        <input type="Cel7Prop" id="Propmobile7" style="width:255px;">
+                                                        <input type="Cel7Prop" id="Propmobile7" style="width:255px;" value="<?php echo $PropCelAluno_7; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1221,24 +1037,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel8">Celular-8</label>
-                                                        <input type="Cel8" id="mobile8" style="width: 155px;">
+                                                        <input type="Cel8" id="mobile8" style="width: 155px;" value="<?php echo $celAluno_8; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel8Prop">Proprietário</label>
-                                                        <input type="Cel8Prop" id="Propmobile8" style="width:255px;">
+                                                        <input type="Cel8Prop" id="Propmobile8" style="width:255px;" value="<?php echo $PropCelAluno_8; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1250,24 +1066,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel9">Celular-9</label>
-                                                        <input type="Cel9" id="mobile9" style="width: 155px;">
+                                                        <input type="Cel9" id="mobile9" style="width: 155px;" value="<?php echo $celAluno_9; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel9Prop">Proprietário</label>
-                                                        <input type="Cel9Prop" id="Propmobile9" style="width:255px;">
+                                                        <input type="Cel9Prop" id="Propmobile9" style="width:255px;" value="<?php echo $PropCelAluno_9; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1279,24 +1095,24 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="Cel10">Celular-10</label>
-                                                        <input type="Cel10" id="mobile10" style="width: 155px;">
+                                                        <input type="Cel10" id="mobile10" style="width: 155px;" value="<?php echo $celAluno_10; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="Cel10Prop">Proprietário</label>
-                                                        <input type="Cel10Prop" id="Propmobile10" style="width:255px;">
+                                                        <input type="Cel10Prop" id="Propmobile10" style="width:255px;" value="<?php echo $PropCelAluno_10; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label>Whatsapp</label>
                                                         <ul style="width: 100px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="sim" class="input_radio" <?php echo $whatSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio">
+                                                                    <input type="radio" name="whatsapp" value="nao" class="input_radio" <?php echo $whatNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
@@ -1323,19 +1139,19 @@ Written by:
                                                         <ul style="width: 265px;">
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="irSolo" value="sim" class="input_radio">
+                                                                    <input type="radio" name="irSolo" value="sim" class="input_radio" <?php echo $irSoloSim; ?>>
                                                                     <span>Sim</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="irSolo" value="nao" class="input_radio">
+                                                                    <input type="radio" name="irSolo" value="nao" class="input_radio" <?php echo $irSoloNao; ?>>
                                                                     <span>Não</span>
                                                                 </label>
                                                             </li>
                                                             <li>
                                                                 <label class="radio_wrap">
-                                                                    <input type="radio" name="irSolo" value="transp" class="input_radio">
+                                                                    <input type="radio" name="irSolo" value="transp" class="input_radio" >
                                                                     <span>Transporte</span>
                                                                 </label>
                                                             </li>
@@ -1414,11 +1230,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="AutorizPessoa1">Pessoa autorizada-1</label>
-                                                        <input type="AutorizPessoa1" id="Pessoa1" style="width: 255px;">
+                                                        <input type="AutorizPessoa1" id="Pessoa1" style="width: 255px;" value="<?php echo $pessoaAutoriz_1; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="AutorizPessoa2">Pessoa autorizada-2</label>
-                                                        <input type="AutorizPessoa2" id="Pessoa2" style="width: 255px;">
+                                                        <input type="AutorizPessoa2" id="Pessoa2" style="width: 255px;" value="<?php echo $pessoaAutoriz_2; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1426,11 +1242,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="AutorizPessoa3">Pessoa autorizada-3</label>
-                                                        <input type="AutorizPessoa3" id="Pessoa3" style="width: 255px;">
+                                                        <input type="AutorizPessoa3" id="Pessoa3" style="width: 255px;" value="<?php echo $pessoaAutoriz_3; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="AutorizPessoa4">Pessoa autorizada-4</label>
-                                                        <input type="AutorizPessoa4" id="Pessoa4" style="width: 255px;">
+                                                        <input type="AutorizPessoa4" id="Pessoa4" style="width: 255px;" value="<?php echo $pessoaAutoriz_4; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1438,11 +1254,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="AutorizPessoa5">Pessoa autorizada-5</label>
-                                                        <input type="AutorizPessoa5" id="Pessoa5" style="width: 255px;">
+                                                        <input type="AutorizPessoa5" id="Pessoa5" style="width: 255px;" value="<?php echo $pessoaAutoriz_5; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="AutorizPessoa6">Pessoa autorizada-6</label>
-                                                        <input type="AutorizPessoa6" id="Pessoa6" style="width: 255px;">
+                                                        <input type="AutorizPessoa6" id="Pessoa6" style="width: 255px;" value="<?php echo $pessoaAutoriz_6; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1450,11 +1266,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="AutorizPessoa7">Pessoa autorizada-7</label>
-                                                        <input type="AutorizPessoa7" id="Pessoa7" style="width: 255px;">
+                                                        <input type="AutorizPessoa7" id="Pessoa7" style="width: 255px;" value="<?php echo $pessoaAutoriz_7; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="AutorizPessoa8">Pessoa autorizada-8</label>
-                                                        <input type="AutorizPessoa8" id="Pessoa8" style="width: 255px;">
+                                                        <input type="AutorizPessoa8" id="Pessoa8" style="width: 255px;" value="<?php echo $pessoaAutoriz_8; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1462,11 +1278,11 @@ Written by:
                                                 <div class="input_grp_pair">
                                                     <div class="input_wrap">
                                                         <label for="AutorizPessoa9">Pessoa autorizada-9</label>
-                                                        <input type="AutorizPessoa9" id="Pessoa9" style="width: 255px;">
+                                                        <input type="AutorizPessoa9" id="Pessoa9" style="width: 255px;" value="<?php echo $pessoaAutoriz_9; ?>" readonly>
                                                     </div>
                                                     <div class="input_wrap" style="margin-left: 16px;">
                                                         <label for="AutorizPessoa10">Pessoa autorizada-10</label>
-                                                        <input type="AutorizPessoa10" id="Pessoa10" style="width: 255px;">
+                                                        <input type="AutorizPessoa10" id="Pessoa10" style="width: 255px;" value="<?php echo $pessoaAutoriz_10; ?>" readonly>
                                                     </div>
                                                 </div>
                                             </div>
