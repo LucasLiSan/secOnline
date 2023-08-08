@@ -19,6 +19,7 @@ Written by:
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
             <link rel="stylesheet" href="_assets/_css/index.css"/>
             <script src="https://kit.fontawesome.com/aeb0f33aae.js" crossorigin="anonymous"></script>
             <title>Prontuário Digital</title>
@@ -65,6 +66,7 @@ Written by:
                     Your browser does not support the video tag.
                </video>
             </div>
+            <a href="../qrscanindex.php"><button class="back_search"><span class="material-symbols-outlined">autorenew</span></button></a>
             <div class="profile_card">
                 <div class="user_img">
                     <img src="../db_imgs/_profile.pictures/profilePic.<?php echo $rm ?>.jpg" height="100" width="100" alt="profile">

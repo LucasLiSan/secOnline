@@ -16,6 +16,23 @@
   height: 100%;
 }
 
+.back_search {
+  position: relative;
+  right: 100px;
+  bottom: 10px;
+  border-radius: 50px;
+  width: 50px;
+  background-color: #fd1d1d;
+}
+
+.back_search span {
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
 .video-bg video {
   width: 100%;
   height: 100%;

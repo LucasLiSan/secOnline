@@ -17,6 +17,7 @@ Written by:
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
             <link rel="stylesheet" href="_assets/_css/infostudent.css">
             <title>Prontuário Digital - Informação do aluno</title>
             <script src="_assets/_js/infostudent.js" defer></script>
@@ -285,6 +286,7 @@ Written by:
                     Your browser does not support the video tag.
                </video>
             </div>
+            <a href="../qrscanindex.php"><button class="back_search"><span class="material-symbols-outlined">autorenew</span></button></a>
             <div class="user_img" title="Bento">
                 <img src="../db_imgs/_profile.pictures/profilePic.<?php echo $rm ?>.jpg" height="100" width="100" alt="profile">
             </div>
