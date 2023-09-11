@@ -36,10 +36,20 @@ Written by:
             echo "Connected successfully";
 
             $rm = htmlspecialchars($_GET['rm']);
-            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
+
+            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno, dataNascAluno, sexoAluno, inepAluno, cidadeNascAluno, UFNascAluno, paisNascAluno, nacionalidade, racaCorAluno, sexoAluno, filiacao1Aluno, filiacao2Aluno FROM infoBasicaAlunos WHERE rm='$rm'";
             $resultBasic = $conn->query($dadosBasic);
-            $dadosSala = "SELECT turma, periodo FROM matricula WHERE rm='$rm'";
+
+            $dadosSala = "SELECT turma, periodo, situacao FROM matricula WHERE rm='$rm'";
             $resultSala = $conn->query($dadosSala);
+
+            if ($resultBasic->num_rows > 0 && $resultSala->num_rows > 0) {
+
+                $dadosAluno = $resultBasic->fetch_assoc();
+                $dadosMatricula = $resultSala->fetch_assoc();
+
+                $nomeAluno = $dadosAluno["nomeAluno"]; $raAluno = $dadosAluno["raAluno"]; $dgRaAluno = $dadosAluno["dgRaAluno"]; $turma = $dadosMatricula["turma"]; $periodo = $dadosMatricula["periodo"];
+            }
         ?>
         <body>
             <div class="video-bg">
@@ -53,16 +63,10 @@ Written by:
             </div>
             <div class="user_details">
                 <h5>DOCUMENTOS DO ALUNO</h5>
-                <?php
-                    while ($row = mysqli_fetch_assoc($resultBasic)) {
-                        echo "<span>".$row['nomeAluno']."</span>";
-                        echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
-                    }
-                    while ($row = mysqli_fetch_assoc($resultSala)) {
-                        echo "<p>".$row['turma']." ".$row['periodo']."</p>";
-                    }
-                ?>
-                <a href="../index/index.php<?php echo "?rm=".$rm ?>">INÍCIO</a>
+                <span><?php echo $nomeAluno; ?></span>
+                <span>R.A.: <?php echo $raAluno; ?>-<?php echo $dgRaAluno; ?></span>
+                <p><?php echo $turma; ?> <?php echo $periodo; ?></p>
+                <a href="../index/index.php<?php echo "?rm=".$rm ?>" title="Voltar para a pagina inicial.">INÍCIO</a>
                 <hr>
             </div>
             <article class="tabs content--flow">
@@ -105,42 +109,37 @@ Written by:
                         <div role="tabpanel" aria-labelledby="1">
                             <div class="container">
                                 <div class="gallery">
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de nascimento">
-                                        <div class="info">
-                                            <h4 class="title">Certidão de Nascimento, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência">
-                                        <div class="info">
-                                            <h4 class="title">Comprovante de residência, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação">
-                                        <div class="info">
-                                            <h4 class="title">Carteira de vacinação, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DocResp.RG-CPF.Pai.Frente.jpg" alt="Documento do responsável">
-                                        <div class="info">
-                                            <h4 class="title">Documento do responsável, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.SUS.Frente.jpg" alt="Cartão do SUS">
-                                        <div class="info">
-                                            <h4 class="title">Cartão do SUS, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DecTransf.PG.01-01-2023.Frente.png" alt="Declaração de transferência">
-                                        <div class="info">
-                                            <h4 class="title">Declaração de transferência, Bento</h4>
-                                        </div>
-                                    </div>
+                                        <?php
+                                            if(isset($_GET['rm'])) {
+                                                $rMatric = $_GET['rm'];
+                                                $dirRoot = "../db_imgs";
+                                                $caminhoFolder = $dirRoot . "/" . $rMatric . " - " . $nomeAluno;
+                                                $fichaAproveit = $rMatric . ".FichaAproveit";
+                                                if (is_dir($caminhoFolder)) {
+                                                    $files = scandir($caminhoFolder);
+                                                    $encontrouCorresp = false;
+
+                                                    foreach($files as $file) {
+                                                        if(strpos($file, $fichaAproveit) !== false) {
+                                                            $encontrouCorresp = true;
+                                                            $caminhoImg = $caminhoFolder. "/" . $file;
+                                                            echo'<div class="card">';
+                                                            echo '<img class="myImg" src="' . $caminhoImg . '" alt="Certidão de nascimento">';
+                                                            echo '<div class="info">';
+                                                            echo '<h4 class="title">Ficha de aproveitamento</h4>';
+                                                            echo '</div>';
+                                                            echo '</div>';
+                                                        }
+                                                    }
+                                                    if (!$encontrouCorresp) {
+                                                        echo'<div class="card" style="display: block;">';
+                                                        echo '</div>';
+                                                    }
+                                                } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
+                                            } else { echo 'O parâmetro "id" não foi encontrado na URL.';}
+                                        ?>
+                                        
+                                    
                                 </div>
                             </div>
                         </div>
@@ -154,7 +153,7 @@ Written by:
                                         </div>
                                     </div>
                                     <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência">
+                                        <img class="myImg" src="../db_imgs/1075 - BRUNA EDUARDA FORTES DOS SANTOS RIBEIRO/1075.AutProjet.OCR.10-02-2017.Frente.jpg" alt="Comprovante de residência">
                                         <div class="info">
                                             <h4 class="title">Comprovante de residência, Bento</h4>
                                         </div>
