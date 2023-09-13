@@ -50,6 +50,33 @@ Written by:
 
                 $nomeAluno = $dadosAluno["nomeAluno"]; $raAluno = $dadosAluno["raAluno"]; $dgRaAluno = $dadosAluno["dgRaAluno"]; $turma = $dadosMatricula["turma"]; $periodo = $dadosMatricula["periodo"];
             }
+
+            $dirRoot = "../db_imgs";
+            $caminhoFolder = $dirRoot . "/" . $rm . " - " . $nomeAluno;
+            $fichaMatric = $rm . ".FichaMatricula";
+            $fichaAproveit = $rm . ".FichaAproveit";
+            $cartVacina = $rm . ".CarteiraVacin";
+            $certNasc = $rm . ".CertidaoNasc";
+            $cardSuS = $rm . ".SUS";
+            $DocResp = $rm . ".DocResp";
+            $comprResid = $rm . ".ComprovResidenc";
+            $consTutelar = $rm . ".ConselhoTutelar";
+            $decTransf = $rm . ".DecTransf";
+            $reqMatric = $rm . ".ReqMatric";
+            $reqTransf = $rm . ".ReqTransf";
+            $orientConsTutelar = $rm . ".CartaDeOrientacaoConsTutelar";
+            $orientMP = $rm . ".CartaDeOrientacaoMP";
+            $decVaga = $rm . ".DecVaga";
+            $uniforme = $rm . ".Uniforme";
+            $normas = $rm . ".Normas";
+            $ciencia = $rm . ".Ciencia";
+            $infos = $rm . ".Info";
+            $cross = $rm . ".CROSS";
+            $enderecos = $rm . ".Endereco";
+            $contatos = $rm . ".Contatos";
+            $projetos = $rm . ".AutProjet";
+            $imagem = $rm . ".AutUsoImg";
+            $laudos = $rm . ".laudos";
         ?>
         <body>
             <div class="video-bg">
@@ -77,6 +104,18 @@ Written by:
                             <i class="fas fa-pencil-alt"></i>
                             </span>
                             <span class="text__for--tab">Matrícula</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="6">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-file"></i>
+                            </span>
+                            <span class="text__for--tab">Documentos</span>
+                        </button>
+                        <button role="tab" aria-selected="false" class="tab__button" id="7">
+                            <span class="icon__for--tab">
+                            <i class="fas fa-share-square"></i>
+                            </span>
+                            <span class="text__for--tab">Trasferências</span>
                         </button>
                         <button role="tab" aria-selected="false" class="tab__button" id="2">
                             <span class="icon__for--tab">
@@ -106,80 +145,213 @@ Written by:
                 </aside>
                 <main class="content__area">
                     <div class="tab__content">
-                        <div role="tabpanel" aria-labelledby="1">
+                        <div role="tabpanel" aria-labelledby="1"> <!--MATRICULA-->
                             <div class="container">
                                 <div class="gallery">
-                                        <?php
-                                            if(isset($_GET['rm'])) {
-                                                $rMatric = $_GET['rm'];
-                                                $dirRoot = "../db_imgs";
-                                                $caminhoFolder = $dirRoot . "/" . $rMatric . " - " . $nomeAluno;
-                                                $fichaAproveit = $rMatric . ".FichaAproveit";
-                                                if (is_dir($caminhoFolder)) {
-                                                    $files = scandir($caminhoFolder);
-                                                    $encontrouCorresp = false;
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
 
-                                                    foreach($files as $file) {
-                                                        if(strpos($file, $fichaAproveit) !== false) {
-                                                            $encontrouCorresp = true;
-                                                            $caminhoImg = $caminhoFolder. "/" . $file;
-                                                            echo'<div class="card">';
-                                                            echo '<img class="myImg" src="' . $caminhoImg . '" alt="Certidão de nascimento">';
-                                                            echo '<div class="info">';
-                                                            echo '<h4 class="title">Ficha de aproveitamento</h4>';
-                                                            echo '</div>';
-                                                            echo '</div>';
-                                                        }
-                                                    }
-                                                    if (!$encontrouCorresp) {
-                                                        echo'<div class="card" style="display: block;">';
-                                                        echo '</div>';
-                                                    }
-                                                } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
-                                            } else { echo 'O parâmetro "id" não foi encontrado na URL.';}
-                                        ?>
-                                        
-                                    
+                                            foreach($files as $file) {
+                                                if(strpos($file, $fichaMatric) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Ficha de matrícula">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Ficha de matrícula</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $reqMatric) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Requerimento de matrícula">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Requerimento de matrícula</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $decVaga) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Declaração de vaga">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Declaração de vaga</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
+                                    ?> 
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="2" hidden>
+                        <div role="tabpanel" aria-labelledby="6" hidden> <!--DOCUMENTOS-->
                             <div class="container">
                                 <div class="gallery">
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de nascimento">
-                                        <div class="info">
-                                            <h4 class="title">Certidão de Nascimento, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/1075 - BRUNA EDUARDA FORTES DOS SANTOS RIBEIRO/1075.AutProjet.OCR.10-02-2017.Frente.jpg" alt="Comprovante de residência">
-                                        <div class="info">
-                                            <h4 class="title">Comprovante de residência, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação">
-                                        <div class="info">
-                                            <h4 class="title">Carteira de vacinação, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DocResp.RG-CPF.Pai.Frente.jpg" alt="Documento do responsável">
-                                        <div class="info">
-                                            <h4 class="title">Documento do responsável, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.SUS.Frente.jpg" alt="Cartão do SUS">
-                                        <div class="info">
-                                            <h4 class="title">Cartão do SUS, Bento</h4>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $cartVacina) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Carteira de vacinação">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Carteira de vacinação</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $certNasc) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Certidão de nascimento">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Certidão de nascimento</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $cardSuS) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Cartão do SUS">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Cartão do SUS</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $DocResp) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Documento do responsável">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Documento do responsável</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $comprResid) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Comprovante de residência">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Comprovante de residência</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $cross) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="SUS">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">SUS</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                    ?> 
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="3" hidden>
+                        <div role="tabpanel" aria-labelledby="7" hidden><!--TRANSFERENCIAS-->
+                            <div class="container">
+                                <div class="gallery">
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $decTransf) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Declaração de transferência">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Declaração de transferência</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $reqTransf) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Requerimento de transferência">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Requerimento de transferência</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
+                                    ?> 
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="2" hidden><!--AUTORIZAÇÕES-->
+                            <div class="container">
+                                <div class="gallery">
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $projetos) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Autorização Projetos">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Autorização Projetos</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $imagem) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Autorização uso de imagem">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Autorização uso de imagem</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
+                                    ?> 
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="3" hidden><!--ATESTADOS-->
                             <div class="container">
                                 <div class="gallery">
                                     <div class="card">
@@ -209,45 +381,81 @@ Written by:
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="4" hidden>
+                        <div role="tabpanel" aria-labelledby="4" hidden><!--LAUDOS-->
                             <div class="container">
                                 <div class="gallery">
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de nascimento">
-                                        <div class="info">
-                                            <h4 class="title">Certidão de Nascimento, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência">
-                                        <div class="info">
-                                            <h4 class="title">Comprovante de residência, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação">
-                                        <div class="info">
-                                            <h4 class="title">Carteira de vacinação, Bento</h4>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $laudos) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Laudo">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Laudo</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                    ?>
                                 </div>
                             </div>
                         </div>
-                        <div role="tabpanel" aria-labelledby="5" hidden>
+                        <div role="tabpanel" aria-labelledby="5" hidden><!--OUTROS-->
                             <div class="container">
                                 <div class="gallery">
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de nascimento">
-                                        <div class="info">
-                                            <h4 class="title">Certidão de Nascimento, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência">
-                                        <div class="info">
-                                            <h4 class="title">Comprovante de residência, Bento</h4>
-                                        </div>
-                                    </div>
+                                <?php
+                                    if (is_dir($caminhoFolder)) {
+                                        $files = scandir($caminhoFolder);
+                                        $encontrouCorresp = false;
+
+                                        foreach($files as $file) {
+                                            if(strpos($file, $consTutelar) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Conselho tutelar">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Conselho tutelar</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                            else if(strpos($file, $orientConsTutelar) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Conselho tutelar">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Conselho tutelar</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                            else if(strpos($file, $orientMP) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Ministério Público">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Ministério Público</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                        }
+                                        if (!$encontrouCorresp) {
+                                            echo'<div class="card" style="display: block;">';
+                                            echo '</div>';
+                                        }
+                                    } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                ?> 
                                 </div>
                             </div>
                         </div>
