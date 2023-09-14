@@ -77,6 +77,36 @@ Written by:
             $projetos = $rm . ".AutProjet";
             $imagem = $rm . ".AutUsoImg";
             $laudos = $rm . ".laudos";
+            
+            //TRANSFERENCIA
+            $padraoDecTransf = '*' . $decTransf . '*';
+            $padraoReqTransf = '*' . $reqTransf . '*';
+            $btnDecTrans = glob($caminhoFolder . '/' . $padraoDecTransf);
+            $btnReqTrans = glob($caminhoFolder . '/' . $padraoReqTransf);
+            //MATRICULA
+            $padraoFichaMatric = '*' . $fichaMatric . '*';
+            $padraoReqMatric = '*' . $reqMatric . '*';
+            $btnFichaMatric = glob($caminhoFolder . '/' . $padraoFichaMatric);
+            $btnReqMatric = glob($caminhoFolder . '/' . $padraoReqMatric);
+            //DOCUMENTOS
+            $padraoCartVacina = '*' . $cartVacina . '*';
+            $padraoCertNasc = '*' . $certNasc . '*';
+            $padraoCardSus = '*' . $cardSuS . '*';
+            $padraoDocResp = '*' . $DocResp . '*';
+            $padraoComprResid = '*' . $comprResid . '*';
+            $padraoCross = '*' . $cross . '*';
+            $btnCartVacina = glob($caminhoFolder . '/' . $padraoCartVacina);
+            $btnCertNasc = glob($caminhoFolder . '/' . $padraoCertNasc);
+            $btnCardSus = glob($caminhoFolder . '/' . $padraoCardSus);
+            $btnDocResp = glob($caminhoFolder . '/' . $padraoDocResp);
+            $btnComprResid = glob($caminhoFolder . '/' . $padraoComprResid);
+            $btnCross = glob($caminhoFolder . '/' . $padraoCross);
+            //AUTORIZAÇÕES
+            $padraoProjetos = '*' . $projetos . '*';
+            $padraoImagem = '*' . $imagem . '*';
+            $btnProjetos = glob($caminhoFolder . '/' . $padraoProjetos);
+            $btnImagem = glob($caminhoFolder . '/' . $padraoImagem);
+
         ?>
         <body>
             <div class="video-bg">
@@ -99,30 +129,51 @@ Written by:
             <article class="tabs content--flow">
                 <aside class="sidebar">
                     <nav role="tablist" class="tab__navigation">
-                        <button role="tab" aria-selected="true" class="tab__button" id="1">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-pencil-alt"></i>
-                            </span>
-                            <span class="text__for--tab">Matrícula</span>
-                        </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="6">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-file"></i>
-                            </span>
-                            <span class="text__for--tab">Documentos</span>
-                        </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="7">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-share-square"></i>
-                            </span>
-                            <span class="text__for--tab">Trasferências</span>
-                        </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="2">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-clipboard-check"></i>
-                            </span>
-                            <span class="text__for--tab">Autorizações</span>
-                        </button>
+                        <?php
+                            if (is_dir($caminhoFolder)) {
+                                $encontrouCorresp = false;
+                                if (!empty($btnFichaMatric) || !empty($btnReqMatric)){
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="true" class="tab__button" id="1">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-pencil-alt"></i>
+                                            </span>
+                                            <span class="text__for--tab">Matrícula</span>
+                                        </button>';
+                                }
+                                if (!empty($btnCartVacina) || !empty($btnCertNasc) || !empty($btnCardSus) || !empty($btnDocResp) || !empty($btnComprResid) || !empty($btnCross)){
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="6">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-file"></i>
+                                            </span>
+                                            <span class="text__for--tab">Documentos</span>
+                                        </button>';
+                                }
+                                if (!empty($btnDecTrans) || !empty($btnReqTrans)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="7">
+                                            <span class="icon__for--tab">
+                                                <i class="fas fa-share-square"></i>
+                                            </span>
+                                            <span class="text__for--tab">Trasferências</span>
+                                        </button>';
+                                }
+                                if (!empty($btnProjetos) || !empty($btnImagem)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="2">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-clipboard-check"></i>
+                                            </span>
+                                            <span class="text__for--tab">Autorizações</span>
+                                        </button>';
+                                }
+                                if (!$encontrouCorresp) {}
+                            } else {
+                                echo 'A pasta correspondente ao "id" não foi encontrada.';
+                            }
+                        ?>
+                        
                         <button role="tab" aria-selected="false" class="tab__button" id="3">
                             <span class="icon__for--tab">
                             <i class="fas fa-plus-square"></i>
