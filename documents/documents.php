@@ -55,6 +55,7 @@ Written by:
             $caminhoFolder = $dirRoot . "/" . $rm . " - " . $nomeAluno;
             $fichaMatric = $rm . ".FichaMatricula";
             $fichaAproveit = $rm . ".FichaAproveit";
+            $fichaAproveitInfant = $rm . ".FichaAproveitInfant";
             $cartVacina = $rm . ".CarteiraVacin";
             $certNasc = $rm . ".CertidaoNasc";
             $cardSuS = $rm . ".SUS";
@@ -70,13 +71,19 @@ Written by:
             $uniforme = $rm . ".Uniforme";
             $normas = $rm . ".Normas";
             $ciencia = $rm . ".Ciencia";
-            $infos = $rm . ".Info";
             $cross = $rm . ".CROSS";
             $enderecos = $rm . ".Endereco";
             $contatos = $rm . ".Contatos";
             $projetos = $rm . ".AutProjet";
             $imagem = $rm . ".AutUsoImg";
             $laudos = $rm . ".laudos";
+            $infosAdd = $rm . ".Info";
+            $DecComparecimento = $rm . ".DecComp";
+            $atestado = $rm . ".Atestado";
+            $autoPasseio = $rm . ".AutPasseio";
+            $reciboUniform = $rm . ".RecibUniforme";
+            $reciboKitEscolar = $rm . ".RecibKitEscolar";
+            $historico = $rm . ".Historico";
             
             //TRANSFERENCIA
             $padraoDecTransf = '*' . $decTransf . '*';
@@ -101,11 +108,47 @@ Written by:
             $btnDocResp = glob($caminhoFolder . '/' . $padraoDocResp);
             $btnComprResid = glob($caminhoFolder . '/' . $padraoComprResid);
             $btnCross = glob($caminhoFolder . '/' . $padraoCross);
+            //FICHA DE APROVEITAMENTO
+            $padraoFichaAproveit = '*' . $fichaAproveit . '*';
+            $btnFichaAproveit = glob($caminhoFolder . '/' . $padraoFichaAproveit);
+            //HISTÓRICO
+            $padraoHistorico = '*' . $historico . '*';
+            $btnHistorico = glob($caminhoFolder . '/' . $padraoHistorico);
+            //CONTATOS-SAÍDA
+            $padraoContatos = '*' . $contatos . '*';
+            $btnContatos = glob($caminhoFolder . '/' . $padraoContatos);
             //AUTORIZAÇÕES
             $padraoProjetos = '*' . $projetos . '*';
             $padraoImagem = '*' . $imagem . '*';
             $btnProjetos = glob($caminhoFolder . '/' . $padraoProjetos);
             $btnImagem = glob($caminhoFolder . '/' . $padraoImagem);
+            //NORMAS
+            $padraoNormas = '*' . $normas . '*';
+            $btnNormas = glob($caminhoFolder . '/' . $padraoNormas);
+            //ATESTADOS
+            $padraoAtestados = '*' . $atestado . '*';
+            $btnAtestados = glob($caminhoFolder . '/' . $padraoAtestados);
+            //LAUDOS
+            $padraoLaudos = '*' . $laudos . '*';
+            $btnLaudos = glob($caminhoFolder . '/' . $padraoLaudos);
+            //UNIFORME
+            $padraoUniform = '*' . $uniforme . '*';
+            $padraoReciboUniform = '*' . $reciboUniform . '*';
+            $btnUniforme = glob($caminhoFolder . '/' . $padraoUniform);
+            $btnReciboUniforme = glob($caminhoFolder . '/' . $padraoReciboUniform);
+            //INFO ADICIONAL
+            $padraoInfoAdd = '*' . $infosAdd . '*';
+            $btnInfoAdd = glob($caminhoFolder . '/' . $padraoInfoAdd);
+            //KIT ESCOLAR
+            $padraoKitEscolar = '*' . $ciencia . '*';
+            $btnKitEscolar = glob($caminhoFolder . '/' . $padraoKitEscolar);
+            //OUTROS
+            $padraoorientConsTutelar = '*' . $orientConsTutelar . '*';
+            $padraoorientMP = '*' . $orientMP . '*';
+            $padraoConsTutelar = '*' . $consTutelar . '*';
+            $btnOrientConsTutelar = glob($caminhoFolder . '/' . $padraoorientConsTutelar);
+            $btnOrientMP = glob($caminhoFolder . '/' . $padraoorientMP);
+            $btnConselhoTutelar = glob($caminhoFolder . '/' . $padraoConsTutelar);
 
         ?>
         <body>
@@ -150,6 +193,33 @@ Written by:
                                             <span class="text__for--tab">Documentos</span>
                                         </button>';
                                 }
+                                if (!empty($btnFichaAproveit)){
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="12">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-file"></i>
+                                            </span>
+                                            <span class="text__for--tab">Ficha de aproveitamento</span>
+                                        </button>';
+                                }
+                                if (!empty($btnHistorico)){
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="13">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-file"></i>
+                                            </span>
+                                            <span class="text__for--tab">Histórico escolar</span>
+                                        </button>';
+                                }
+                                if (!empty($btnContatos)){
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="10">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-file"></i>
+                                            </span>
+                                            <span class="text__for--tab">Contatos e Aut. de Saída</span>
+                                        </button>';
+                                }
                                 if (!empty($btnDecTrans) || !empty($btnReqTrans)) {
                                     $encontrouCorresp = true;
                                     echo '<button role="tab" aria-selected="false" class="tab__button" id="7">
@@ -157,6 +227,15 @@ Written by:
                                                 <i class="fas fa-share-square"></i>
                                             </span>
                                             <span class="text__for--tab">Trasferências</span>
+                                        </button>';
+                                }
+                                if (!empty($btnNormas)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="8">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-clipboard-check"></i>
+                                            </span>
+                                            <span class="text__for--tab">Normas</span>
                                         </button>';
                                 }
                                 if (!empty($btnProjetos) || !empty($btnImagem)) {
@@ -168,30 +247,65 @@ Written by:
                                             <span class="text__for--tab">Autorizações</span>
                                         </button>';
                                 }
+                                if (!empty($btnAtestados)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="3">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-plus-square"></i>
+                                            </span>
+                                            <span class="text__for--tab">Atestados</span>
+                                        </button>';
+                                }
+                                if (!empty($btnLaudos)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="4">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-clipboard"></i>
+                                            </span>
+                                            <span class="text__for--tab">Laudos</span>
+                                        </button>';
+                                }
+                                if (!empty($btnUniforme) || !empty($btnReciboUniforme)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="9">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-tag"></i>
+                                            </span>
+                                            <span class="text__for--tab">Uniforme</span>
+                                        </button>';
+                                }
+                                if (!empty($btnInfoAdd)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="11">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-tag"></i>
+                                            </span>
+                                            <span class="text__for--tab">Infos Adicionais</span>
+                                        </button>';
+                                }
+                                if (!empty($btnInfoAdd)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="14">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-tag"></i>
+                                            </span>
+                                            <span class="text__for--tab">Kit escolar</span>
+                                        </button>';
+                                }
+                                if (!empty($btnOrientConsTutelar) || !empty($btnOrientMP) || !empty($btnConselhoTutelar)) {
+                                    $encontrouCorresp = true;
+                                    echo '<button role="tab" aria-selected="false" class="tab__button" id="5">
+                                            <span class="icon__for--tab">
+                                            <i class="fas fa-tag"></i>
+                                            </span>
+                                            <span class="text__for--tab">Outros</span>
+                                        </button>';
+                                }
                                 if (!$encontrouCorresp) {}
                             } else {
                                 echo 'A pasta correspondente ao "id" não foi encontrada.';
                             }
-                        ?>
-                        
-                        <button role="tab" aria-selected="false" class="tab__button" id="3">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-plus-square"></i>
-                            </span>
-                            <span class="text__for--tab">Atestados</span>
-                        </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="4">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-clipboard"></i>
-                            </span>
-                            <span class="text__for--tab">Laudos</span>
-                        </button>
-                        <button role="tab" aria-selected="false" class="tab__button" id="5">
-                            <span class="icon__for--tab">
-                            <i class="fas fa-tag"></i>
-                            </span>
-                            <span class="text__for--tab">Outros</span>
-                        </button>
+                        ?>                      
                     </nav>
                 </aside>
                 <main class="content__area">
@@ -324,6 +438,93 @@ Written by:
                                 </div>
                             </div>
                         </div>
+                        <div role="tabpanel" aria-labelledby="12" hidden> <!--FICHA DE APROVEITAMENTO-->
+                            <div class="container">
+                                <div class="gallery">
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $fichaAproveit) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Ficha de aproveitamento">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Ficha de aproveitamento</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                    ?> 
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="13" hidden> <!--HISTÓRICO-->
+                            <div class="container">
+                                <div class="gallery">
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $historico) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Histórico escolar">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Histórico escolar</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                    ?> 
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="10" hidden> <!--CONTATOS E SAÍDA-->
+                            <div class="container">
+                                <div class="gallery">
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $contatos) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Autorização de saída e contatos">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Autorização de saída e contatos</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                    ?> 
+                                </div>
+                            </div>
+                        </div>
                         <div role="tabpanel" aria-labelledby="7" hidden><!--TRANSFERENCIAS-->
                             <div class="container">
                                 <div class="gallery">
@@ -402,33 +603,61 @@ Written by:
                                 </div>
                             </div>
                         </div>
+                        <div role="tabpanel" aria-labelledby="8" hidden><!--NORMAS-->
+                            <div class="container">
+                                <div class="gallery">
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $normas) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Normas">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Normas</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
+                                    ?> 
+                                </div>
+                            </div>
+                        </div>
                         <div role="tabpanel" aria-labelledby="3" hidden><!--ATESTADOS-->
                             <div class="container">
                                 <div class="gallery">
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CertidNasc.Frente.jpg" alt="Certidão de nascimento">
-                                        <div class="info">
-                                            <h4 class="title">Certidão de Nascimento, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.ComprovanteResid.Frente.jpg" alt="Comprovante de residência">
-                                        <div class="info">
-                                            <h4 class="title">Comprovante de residência, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.CarteiraVac.Frente.jpeg" alt="Carteira de vacinação">
-                                        <div class="info">
-                                            <h4 class="title">Carteira de vacinação, Bento</h4>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <img class="myImg" src="../db_imgs/_matric.pictures/1234.DocResp.RG-CPF.Pai.Frente.jpg" alt="Documento do responsável">
-                                        <div class="info">
-                                            <h4 class="title">Documento do responsável, Bento</h4>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        if (is_dir($caminhoFolder)) {
+                                            $files = scandir($caminhoFolder);
+                                            $encontrouCorresp = false;
+
+                                            foreach($files as $file) {
+                                                if(strpos($file, $atestado) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Atestado médico">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Atestado médico</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
+                                            if (!$encontrouCorresp) {
+                                                echo'<div class="card" style="display: block;">';
+                                                echo '</div>';
+                                            }
+                                        } else { echo 'A pasta correspondente ao "id" não foi encontrada.';} 
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -458,6 +687,103 @@ Written by:
                                             }
                                         } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
                                     ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="9" hidden><!--UNIFORME-->
+                            <div class="container">
+                                <div class="gallery">
+                                <?php
+                                    if (is_dir($caminhoFolder)) {
+                                        $files = scandir($caminhoFolder);
+                                        $encontrouCorresp = false;
+
+                                        foreach($files as $file) {
+                                            if(strpos($file, $uniforme) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Medidas do uniforme">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Medidas do uniforme</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                            else if(strpos($file, $reciboUniform) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Recibo do uniforme">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Recibo do uniforme</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                        }
+                                        if (!$encontrouCorresp) {
+                                            echo'<div class="card" style="display: block;">';
+                                            echo '</div>';
+                                        }
+                                    } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                ?> 
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="11" hidden><!--INFO ADICIONAL-->
+                            <div class="container">
+                                <div class="gallery">
+                                <?php
+                                    if (is_dir($caminhoFolder)) {
+                                        $files = scandir($caminhoFolder);
+                                        $encontrouCorresp = false;
+
+                                        foreach($files as $file) {
+                                            if(strpos($file, $infosAdd) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Informações adicionais">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Informações adicionais</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                        }
+                                        if (!$encontrouCorresp) {
+                                            echo'<div class="card" style="display: block;">';
+                                            echo '</div>';
+                                        }
+                                    } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                ?> 
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" aria-labelledby="14" hidden><!--KIT ESCOLAR-->
+                            <div class="container">
+                                <div class="gallery">
+                                <?php
+                                    if (is_dir($caminhoFolder)) {
+                                        $files = scandir($caminhoFolder);
+                                        $encontrouCorresp = false;
+
+                                        foreach($files as $file) {
+                                            if(strpos($file, $ciencia) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Kit escolar">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Kit escolar</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                        }
+                                        if (!$encontrouCorresp) {
+                                            echo'<div class="card" style="display: block;">';
+                                            echo '</div>';
+                                        }
+                                    } else { echo 'A pasta correspondente ao "id" não foi encontrada.';}
+                                ?> 
                                 </div>
                             </div>
                         </div>
