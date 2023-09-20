@@ -42,10 +42,20 @@ Written by:
             echo "Connected successfully";
 
             $rm = htmlspecialchars($_GET['rm']);
-            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno FROM infoBasicaAlunos WHERE rm='$rm'";
+
+            $dadosBasic = "SELECT nomeAluno, raAluno, dgRaAluno, dataNascAluno, sexoAluno, inepAluno, cidadeNascAluno, UFNascAluno, paisNascAluno, nacionalidade, racaCorAluno, sexoAluno, filiacao1Aluno, filiacao2Aluno FROM infoBasicaAlunos WHERE rm='$rm'";
             $resultBasic = $conn->query($dadosBasic);
-            $dadosSala = "SELECT turma, periodo FROM matricula WHERE rm='$rm'";
+
+            $dadosSala = "SELECT turma, periodo, situacao FROM matricula WHERE rm='$rm'";
             $resultSala = $conn->query($dadosSala);
+
+            if ($resultBasic->num_rows > 0 && $resultSala->num_rows > 0) {
+
+                $dadosAluno = $resultBasic->fetch_assoc();
+                $dadosMatricula = $resultSala->fetch_assoc();
+
+                $nomeAluno = $dadosAluno["nomeAluno"]; $raAluno = $dadosAluno["raAluno"]; $dgRaAluno = $dadosAluno["dgRaAluno"]; $turma = $dadosMatricula["turma"]; $periodo = $dadosMatricula["periodo"];
+            }
         ?>
         <body>
             <div class="video-bg">
@@ -59,16 +69,10 @@ Written by:
             </div>
             <div class="user_details">
                 <h5>SOLICITAÇÃO DE DOCUMENTOS</h5>
-                <?php
-                    while ($row = mysqli_fetch_assoc($resultBasic)) {
-                        echo "<span>".$row['nomeAluno']."</span>";
-                        echo "<span>"."R.A.: ".$row['raAluno']."-".$row['dgRaAluno']."</span>";
-                    }
-                    while ($row = mysqli_fetch_assoc($resultSala)) {
-                        echo "<p>".$row['turma']." ".$row['periodo']."</p>";
-                    }
-                ?>
-                <a href="../index/index.php<?php echo "?rm=".$rm ?>">INÍCIO</a>
+                <span><?php echo $nomeAluno; ?></span>
+                <span>R.A.: <?php echo $raAluno; ?>-<?php echo $dgRaAluno; ?></span>
+                <p><?php echo $turma; ?> <?php echo $periodo; ?></p>
+                <a href="../index/index.php<?php echo "?rm=".$rm ?>" title="Voltar para a pagina inicial.">INÍCIO</a>
                 <hr>
             </div>
             <div class="card">

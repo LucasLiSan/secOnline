@@ -74,11 +74,12 @@ Written by:
             $cross = $rm . ".CROSS";
             $enderecos = $rm . ".Endereco";
             $contatos = $rm . ".Contatos";
+            $autSaida = $rm .".Saida";
             $projetos = $rm . ".AutProjet";
             $imagem = $rm . ".AutUsoImg";
             $laudos = $rm . ".laudos";
             $infosAdd = $rm . ".Info";
-            $DecComparecimento = $rm . ".DecComp";
+            $decComparecimento = $rm . ".DecComp";
             $atestado = $rm . ".Atestado";
             $autoPasseio = $rm . ".AutPasseio";
             $reciboUniform = $rm . ".RecibUniforme";
@@ -116,10 +117,14 @@ Written by:
             $btnHistorico = glob($caminhoFolder . '/' . $padraoHistorico);
             //CONTATOS-SAÍDA
             $padraoContatos = '*' . $contatos . '*';
+            $padraoSaida = '*' . $autSaida . '*';
             $btnContatos = glob($caminhoFolder . '/' . $padraoContatos);
+            $btnSaida = glob($caminhoFolder . '/' . $padraoSaida);
             //AUTORIZAÇÕES
             $padraoProjetos = '*' . $projetos . '*';
             $padraoImagem = '*' . $imagem . '*';
+            $padraoPasseio = '*' . $autoPasseio . '*';
+            $btnPasseio = glob($caminhoFolder . '/' . $padraoPasseio);
             $btnProjetos = glob($caminhoFolder . '/' . $padraoProjetos);
             $btnImagem = glob($caminhoFolder . '/' . $padraoImagem);
             //NORMAS
@@ -146,9 +151,11 @@ Written by:
             $padraoorientConsTutelar = '*' . $orientConsTutelar . '*';
             $padraoorientMP = '*' . $orientMP . '*';
             $padraoConsTutelar = '*' . $consTutelar . '*';
+            $padraoComparecimento = '*' . $decComparecimento . '*';
             $btnOrientConsTutelar = glob($caminhoFolder . '/' . $padraoorientConsTutelar);
             $btnOrientMP = glob($caminhoFolder . '/' . $padraoorientMP);
             $btnConselhoTutelar = glob($caminhoFolder . '/' . $padraoConsTutelar);
+            $btnComparecimento = glob($caminhoFolder . '/' . $padraoComparecimento);
 
         ?>
         <body>
@@ -211,7 +218,7 @@ Written by:
                                             <span class="text__for--tab">Histórico escolar</span>
                                         </button>';
                                 }
-                                if (!empty($btnContatos)){
+                                if (!empty($btnContatos) || !empty($btnSaida)){
                                     $encontrouCorresp = true;
                                     echo '<button role="tab" aria-selected="false" class="tab__button" id="10">
                                             <span class="icon__for--tab">
@@ -238,7 +245,7 @@ Written by:
                                             <span class="text__for--tab">Normas</span>
                                         </button>';
                                 }
-                                if (!empty($btnProjetos) || !empty($btnImagem)) {
+                                if (!empty($btnProjetos) || !empty($btnImagem) || !empty($btnPasseio)) {
                                     $encontrouCorresp = true;
                                     echo '<button role="tab" aria-selected="false" class="tab__button" id="2">
                                             <span class="icon__for--tab">
@@ -283,7 +290,7 @@ Written by:
                                             <span class="text__for--tab">Infos Adicionais</span>
                                         </button>';
                                 }
-                                if (!empty($btnInfoAdd)) {
+                                if (!empty($btnKitEscolar)) {
                                     $encontrouCorresp = true;
                                     echo '<button role="tab" aria-selected="false" class="tab__button" id="14">
                                             <span class="icon__for--tab">
@@ -292,7 +299,7 @@ Written by:
                                             <span class="text__for--tab">Kit escolar</span>
                                         </button>';
                                 }
-                                if (!empty($btnOrientConsTutelar) || !empty($btnOrientMP) || !empty($btnConselhoTutelar)) {
+                                if (!empty($btnOrientConsTutelar) || !empty($btnOrientMP) || !empty($btnConselhoTutelar) || !empty($btnComparecimento)) {
                                     $encontrouCorresp = true;
                                     echo '<button role="tab" aria-selected="false" class="tab__button" id="5">
                                             <span class="icon__for--tab">
@@ -516,6 +523,18 @@ Written by:
                                                     echo '</div>';
                                                 }
                                             }
+                                            foreach($files as $file) {
+                                                if(strpos($file, $autSaida) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Autorização de saída e contatos">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Autorização de saída e contatos</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                            }
                                             if (!$encontrouCorresp) {
                                                 echo'<div class="card" style="display: block;">';
                                                 echo '</div>';
@@ -590,6 +609,16 @@ Written by:
                                                     echo '<img class="myImg" src="' . $caminhoImg . '" alt="Autorização uso de imagem">';
                                                     echo '<div class="info">';
                                                     echo '<h4 class="title">Autorização uso de imagem</h4>';
+                                                    echo '</div>';
+                                                    echo '</div>';
+                                                }
+                                                else if(strpos($file, $autoPasseio) !== false) {
+                                                    $encontrouCorresp = true;
+                                                    $caminhoImg = $caminhoFolder. "/" . $file;
+                                                    echo'<div class="card">';
+                                                    echo '<img class="myImg" src="' . $caminhoImg . '" alt="Autorização passeio">';
+                                                    echo '<div class="info">';
+                                                    echo '<h4 class="title">Autorização passeio</h4>';
                                                     echo '</div>';
                                                     echo '</div>';
                                                 }
@@ -823,6 +852,16 @@ Written by:
                                                 echo '<img class="myImg" src="' . $caminhoImg . '" alt="Ministério Público">';
                                                 echo '<div class="info">';
                                                 echo '<h4 class="title">Ministério Público</h4>';
+                                                echo '</div>';
+                                                echo '</div>';
+                                            }
+                                            else if(strpos($file, $decComparecimento) !== false) {
+                                                $encontrouCorresp = true;
+                                                $caminhoImg = $caminhoFolder. "/" . $file;
+                                                echo'<div class="card">';
+                                                echo '<img class="myImg" src="' . $caminhoImg . '" alt="Declaração de comparecimento">';
+                                                echo '<div class="info">';
+                                                echo '<h4 class="title">Declaração de comparecimento</h4>';
                                                 echo '</div>';
                                                 echo '</div>';
                                             }
