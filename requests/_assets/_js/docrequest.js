@@ -51,3 +51,13 @@ $(document).ready(function(){
         $("#request-choice").attr("src", "../db_imgs/_pictures/test.png");
     });
 });
+
+document.getElementById("Bt1").addEventListener("click", function() {
+    // Enviar uma solicitação AJAX para o servidor PHP para gerar o documento
+    // Você pode passar os parâmetros necessários, como o ID do aluno, na solicitação.
+    // Certifique-se de ajustar isso de acordo com a sua estrutura de dados no banco.
+    var alunoID = 1; // Exemplo de ID do aluno
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "gerar_documento.php?alunoID=" + alunoID, true);
+    xhr.send();
+});
