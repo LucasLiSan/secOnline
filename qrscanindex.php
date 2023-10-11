@@ -34,7 +34,7 @@
                 });
                 scanner.render(success, error);
                 function success(result) {
-                    document.getElementById('result').innerHTML =  `<form id="form" action="/index/index.php" method="get">` +
+                    document.getElementById('result').innerHTML =  `<form id="form" action="index/index.php" method="get">` +
                         `<input type="hidden" name="rm" value="${result}">` +
                         `</form>`;
                     //window.location.replace(String(result));
