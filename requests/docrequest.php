@@ -56,8 +56,29 @@ Written by:
 
                 $nomeAluno = $dadosAluno["nomeAluno"]; $raAluno = $dadosAluno["raAluno"]; $dgRaAluno = $dadosAluno["dgRaAluno"]; $turma = $dadosMatricula["turma"]; $periodo = $dadosMatricula["periodo"];
 
-                
+                $phpWord = \PhpOffice\PhpWord\PhpWord();
+                $section = $phpWord->addSection();
 
+                // Adicionar um parágrafo para cada dado
+                $section->addText('Nome: ' . $nomeAluno);
+                $section->addText('RA: ' . $raAluno);
+                $section->addText('Dígito do RA: ' . $dgRaAluno);
+                $section->addText('Turma: ' . $turma);
+                $section->addText('Período: ' . $periodo);
+
+                $writer = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+
+                // Defina o nome do arquivo
+                $filename = 'DeclaracaoDeMatricula.docx';
+                $writer->save($filename);
+                
+                // Envie o arquivo para download
+                header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+                header('Content-Disposition: attachment;filename="' . $filename . '"');
+                readfile($filename);
+
+                // Remova o arquivo temporário
+                unlink($filename);
             }
         ?>
         <body>
