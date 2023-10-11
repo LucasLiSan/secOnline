@@ -56,35 +56,7 @@ Written by:
 
                 $nomeAluno = $dadosAluno["nomeAluno"]; $raAluno = $dadosAluno["raAluno"]; $dgRaAluno = $dadosAluno["dgRaAluno"]; $turma = $dadosMatricula["turma"]; $periodo = $dadosMatricula["periodo"];
 
-                require_once '../vendor/autoload.php';
-
-                $phpWord = new \PhpOffice\PhpWord\PhpWord();
-                $mpdf = new mPDF();
-
-                $renderer = new \PhpOffice\PhpWord\Writer\Pdf\Mpdf($phpWord, $mpdf);
-
-                $section = $phpWord->addSection();
-
-                $section->addText('<NOME>' . $dadosAluno['nomeAluno']);
-                $section->addText('<NASCIMENTO>' . $dadosAluno['dataNascAluno']);
-                $section->addText('<RA>' . $dadosAluno['raAluno']);
-                $section->addText('<DG>' . $dadosAluno['dgRaAluno']);
-                $section->addText('<TURMA>' . $dadosMatricula['turma']);
-                $section->addText('<TURNO>' . $dadosMatricula['periodo']);
-
-                $docxFile = '../DeclaracaoDeMatricula.docx';
-                $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-                $objWriter->save($docxFile);
-
-                require_once '../vendor/tecnickcom/tcpdf/tcpdf.php';
-
-                $pdfFile = 'declaracao_matricula.pdf';
-                $renderer->save($pdfFile);
-
-                // Envie o arquivo PDF ao navegador para download
-                header('Content-Type: application/pdf');
-                header('Content-Disposition: attachment; filename="' . $pdfFile . '"');
-                readfile($pdfFile);
+                
 
             }
         ?>
