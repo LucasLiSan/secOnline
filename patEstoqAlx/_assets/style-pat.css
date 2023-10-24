@@ -468,10 +468,13 @@ section h1 {
 section:target {
     opacity: 1;
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: 16vw;
+    width: 84%;
     height: 100%;
     z-index: 10;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 section:target h1 {
@@ -487,11 +490,14 @@ section:target h1 {
 }
 
 #third {
-    background: var(--contrast-color);
 }
 
 #fourth {
     background: var(--light-color);
+}
+
+#fifth {
+    background: var(--contrast-color);
 }
 
 @keyframes fadeIn {
@@ -504,4 +510,25 @@ section:target h1 {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+}
+
+.btns {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 90%;
+    top: 30px;
+    position: relative;
+}
+
+table {
+    top: 35px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+td {
+    border-bottom: solid #000000;
+    height: 50px;
 }
