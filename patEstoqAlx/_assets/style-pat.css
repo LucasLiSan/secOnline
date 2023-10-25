@@ -475,6 +475,7 @@ section:target {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 section:target h1 {
@@ -521,7 +522,7 @@ section:target h1 {
 }
 
 table {
-    top: 35px;
+    
     width: 90%;
     text-align: center;
     position: relative;
@@ -531,4 +532,35 @@ table {
 td {
     border-bottom: solid #000000;
     height: 50px;
+}
+
+.edit {
+    border-bottom: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btnEdit {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-weight: bolder;
+    font-size: 19px;
+    text-align: left;
+    margin: 0 0 0 5px;
+}
+
+span {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+span:hover {
+    background: #8392a5;
+    color: #F2E527;
 }
