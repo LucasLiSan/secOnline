@@ -12,6 +12,7 @@
             <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:300,400,700" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
             <link rel="stylesheet" href="_assets/style-pat.css">
+            <script src= "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="_assets/script.js" type="text/javascript"></script>
             <title>PATRIMÔNIO</title>
         </head>
@@ -70,8 +71,253 @@
             </div>
             <div class= 'container'> 
                 <section id= 'first'>
-                    <h1>First</h1>
-                    <input type="text">
+                    <h1>CADASTRO</h1>
+                    <form action="">
+                        <div class="rowForm">
+                            <label for="cod">COD. PATRIMÔNIO
+                                <input type="text" name="cod" required>
+                            </label>
+                            <label for="item">ITEM
+                                <input type="text" name="item" required>
+                            </label>
+                            <label for="marca">MARCA
+                                <input type="text" name="marca">
+                            </label>
+                            <label for="modelo">MODELO
+                                <input type="text" name="modelo">
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="condicao">CONDIÇÃO
+                                <select name="condicao">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="ÓTIMO" title="ÓTIMO">ÓTIMO</option>
+                                    <option value="BOM" title="BOM">BOM</option>
+                                    <option value="REGULAR" title="REGULAR">REGULAR</option>
+                                    <option value="RUIM" title="RUIM">RUIM</option>
+                                    <option value="INSERVÍVEL" title="INSERVÍVEL">INSERVÍVEL</option>
+                                </select>
+                            </label>
+                            <label for="local">LOCAL
+                                <input type="text" name="local" required>
+                            </label>
+                            <label for="ue">UE
+                                <input type="text" name="ue" required>
+                            </label>
+                            <label for="valor">VALOR
+                                <input type="text" name="valor">
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="dataAquisit">DATA AQUISIÇÃO
+                                <input type="text" name="dataAquisit">
+                            </label>
+                            <label for="cor">COR PREDOMINANTE
+                                <input type="text" name="cor">
+                            </label>
+                            <label for="largura">Largura
+                                <input type="text" name="largura">
+                            </label>
+                            <label for="undMedLarg">UNIDADE DE MEDIDA
+                                <select name="undMedLarg">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="altura">Altura
+                                <input type="text" name="altura">
+                            </label>
+                            <label for="undMedAlt">UNIDADE DE MEDIDA
+                                <select name="undMedAlt">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                            <label for="comprimeto">Comprimeto
+                                <input type="text" name="comprimeto">
+                            </label>
+                            <label for="undMedCompr">UNIDADE DE MEDIDA
+                                <select name="undMedCompr">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="espessura">espessura
+                                <input type="text" name="espessura">
+                            </label>
+                            <label for="undMedEspe">UNIDADE DE MEDIDA
+                                <select name="undMedEspe">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                            <label for="profundidade">profundidade
+                                <input type="text" name="profundidade">
+                            </label>
+                            <label for="undMedProfund">UNIDADE DE MEDIDA
+                                <select name="undMedProfund">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="largTampo">largura do tampo
+                                <input type="text" name="largTampo">
+                            </label>
+                            <label for="undMedLargTampo">UNIDADE DE MEDIDA
+                                <select name="undMedLargTampo">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                            <label for="compTampo">Comprimeto do Tampo
+                                <input type="text" name="compTampo">
+                            </label>
+                            <label for="undMedCompTampo">UNIDADE DE MEDIDA
+                                <select name="undMedCompTampo">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="espessuraTampo">espessura do tampo
+                                <input type="text" name="espessuraTampo">
+                            </label>
+                            <label for="undMedEspeTampo">UNIDADE DE MEDIDA
+                                <select name="undMedEspeTampo">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                            <label for="altPernas">Altura das pernas
+                                <input type="text" name="altPernas">
+                            </label>
+                            <label for="undMedAltPernas">UNIDADE DE MEDIDA
+                                <select name="undMedAltPernas">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="rowForm rowForm-6">
+                            <label for="espessuraPernas">espessura das pernas
+                                <input type="text" name="espessuraPernas">
+                            </label>
+                            <label for="undMedEspesPernas">UNIDADE DE MEDIDA
+                                <select name="undMedEspesPernas">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                            <label for="largPernas">Largura das pernas
+                                <input type="text" name="largPernas">
+                            </label>
+                            <label for="undMedLargPernas">UNIDADE DE MEDIDA
+                                <select name="undMedLargPernas">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                            <label for="qtdPernas">Quantidade de pernas
+                                <input type="number" name="qtdPernas" >
+                            </label>
+                            <label for="undMedEspesPernas">UNIDADE DE MEDIDA
+                                <select name="undMedEspesPernas">
+                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="qtdPortas">Quantidade de portas
+                                <input type="number" name="qtdPortas" >
+                            </label>
+                            <label for="qtdPrateleiras">Quantidade de prateleiras
+                                <input type="number" name="qtdPrateleiras" >
+                            </label>
+                            <label for="qtdGavetas">Quantidade de gavetas
+                                <input type="number" name="qtdGavetas" >
+                            </label>
+                            <label for="qtdHelices">Quantidade de helices
+                                <input type="number" name="qtdHelices" >
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="qtdVelox">Quantidade de velocidades
+                                <input type="number" name="qtdVelox" >
+                            </label>
+                            <div class="radio">
+                                <label for="chaveamento">CHAVE</label>
+                                <div class="optRadio">
+                                    <label for="sim">SIM
+                                        <input type="radio" name="chaveamentoSim" id="" value="SIM">
+                                    </label>
+                                    <label for="não">não
+                                        <input type="radio" name="chaveamentoSim" id="" value="NÃO">
+                                    </label>
+                                </div>
+                            </div>
+                            <label for="qtdGavetas">Quantidade de gavetas
+                                <input type="number" name="qtdGavetas" >
+                            </label>
+                            <label for="qtdHelices">Quantidade de helices
+                                <input type="number" name="qtdHelices" >
+                            </label>
+                        </div>
+                        <div class="rowForm">
+                            <label for="telaPolegadas">Polegadas (tela)
+                                <input type="number" name="telaPolegadas" >
+                            </label>
+                            <label for="arCondBTU">BTUs (Ar condicionado)
+                                <input type="number" name="arCondBTU" >
+                            </label>
+                            <label for="infoAdd">Informação adicional
+                                <input type="text" name="infoAdd" >
+                            </label>
+                        </div>
+                    </form>
                 </section>
                 
                 <section id= 'second'>
@@ -79,12 +325,9 @@
                 </section>
                 
                 <section id= 'third'>
-                    <div class="btns">
-                        <button>+CADASTRAR</button>
-                    </div>
-                    <table>
+                    <table class="table_show">
                         <thead>
-                            <th colspan="6"><h1>PATRIMÔNIO - EMEB PINGO DE GENTE</h1></th>
+                            <th class="titulo" colspan="6"><h1>PATRIMÔNIO - EMEB PINGO DE GENTE</h1></th>
                         </thead>
                         <tr>
                             <th>COD.</th>
@@ -93,17 +336,17 @@
                             <th>LOCAL-UE</th>
                             <th>ULTIMA CHECAGEM</th>
                         </tr>
-                        <tr onclick="showHideRow(this);">
-                            <td>1234</td>
-                            <td>TELEFONE SEM FIO INTELBRAS TS3110</td>
-                            <td>BOM</td>
+                        <tr class="rowPrin" onclick="showHideRow(this);">
+                            <td>13608</td>
+                            <td>VENTILADOR DE TETO EM MADEIRA</td>
+                            <td>ÓTIMO</td>
                             <td>SECRETARIA-PG</td>
-                            <td>24/10/2023 16:32:50</td>
+                            <td>26/10/2023 09:03:35</td>
                             <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
                         </tr>
-                        <tr class="hidden_row" style="display: none;">
-                            <td colspan="6">
-                                <table>
+                        <tr class="hidden_row" style="display:none;">
+                            <td class="hidden_td" colspan="6">
+                                <table class="hidden_table">
                                     <thead>
                                         <th>IMG</th>
                                         <th>DESCRIÇÃO GERAL</th>
@@ -113,13 +356,20 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            
+                                            <td class="htd">
+                                                <label for="" class="tdImg">IMAGEM MERAMENTE ILUSTRATIVA
+                                                <img src="_assets/13608.avif" alt=""></label>
+                                            </td>
+                                            <td class="htd tdDescGer">VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS</td>
+                                            <td class="htd">R$ 22.000,20</td>
+                                            <td class="htd">26/10/2023 09:40:20</td>
+                                            <td class="htd">NF.nº 034<br>27/11/2008</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </td>
                         </tr>
-                        <tr onclick="showHideRow(this);">
+                        <tr class="rowPrin" onclick="showHideRow(this);">
                             <td>SP131</td>
                             <td>IMPRESSORA HP LASER MFP 432</td>
                             <td>BOM</td>
@@ -127,21 +377,63 @@
                             <td>24/10/2023 16:32:50</td>
                             <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
                         </tr>
-                        <tr class="hidden_row" style="display: none;">
-                            <td>3344</td>
-                            <td>TELEFONE SEM FIO INTELBRAS TS3110</td>
-                            <td>BOM</td>
-                            <td>SECRETARIA-PG</td>
-                            <td>24/10/2023 16:32:50</td>
-                            <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
+                        <tr class="hidden_row" style="display:none;">
+                            <td class="hidden_td" colspan="6">
+                                <table class="hidden_table">
+                                    <thead>
+                                        <th>IMG</th>
+                                        <th>DESCRIÇÃO GERAL</th>
+                                        <th>VALOR</th>
+                                        <th>DATA AQUISIÇÃO</th>
+                                        <th>NF</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="htd">
+                                                <label for="" class="tdImg">IMAGEM MERAMENTE ILUSTRATIVA
+                                                <img src="_assets/13608.avif" alt=""></label>
+                                            </td>
+                                            <td class="htd tdDescGer">VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS</td>
+                                            <td class="htd">R$ 22.000,20</td>
+                                            <td class="htd">26/10/2023 09:40:20</td>
+                                            <td class="htd">NF.nº 034<br>27/11/2008</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr class="rowPrin" onclick="showHideRow(this);">
                             <td>50392</td>
                             <td>TV CCE 42'' LED PRETO</td>
                             <td>BOM</td>
                             <td>SECRETARIA-PG</td>
                             <td>24/10/2023 16:32:50</td>
                             <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
+                        </tr>
+                        <tr class="hidden_row" style="display:none;">
+                            <td class="hidden_td" colspan="6">
+                                <table class="hidden_table">
+                                    <thead>
+                                        <th>IMG</th>
+                                        <th>DESCRIÇÃO GERAL</th>
+                                        <th>VALOR</th>
+                                        <th>DATA AQUISIÇÃO</th>
+                                        <th>NF</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="htd">
+                                                <label for="" class="tdImg">IMAGEM MERAMENTE ILUSTRATIVA
+                                                <img src="_assets/13608.avif" alt=""></label>
+                                            </td>
+                                            <td class="htd tdDescGer">VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS VENTILADOR DE TETO EM MADEIRA C/ 03 PAS</td>
+                                            <td class="htd">R$ 22.000,20</td>
+                                            <td class="htd">26/10/2023 09:40:20</td>
+                                            <td class="htd">NF.nº 034<br>27/11/2008</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
                         </tr>
                     </table>
                 </section>
