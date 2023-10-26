@@ -93,7 +93,7 @@
                             <th>LOCAL-UE</th>
                             <th>ULTIMA CHECAGEM</th>
                         </tr>
-                        <tr>
+                        <tr onclick="showHideRow(this);">
                             <td>1234</td>
                             <td>TELEFONE SEM FIO INTELBRAS TS3110</td>
                             <td>BOM</td>
@@ -101,17 +101,35 @@
                             <td>24/10/2023 16:32:50</td>
                             <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
                         </tr>
-                        <tr style="display:;">
-                            <td>1234</td>
-                            <td>TELEFONE SEM FIO INTELBRAS TS3110</td>
-                            <td>BOM</td>
-                            <td>SECRETARIA-PG</td>
-                            <td>24/10/2023 16:32:50</td>
-                            <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
+                        <tr class="hidden_row" style="display: none;">
+                            <td colspan="6">
+                                <table>
+                                    <thead>
+                                        <th>IMG</th>
+                                        <th>DESCRIÇÃO GERAL</th>
+                                        <th>VALOR</th>
+                                        <th>DATA AQUISIÇÃO</th>
+                                        <th>NF</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
                         </tr>
-                        <tr>
+                        <tr onclick="showHideRow(this);">
                             <td>SP131</td>
                             <td>IMPRESSORA HP LASER MFP 432</td>
+                            <td>BOM</td>
+                            <td>SECRETARIA-PG</td>
+                            <td>24/10/2023 16:32:50</td>
+                            <td class="edit"><span><i class="fas fa-pen-nib"></i><input type="submit" value="EDITAR" class="btnEdit"></span></td>
+                        </tr>
+                        <tr class="hidden_row" style="display: none;">
+                            <td>3344</td>
+                            <td>TELEFONE SEM FIO INTELBRAS TS3110</td>
                             <td>BOM</td>
                             <td>SECRETARIA-PG</td>
                             <td>24/10/2023 16:32:50</td>
