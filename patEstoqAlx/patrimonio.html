@@ -72,252 +72,250 @@
             <div class= 'container'> 
                 <section id= 'first'>
                     <h1>CADASTRO</h1>
-                    <form action="">
+                    <form action="" id="formCadastro">
                         <div class="rowForm">
-                            <label for="cod">COD. PATRIMÔNIO
+                            <div class="colForm">
+                                <label for="cod">CÓDIGO</label><br>
                                 <input type="text" name="cod" required>
-                            </label>
-                            <label for="item">ITEM
+                            </div>
+                            <div class="colForm">
+                                <label for="item">ITEM</label><br>
                                 <input type="text" name="item" required>
-                            </label>
-                            <label for="marca">MARCA
+                            </div>
+                            <div class="colForm">
+                                <label for="marca">MARCA</label><br>
                                 <input type="text" name="marca">
-                            </label>
-                            <label for="modelo">MODELO
+                            </div>
+                            <div class="colForm">
+                                <label for="modelo">MODELO</label><br>
                                 <input type="text" name="modelo">
-                            </label>
-                        </div>
-                        <div class="rowForm">
-                            <label for="condicao">CONDIÇÃO
+                            </div>
+                            <div class="colForm">
+                                <label for="condicao">CONDIÇÃO</label><br>
                                 <select name="condicao">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="ÓTIMO" title="ÓTIMO">ÓTIMO</option>
                                     <option value="BOM" title="BOM">BOM</option>
                                     <option value="REGULAR" title="REGULAR">REGULAR</option>
                                     <option value="RUIM" title="RUIM">RUIM</option>
                                     <option value="INSERVÍVEL" title="INSERVÍVEL">INSERVÍVEL</option>
                                 </select>
-                            </label>
-                            <label for="local">LOCAL
+                            </div>
+                        </div>
+                        <div class="rowForm">
+                            <div class="colForm">
+                                <label for="local">LOCAL</label><br>
                                 <input type="text" name="local" required>
-                            </label>
-                            <label for="ue">UE
+                            </div>
+                            <div class="colForm">
+                                <label for="ue">UE</label><br>
                                 <input type="text" name="ue" required>
-                            </label>
-                            <label for="valor">VALOR
+                            </div>
+                            <div class="colForm">
+                                <label for="valor">VALOR</label><br>
                                 <input type="text" name="valor">
-                            </label>
-                        </div>
-                        <div class="rowForm">
-                            <label for="dataAquisit">DATA AQUISIÇÃO
-                                <input type="text" name="dataAquisit">
-                            </label>
-                            <label for="cor">COR PREDOMINANTE
+                            </div>
+                            <div class="colForm">
+                                <label for="dataAquisit">DATA AQUISIÇÃO</label><br>
+                                <input type="date" name="dataAquisit">
+                            </div>
+                            <div class="colForm">
+                                <label for="cor">COR</label><br>
                                 <input type="text" name="cor">
-                            </label>
-                            <label for="largura">Largura
-                                <input type="text" name="largura">
-                            </label>
-                            <label for="undMedLarg">UNIDADE DE MEDIDA
+                            </div>
+                        </div>
+                        <div class="rowForm desk">
+                            <div class="colForm">
+                                <label for="largura">Largura</label><br>
+                                <input type="number" name="largura">
                                 <select name="undMedLarg">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                        </div>
-                        <div class="rowForm">
-                            <label for="altura">Altura
-                                <input type="text" name="altura">
-                            </label>
-                            <label for="undMedAlt">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="altura">Altura</label><br>
+                                <input type="number" name="altura">
                                 <select name="undMedAlt">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                            <label for="comprimeto">Comprimeto
-                                <input type="text" name="comprimeto">
-                            </label>
-                            <label for="undMedCompr">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="comprimeto">Comprimeto</label><br>
+                                <input type="number" name="comprimeto">
                                 <select name="undMedCompr">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                        </div>
-                        <div class="rowForm">
-                            <label for="espessura">espessura
-                                <input type="text" name="espessura">
-                            </label>
-                            <label for="undMedEspe">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="espessura">espessura</label><br>
+                                <input type="number" name="espessura">
                                 <select name="undMedEspe">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                            <label for="profundidade">profundidade
-                                <input type="text" name="profundidade">
-                            </label>
-                            <label for="undMedProfund">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="profundidade">profundidade</label><br>
+                                <input type="number" name="profundidade">
                                 <select name="undMedProfund">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
+                            </div>
                         </div>
-                        <div class="rowForm">
-                            <label for="largTampo">largura do tampo
-                                <input type="text" name="largTampo">
-                            </label>
-                            <label for="undMedLargTampo">UNIDADE DE MEDIDA
+                        <div class="rowForm desk">
+                            <div class="colForm">
+                                <label for="largTampo">largura do tampo</label><br>
+                                <input  type="number" name="largTampo">
                                 <select name="undMedLargTampo">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                            <label for="compTampo">Comprimeto do Tampo
-                                <input type="text" name="compTampo">
-                            </label>
-                            <label for="undMedCompTampo">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="compTampo">Comprimeto do Tampo</label><br>
+                                <input type="number" name="compTampo">
                                 <select name="undMedCompTampo">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                        </div>
-                        <div class="rowForm">
-                            <label for="espessuraTampo">espessura do tampo
-                                <input type="text" name="espessuraTampo">
-                            </label>
-                            <label for="undMedEspeTampo">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="espessuraTampo">espessura do tampo</label><br>
+                                <input type="number" name="espessuraTampo">
                                 <select name="undMedEspeTampo">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                            <label for="altPernas">Altura das pernas
-                                <input type="text" name="altPernas">
-                            </label>
-                            <label for="undMedAltPernas">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="altPernas">Altura das pernas</label><br>
+                                <input type="number" name="altPernas">
                                 <select name="undMedAltPernas">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                        </div>
-                        <div class="rowForm rowForm-6">
-                            <label for="espessuraPernas">espessura das pernas
-                                <input type="text" name="espessuraPernas">
-                            </label>
-                            <label for="undMedEspesPernas">UNIDADE DE MEDIDA
+                            </div>
+                            <div class="colForm">
+                                <label for="espessuraPernas">espessura das pernas</label><br>
+                                <input type="number" name="espessuraPernas">
                                 <select name="undMedEspesPernas">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                            <label for="largPernas">Largura das pernas
-                                <input type="text" name="largPernas">
-                            </label>
-                            <label for="undMedLargPernas">UNIDADE DE MEDIDA
+                            </div>
+                        </div>
+                        <div class="rowForm desk">
+                            <div class="colForm">
+                                <label for="largPernas">Largura das pernas</label><br>
+                                <input type="number" name="largPernas">
                                 <select name="undMedLargPernas">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
+                                    <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
                                     <option value="m" title="m">M</option>
                                     <option value="km" title="km">KM</option>
                                 </select>
-                            </label>
-                            <label for="qtdPernas">Quantidade de pernas
-                                <input type="number" name="qtdPernas" >
-                            </label>
-                            <label for="undMedEspesPernas">UNIDADE DE MEDIDA
-                                <select name="undMedEspesPernas">
-                                    <option value="" title="SELECIONE..." selected="selected">SELECIONE...</option>
-                                    <option value="mm" title="mm">MM</option>
-                                    <option value="cm" title="cm">CM</option>
-                                    <option value="m" title="m">M</option>
-                                    <option value="km" title="km">KM</option>
-                                </select>
-                            </label>
+                            </div>
                         </div>
                         <div class="rowForm">
-                            <label for="qtdPortas">Quantidade de portas
-                                <input type="number" name="qtdPortas" >
-                            </label>
-                            <label for="qtdPrateleiras">Quantidade de prateleiras
-                                <input type="number" name="qtdPrateleiras" >
-                            </label>
-                            <label for="qtdGavetas">Quantidade de gavetas
-                                <input type="number" name="qtdGavetas" >
-                            </label>
-                            <label for="qtdHelices">Quantidade de helices
-                                <input type="number" name="qtdHelices" >
-                            </label>
+                            <div class="colForm">
+                                <label for="qtdPernas">qtd. de pernas</label><br>
+                                <input type="number" name="qtdPernas">
+                            </div>
+                            <div class="colForm">
+                                <label for="qtdPortas">qtd. de portas</label><br>
+                                <input type="number" name="qtdPortas">
+                            </div>
+                            <div class="colForm">
+                                <label for="qtdPrateleiras">qtd. de prateleiras</label><br>
+                                <input type="number" name="qtdPrateleiras">
+                            </div>
+                            <div class="colForm">
+                                <label for="qtdGavetas">qtd. de gavetas</label><br>
+                                <input type="number" name="qtdGavetas">
+                            </div>
+                            <div class="colForm">
+                                <label for="qtdHelices">qtd. de helices</label><br>
+                                <input type="number" name="qtdHelices">
+                            </div>
                         </div>
                         <div class="rowForm">
-                            <label for="qtdVelox">Quantidade de velocidades
-                                <input type="number" name="qtdVelox" >
-                            </label>
-                            <div class="radio">
-                                <label for="chaveamento">CHAVE</label>
-                                <div class="optRadio">
-                                    <label for="sim">SIM
-                                        <input type="radio" name="chaveamentoSim" id="" value="SIM">
-                                    </label>
-                                    <label for="não">não
-                                        <input type="radio" name="chaveamentoSim" id="" value="NÃO">
-                                    </label>
+                            <div class="colForm">
+                                <label for="qtdVelox">qtd. de velocidades</label><br>
+                                <input type="number" name="qtdVelox">
+                            </div>
+                            <div class="colForm radio">
+                                <label>CHAVE</label>
+                                <div class="inptRadio">
+                                    <input type="radio" name="chave" id="sim" value="SIM">
+                                    <label for="sim">SIM</label><br>
+                                    <input type="radio" name="chave" id="nao" value="NÃO">
+                                    <label for="nao">não</label><br>
                                 </div>
                             </div>
-                            <label for="qtdGavetas">Quantidade de gavetas
-                                <input type="number" name="qtdGavetas" >
-                            </label>
-                            <label for="qtdHelices">Quantidade de helices
-                                <input type="number" name="qtdHelices" >
-                            </label>
+                            <div class="colForm">
+                                <label for="qtdGavetas">qtd. de gavetas</label><br>
+                                <input type="number" name="qtdGavetas">
+                            </div>
+                            <div class="colForm">
+                                <label for="qtdHelices">qtd. de helices</label><br>
+                                <input type="number" name="qtdHelices">
+                            </div>
+                            <div class="colForm">
+                                <label for="telaPolegadas">Polegadas (tela)</label><br>
+                                <input type="number" name="telaPolegadas">
+                            </div>
                         </div>
                         <div class="rowForm">
-                            <label for="telaPolegadas">Polegadas (tela)
-                                <input type="number" name="telaPolegadas" >
-                            </label>
-                            <label for="arCondBTU">BTUs (Ar condicionado)
-                                <input type="number" name="arCondBTU" >
-                            </label>
-                            <label for="infoAdd">Informação adicional
-                                <input type="text" name="infoAdd" >
-                            </label>
+                            <div class="colForm">
+                                <label for="arCondBTU">BTUs (Ar condicionado)</label><br>
+                                <input type="number" name="arCondBTU">
+                            </div>
+                            <div class="colForm">
+                                <label for="infoAdd">Informação adicional</label><br>
+                                <input type="text" name="infoAdd">
+                            </div>
                         </div>
                     </form>
+                    <div class="btnForm">
+                        <input class="button cadastro" type="submit" value="CADASTRAR">
+                        <input class="button moreItem" type="submit" value="+ITEM">
+                        <input class="button repeat" type="submit" value="REPETIR">
+                    </div>
                 </section>
                 
                 <section id= 'second'>
