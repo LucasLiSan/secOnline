@@ -464,70 +464,6 @@ section h1 {
     opacity: 0;
 }
 
-#first {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.rowForm label {
-    color: #ffffff;
-    font-weight: bolder;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-transform: uppercase;
-    width: 25%;
-}
-
-.rowForm-6 label {
-    width: 16%;
-    font-size: 13px;
-}
-
-.rowForm-6 input {
-    width: 175px;
-}
-
-.radio {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-}
-.optRadio {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-.radio label {
-    width: 100%;
-}
-
-.rowForm input {
-    height: 25px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.rowForm {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 65px;
-    background: #88bfb585;
-}
-
-.rowForm:nth-child(odd) {
-    background: #00000054;
-}
-
 /* Styles applied on trigger */
 section:target {
     opacity: 1;
@@ -544,6 +480,143 @@ section:target {
 section:target h1 {
     opacity: 0;
     animation: 2s fadeIn forwards .5s;
+}
+
+#formCadastro {
+    width: 100%;
+    padding: 0 20px 0 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.btnForm {
+    width: 50%;
+    height: 65px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button {
+    height: 65%;
+    width: 25%;
+    border: none;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.cadastro {
+    background: #00ff00;
+}
+
+.cadastro:hover {
+    background: #00ff0080
+}
+
+.cadastro:active {
+    background: #0000ff;
+    color: #ffffff;
+}
+
+.moreItem {
+    background: #07d8e7;
+}
+
+.moreItem:hover {
+    background: #07d8e780;
+}
+
+.moreItem:active {
+    background: #0000ff;
+    color: #ffffff;
+}
+
+.repeat {
+    background: #ffff00;
+}
+
+.repeat:hover {
+    background: #ffff0080;
+}
+
+.repeat:active {
+    background: #0000ff;
+    color: #ffffff;
+}
+
+.rowForm input, select {
+    background: #bb2649;
+    color: #ffffff;
+    height: 30px;
+    width: 65%;
+    text-align: center;
+    border: none;
+    margin: 1px;
+}
+
+.rowForm input:focus, select:focus {
+    background: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+.rowForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0 15px 0;
+    height: 90px;
+}
+
+.rowForm:hover, .rowForm:nth-child(odd):hover {
+    background: #8392a5;
+    margin: 15px 0 15px 0;
+}
+
+.rowForm:nth-child(odd) {
+    background: #8bbaf7ad;
+}
+
+.colForm {
+    width: 20%;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio input {
+    width: 20px;
+}
+
+.inptRadio {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-direction: row;
+}
+
+.desk input {
+    width: 35%;
+}
+
+.desk select {
+    height: 30px;
+    font-weight: bold;
+    width: 25%;
+    text-align: center;
+    border: none;
+    margin: 1px;
 }
 
 @keyframes fadeIn {
