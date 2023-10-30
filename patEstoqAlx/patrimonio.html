@@ -72,7 +72,7 @@
             <div class= 'container'> 
                 <section id= 'first'>
                     <h1>CADASTRO</h1>
-                    <form action="" id="formCadastro">
+                    <form action="" class="formCadastro" method="POST">
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="cod">CÓDIGO</label><br>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="colForm">
                                 <label for="item">ITEM</label><br>
-                                <input type="text" name="item" required>
+                                <input type="text" name="item" id="ipt-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="marca">MARCA</label><br>
@@ -148,8 +148,8 @@
                                 </select>
                             </div>
                             <div class="colForm">
-                                <label for="comprimeto">Comprimeto</label><br>
-                                <input type="number" name="comprimeto">
+                                <label for="comprimento">Comprimento</label><br>
+                                <input type="number" name="comprimento">
                                 <select name="undMedCompr">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
@@ -194,7 +194,7 @@
                                 </select>
                             </div>
                             <div class="colForm">
-                                <label for="compTampo">Comprimeto do Tampo</label><br>
+                                <label for="compTampo">comprimento do Tampo</label><br>
                                 <input type="number" name="compTampo">
                                 <select name="undMedCompTampo">
                                     <option value="" title="" selected="selected"></option>
@@ -307,15 +307,16 @@
                             </div>
                             <div class="colForm">
                                 <label for="infoAdd">Informação adicional</label><br>
-                                <input type="text" name="infoAdd">
+                                <input type="text" name="infoAdd" id="addInfo">
                             </div>
                         </div>
+                        <div class="btnForm">
+                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" value="CADASTRAR"></span>
+                            <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
+                            <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem()"></span>
+                        </div>
                     </form>
-                    <div class="btnForm">
-                        <input class="button cadastro" type="submit" value="CADASTRAR">
-                        <input class="button moreItem" type="submit" value="+ITEM">
-                        <input class="button repeat" type="submit" value="REPETIR">
-                    </div>
+                    <div id="newForm"></div>
                 </section>
                 
                 <section id= 'second'>
