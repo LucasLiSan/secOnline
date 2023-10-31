@@ -487,6 +487,8 @@ section:target h1 {
 }
 
 .formCadastro {
+    position: relative;
+    left: 5%;
     width: 100%;
     padding: 0 20px 0 20px;
     text-transform: uppercase;

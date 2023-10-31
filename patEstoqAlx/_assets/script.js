@@ -6,29 +6,33 @@ function showHideRow(row) {
   hiddenRow.toggle();
 }
 
+let formCount = 1;
 function moreForm() {
-  const newForm = document.getElementById('newForm');
-  const morePats = document.createElement('FORM');
-  morePats.method='POST';
-  morePats.classList.add('formCadastro');
-  morePats.innerHTML = 
-  `
-  <div class="rowForm">
+    formCount++;
+    const newForm = document.getElementById('newForm');
+    const morePats = document.createElement('FORM');
+    morePats.method='POST';
+    morePats.classList.add('formCadastro');
+    morePats.id = `form-${formCount}`;
+
+    morePats.innerHTML = 
+    `
+    <div class="rowForm">
     <div class="colForm">
         <label for="cod">CÓDIGO</label><br>
         <input type="text" name="cod" required>
     </div>
     <div class="colForm">
         <label for="item">ITEM</label><br>
-        <input type="text" name="item" id="ipt-2" required>
+        <input type="text" name="item" id="item-${formCount}" required>
     </div>
     <div class="colForm">
         <label for="marca">MARCA</label><br>
-        <input type="text" name="marca">
+        <input type="text" name="marca" id="marca-${formCount}">
     </div>
     <div class="colForm">
         <label for="modelo">MODELO</label><br>
-        <input type="text" name="modelo">
+        <input type="text" name="modelo" id="modelo-${formCount}">
     </div>
     <div class="colForm">
         <label for="condicao">CONDIÇÃO</label><br>
@@ -41,30 +45,30 @@ function moreForm() {
             <option value="INSERVÍVEL" title="INSERVÍVEL">INSERVÍVEL</option>
         </select>
     </div>
-</div>
-<div class="rowForm">
+    </div>
+    <div class="rowForm">
     <div class="colForm">
         <label for="local">LOCAL</label><br>
-        <input type="text" name="local" required>
+        <input type="text" name="local" id="local-${formCount}" required>
     </div>
     <div class="colForm">
         <label for="ue">UE</label><br>
-        <input type="text" name="ue" required>
+        <input type="text" name="ue" id="ue-${formCount}" required>
     </div>
     <div class="colForm">
         <label for="valor">VALOR</label><br>
-        <input type="text" name="valor">
+        <input type="text" name="valor" id="valor-${formCount}">
     </div>
     <div class="colForm">
         <label for="dataAquisit">DATA AQUISIÇÃO</label><br>
-        <input type="date" name="dataAquisit">
+        <input type="date" name="dataAquisit" id="aquisicao-${formCount}">
     </div>
     <div class="colForm">
         <label for="cor">COR</label><br>
-        <input type="text" name="cor">
+        <input type="text" name="cor" id="cor-${formCount}">
     </div>
-</div>
-<div class="rowForm desk">
+    </div>
+    <div class="rowForm desk">
     <div class="colForm">
         <label for="largura">Largura</label><br>
         <input type="number" name="largura">
@@ -120,8 +124,8 @@ function moreForm() {
             <option value="km" title="km">KM</option>
         </select>
     </div>
-</div>
-<div class="rowForm desk">
+    </div>
+    <div class="rowForm desk">
     <div class="colForm">
         <label for="largTampo">largura do tampo</label><br>
         <input  type="number" name="largTampo">
@@ -177,8 +181,8 @@ function moreForm() {
             <option value="km" title="km">KM</option>
         </select>
     </div>
-</div>
-<div class="rowForm desk">
+    </div>
+    <div class="rowForm desk">
     <div class="colForm">
         <label for="largPernas">Largura das pernas</label><br>
         <input type="number" name="largPernas">
@@ -190,33 +194,33 @@ function moreForm() {
             <option value="km" title="km">KM</option>
         </select>
     </div>
-</div>
-<div class="rowForm">
+    </div>
+    <div class="rowForm">
     <div class="colForm">
         <label for="qtdPernas">qtd. de pernas</label><br>
-        <input type="number" name="qtdPernas">
+        <input type="number" name="qtdPernas" id="qtdPerna-${formCount}">
     </div>
     <div class="colForm">
         <label for="qtdPortas">qtd. de portas</label><br>
-        <input type="number" name="qtdPortas">
+        <input type="number" name="qtdPortas" id="qtdPorta-${formCount}">
     </div>
     <div class="colForm">
         <label for="qtdPrateleiras">qtd. de prateleiras</label><br>
-        <input type="number" name="qtdPrateleiras">
+        <input type="number" name="qtdPrateleiras" id="qtdPrate-${formCount}">
     </div>
     <div class="colForm">
         <label for="qtdGavetas">qtd. de gavetas</label><br>
-        <input type="number" name="qtdGavetas">
+        <input type="number" name="qtdGavetas" id="qtdGav-${formCount}">
     </div>
     <div class="colForm">
         <label for="qtdHelices">qtd. de helices</label><br>
-        <input type="number" name="qtdHelices">
+        <input type="number" name="qtdHelices" id="qtdHelice-${formCount}">
     </div>
-</div>
-<div class="rowForm">
+    </div>
+    <div class="rowForm">
     <div class="colForm">
         <label for="qtdVelox">qtd. de velocidades</label><br>
-        <input type="number" name="qtdVelox">
+        <input type="number" name="qtdVelox" id="qtdVelox-${formCount}">
     </div>
     <div class="colForm radio">
         <label>CHAVE</label>
@@ -228,40 +232,38 @@ function moreForm() {
         </div>
     </div>
     <div class="colForm">
-        <label for="qtdGavetas">qtd. de gavetas</label><br>
-        <input type="number" name="qtdGavetas">
-    </div>
-    <div class="colForm">
-        <label for="qtdHelices">qtd. de helices</label><br>
-        <input type="number" name="qtdHelices">
-    </div>
-    <div class="colForm">
         <label for="telaPolegadas">Polegadas (tela)</label><br>
-        <input type="number" name="telaPolegadas">
+        <input type="number" name="telaPolegadas" id="qtdPol-${formCount}">
     </div>
-</div>
-<div class="rowForm">
+    </div>
+    <div class="rowForm">
     <div class="colForm">
         <label for="arCondBTU">BTUs (Ar condicionado)</label><br>
-        <input type="number" name="arCondBTU">
+        <input type="number" name="arCondBTU" id="btu-${formCount}">
     </div>
     <div class="colForm">
         <label for="infoAdd">Informação adicional</label><br>
         <input type="text" name="infoAdd" id="addInfo">
     </div>
-</div>
-<div class="btnForm">
+    </div>
+    <div class="btnForm">
     <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" value="CADASTRAR"></span>
     <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
-    <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR"></span>
-</div>
-  `;
-  newForm.appendChild(morePats);
+    <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem(this.form, ${formCount})"></span>
+    </div>
+    `;
+    newForm.appendChild(morePats);
 }
 
-function repeatItem() {
-  var src = document.getElementById("ipt-1"),
-      dst = document.getElementById("ipt-2");
+function repeatItem(form, formNumber) {
 
-  dst.value = src.value;
-}
+    var src = document.getElementById("item-1");
+    var dst = document.getElementById(`item-${formNumber}`);
+
+    if (dst) {
+      dst.value = src.value;
+    } else {
+      alert("Não há mais campos para copiar neste formulário.");
+    }
+  }
+  

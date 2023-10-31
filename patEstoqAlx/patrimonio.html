@@ -72,7 +72,7 @@
             <div class= 'container'> 
                 <section id= 'first'>
                     <h1>CADASTRO</h1>
-                    <form action="" class="formCadastro" method="POST">
+                    <form action="" id="form-1" class="formCadastro" method="POST">
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="cod">CÓDIGO</label><br>
@@ -80,15 +80,15 @@
                             </div>
                             <div class="colForm">
                                 <label for="item">ITEM</label><br>
-                                <input type="text" name="item" id="ipt-1" required>
+                                <input type="text" name="item" id="item-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="marca">MARCA</label><br>
-                                <input type="text" name="marca">
+                                <input type="text" name="marca" id="marca-1">
                             </div>
                             <div class="colForm">
                                 <label for="modelo">MODELO</label><br>
-                                <input type="text" name="modelo">
+                                <input type="text" name="modelo" id="modelo-1">
                             </div>
                             <div class="colForm">
                                 <label for="condicao">CONDIÇÃO</label><br>
@@ -105,23 +105,23 @@
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="local">LOCAL</label><br>
-                                <input type="text" name="local" required>
+                                <input type="text" name="local" id="local-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="ue">UE</label><br>
-                                <input type="text" name="ue" required>
+                                <input type="text" name="ue" id="ue-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="valor">VALOR</label><br>
-                                <input type="text" name="valor">
+                                <input type="text" name="valor" id="valor-1">
                             </div>
                             <div class="colForm">
                                 <label for="dataAquisit">DATA AQUISIÇÃO</label><br>
-                                <input type="date" name="dataAquisit">
+                                <input type="date" name="dataAquisit" id="aquisicao-1">
                             </div>
                             <div class="colForm">
                                 <label for="cor">COR</label><br>
-                                <input type="text" name="cor">
+                                <input type="text" name="cor" id="cor-1">
                             </div>
                         </div>
                         <div class="rowForm desk">
@@ -254,29 +254,29 @@
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="qtdPernas">qtd. de pernas</label><br>
-                                <input type="number" name="qtdPernas">
+                                <input type="number" name="qtdPernas" id="qtdPerna-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdPortas">qtd. de portas</label><br>
-                                <input type="number" name="qtdPortas">
+                                <input type="number" name="qtdPortas" id="qtdPorta-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdPrateleiras">qtd. de prateleiras</label><br>
-                                <input type="number" name="qtdPrateleiras">
+                                <input type="number" name="qtdPrateleiras" id="qtdPrate-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdGavetas">qtd. de gavetas</label><br>
-                                <input type="number" name="qtdGavetas">
+                                <input type="number" name="qtdGavetas" id="qtdGav-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdHelices">qtd. de helices</label><br>
-                                <input type="number" name="qtdHelices">
+                                <input type="number" name="qtdHelices" id="qtdHelice-1">
                             </div>
                         </div>
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="qtdVelox">qtd. de velocidades</label><br>
-                                <input type="number" name="qtdVelox">
+                                <input type="number" name="qtdVelox" id="qtdVelox-1">
                             </div>
                             <div class="colForm radio">
                                 <label>CHAVE</label>
@@ -288,22 +288,14 @@
                                 </div>
                             </div>
                             <div class="colForm">
-                                <label for="qtdGavetas">qtd. de gavetas</label><br>
-                                <input type="number" name="qtdGavetas">
-                            </div>
-                            <div class="colForm">
-                                <label for="qtdHelices">qtd. de helices</label><br>
-                                <input type="number" name="qtdHelices">
-                            </div>
-                            <div class="colForm">
                                 <label for="telaPolegadas">Polegadas (tela)</label><br>
-                                <input type="number" name="telaPolegadas">
+                                <input type="number" name="telaPolegadas" id="qtdPol-1">
                             </div>
                         </div>
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="arCondBTU">BTUs (Ar condicionado)</label><br>
-                                <input type="number" name="arCondBTU">
+                                <input type="number" name="arCondBTU" id="btu-1">
                             </div>
                             <div class="colForm">
                                 <label for="infoAdd">Informação adicional</label><br>
@@ -313,7 +305,6 @@
                         <div class="btnForm">
                             <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" value="CADASTRAR"></span>
                             <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
-                            <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem()"></span>
                         </div>
                     </form>
                     <div id="newForm"></div>
