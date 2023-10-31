@@ -183,6 +183,17 @@
                         </div>
                         <div class="rowForm desk">
                             <div class="colForm">
+                                <label for="diametro">diâmetro</label><br>
+                                <input  type="number" name="diametro">
+                                <select name="undMedDiametro">
+                                    <option value="" title="" selected="selected"></option>
+                                    <option value="mm" title="mm">MM</option>
+                                    <option value="cm" title="cm">CM</option>
+                                    <option value="m" title="m">M</option>
+                                    <option value="km" title="km">KM</option>
+                                </select>
+                            </div>
+                            <div class="colForm">
                                 <label for="largTampo">largura do tampo</label><br>
                                 <input  type="number" name="largTampo">
                                 <select name="undMedLargTampo">
@@ -226,6 +237,8 @@
                                     <option value="km" title="km">KM</option>
                                 </select>
                             </div>
+                        </div>
+                        <div class="rowForm desk">
                             <div class="colForm">
                                 <label for="espessuraPernas">espessura das pernas</label><br>
                                 <input type="number" name="espessuraPernas">
@@ -237,8 +250,6 @@
                                     <option value="km" title="km">KM</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="rowForm desk">
                             <div class="colForm">
                                 <label for="largPernas">Largura das pernas</label><br>
                                 <input type="number" name="largPernas">

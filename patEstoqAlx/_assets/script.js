@@ -243,7 +243,7 @@ function moreForm() {
     </div>
     <div class="colForm">
         <label for="infoAdd">Informação adicional</label><br>
-        <input type="text" name="infoAdd" id="addInfo">
+        <input type="text" name="infoAdd" id="addInfo-${formCount}">
     </div>
     </div>
     <div class="btnForm">
@@ -315,6 +315,3 @@ function repeatItem(form, formNumber) {
       alert("Não há mais campos para copiar neste formulário.");
     }
   }
-  
-let k = [...document.getElementById('form-1').querySelectorAll("input[type=text]")].map(item => item.id);
-console.log(k);
