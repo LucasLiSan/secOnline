@@ -257,13 +257,64 @@ function moreForm() {
 
 function repeatItem(form, formNumber) {
 
-    var src = document.getElementById("item-1");
-    var dst = document.getElementById(`item-${formNumber}`);
+    var srcItem = document.getElementById("item-1");
+    var srcMarca = document.getElementById("marca-1");
+    var srcModelo = document.getElementById("modelo-1");
+    var srcLocal = document.getElementById("local-1");
+    var srcUe = document.getElementById("ue-1");
+    var srcAquisicao = document.getElementById("aquisicao-1");
+    var srcValor = document.getElementById("valor-1");
+    var srcCor = document.getElementById("cor-1");
+    var srcPerna = document.getElementById("qtdPerna-1");
+    var srcPorta = document.getElementById("qtdPorta-1");
+    var srcPrateleira = document.getElementById("qtdPrate-1");
+    var srcGaveta = document.getElementById("qtdGav-1");
+    var srcHelice = document.getElementById("qtdHelice-1");
+    var srcVeloc = document.getElementById("qtdVelox-1");
+    var srcPolegada = document.getElementById("qtdPol-1");
+    var srcBtu = document.getElementById("btu-1");
+    var srcAddInfo = document.getElementById("addInfo-1");
 
-    if (dst) {
-      dst.value = src.value;
+    var dstItem = document.getElementById(`item-${formNumber}`);
+    var dstMarca = document.getElementById(`marca-${formNumber}`);
+    var dstModelo = document.getElementById(`modelo-${formNumber}`);
+    var dstLocal = document.getElementById(`local-${formNumber}`);
+    var dstUe = document.getElementById(`ue-${formNumber}`);
+    var dstAquisicao = document.getElementById(`aquisicao-${formNumber}`);
+    var dstValor = document.getElementById(`valor-${formNumber}`);
+    var dstCor = document.getElementById(`cor-${formNumber}`);
+    var dstPerna = document.getElementById(`qtdPerna-${formNumber}`);
+    var dstPorta = document.getElementById(`qtdPorta-${formNumber}`);
+    var dstPrateleira = document.getElementById(`qtdPrate-${formNumber}`);
+    var dstGaveta = document.getElementById(`qtdGav-${formNumber}`);
+    var dstHelice = document.getElementById(`qtdHelice-${formNumber}`);
+    var dstVeloc = document.getElementById(`qtdVelox-${formNumber}`);
+    var dstPolegada = document.getElementById(`qtdPol-${formNumber}`);
+    var dstBtu = document.getElementById(`btu-${formNumber}`);
+    var dstAddInfo = document.getElementById(`addInfo-${formNumber}`);
+
+    if (dstItem) {
+        dstItem.value = srcItem.value;
+        dstMarca.value = srcMarca.value;
+        dstModelo.value = srcModelo.value;
+        dstLocal.value = srcLocal.value;
+        dstUe.value = srcUe.value;
+        dstAquisicao.value = srcAquisicao.value;
+        dstValor.value = srcValor.value;
+        dstCor.value = srcCor.value;
+        dstPerna.value = srcPerna.value;
+        dstPorta.value = srcPorta.value;
+        dstPrateleira.value = srcPrateleira.value;
+        dstGaveta.value = srcGaveta.value;
+        dstHelice.value = srcHelice.value;
+        dstVeloc.value = srcVeloc.value;
+        dstPolegada.value = srcPolegada.value;
+        dstBtu.value = srcBtu.value;
+        dstAddInfo.value = srcAddInfo.value;
     } else {
       alert("Não há mais campos para copiar neste formulário.");
     }
   }
   
+let k = [...document.getElementById('form-1').querySelectorAll("input[type=text]")].map(item => item.id);
+console.log(k);
