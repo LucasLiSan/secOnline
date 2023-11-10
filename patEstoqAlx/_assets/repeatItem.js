@@ -31,8 +31,6 @@ function repeatItem(form, formNumber) {
     var srcUndMedAltPernas = document.getElementById("undMedAltPernas-1");
     var srcEspessuraPernas = document.getElementById("espessuraPernas-1");
     var srcUndMedEspesPernas = document.getElementById("undMedEspesPernas-1");
-    var srcLargPernas = document.getElementById("largPernas-1");
-    var srcUndMedLargPernas = document.getElementById("undMedLargPernas-1");
     var srcPerna = document.getElementById("qtdPerna-1");
     var srcPorta = document.getElementById("qtdPorta-1");
     var srcPrateleira = document.getElementById("qtdPrate-1");
@@ -42,8 +40,7 @@ function repeatItem(form, formNumber) {
     var srcPolegada = document.getElementById("qtdPol-1");
     var srcBtu = document.getElementById("btu-1");
     var srcAddInfo = document.getElementById("addInfo-1");
-    var srcChave = document.querySelector('input[name="chave-1"]:checked');
-    var valorsrcChave = srcChave ? srcChave.value : "";
+    var srcChave = document.getElementById("chave-1");
 
     var dstItem = document.getElementById(`item-${formNumber}`);
     var dstMarca = document.getElementById(`marca-${formNumber}`);
@@ -76,8 +73,6 @@ function repeatItem(form, formNumber) {
     var dstUndMedAltPernas = document.getElementById(`undMedAltPernas-${formNumber}`);
     var dstEspessuraPernas = document.getElementById(`espessuraPernas-${formNumber}`);
     var dstUndMedEspesPernas = document.getElementById(`undMedEspesPernas-${formNumber}`);
-    var dstLargPernas = document.getElementById(`largPernas-${formNumber}`);
-    var dstUndMedLargPernas = document.getElementById(`undMedLargPernas-${formNumber}`);
     var dstPerna = document.getElementById(`qtdPerna-${formNumber}`);
     var dstPorta = document.getElementById(`qtdPorta-${formNumber}`);
     var dstPrateleira = document.getElementById(`qtdPrate-${formNumber}`);
@@ -87,8 +82,8 @@ function repeatItem(form, formNumber) {
     var dstPolegada = document.getElementById(`qtdPol-${formNumber}`);
     var dstBtu = document.getElementById(`btu-${formNumber}`);
     var dstAddInfo = document.getElementById(`addInfo-${formNumber}`);
-    var dstChave = document.querySelector(`input[name="chave-${formNumber}"]`);
-    var valordstChave = dstChave ? dstChave.value : "";
+    var dstChave = document.getElementById(`chave-${formNumber}`);
+
 
     if (dstItem) {
         dstItem.value = srcItem.value;
@@ -122,8 +117,6 @@ function repeatItem(form, formNumber) {
         dstUndMedAltPernas.value = srcUndMedAltPernas.value;
         dstEspessuraPernas.value = srcEspessuraPernas.value;
         dstUndMedEspesPernas.value = srcUndMedEspesPernas.value;
-        dstLargPernas.value = srcLargPernas.value;
-        dstUndMedLargPernas.value = srcUndMedLargPernas.value;
         dstPerna.value = srcPerna.value;
         dstPorta.value = srcPorta.value;
         dstPrateleira.value = srcPrateleira.value;
@@ -133,7 +126,7 @@ function repeatItem(form, formNumber) {
         dstPolegada.value = srcPolegada.value;
         dstBtu.value = srcBtu.value;
         dstAddInfo.value = srcAddInfo.value;
-        dstChave.value = valorsrcChave.value;
+        dstChave.value = srcChave.value;
     } else {
         alert("Não há mais campos para copiar neste formulário.");
     }
