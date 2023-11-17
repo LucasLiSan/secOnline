@@ -16,16 +16,16 @@
         // Loop through each form
 
         //$formCount = isset($_POST['formCount']) ? intval($_POST['formCount']) : 1;
-        $maxFormNumber = isset($_POST['formCount']) ? intval($_POST['formCount']) : 1;
+        $formCount = $_POST['formCount'];
 
-        for ($i = 1; $i <= $maxFormNumber; $i++) {
+        for ($i = 1; $i <= $formCount; $i++) {
             // Get data from the form
-            $cod = isset($_POST["cod-$i"]) ? $_POST["cod-$i"] : '';
-            $item = isset($_POST["item-$i"]) ? $_POST["item-$i"] : '';
-            $marca = isset($_POST["marca-$i"]) ? $_POST["marca-$i"] : '';
-            $modelo = isset($_POST["modelo-$i"]) ? $_POST["modelo-$i"] : '';
-            $condicao = isset($_POST["condicao-$i"]) ? $_POST["condicao-$i"] : '';
-            $local = isset($_POST["local-$i"]) ? $_POST["local-$i"] : '';
+            $cod = $_POST["cod-$i"];
+            $item = $_POST["item-$i"];
+            $marca = $_POST["marca-$i"];
+            $modelo = $_POST["modelo-$i"];
+            $condicao = $_POST["condicao-$i"];
+            /*$local = $_POST["local-$i"];
             $ue = isset($_POST["ue-$i"]) ? $_POST["ue-$i"] : '';
             $aquisicao = isset($_POST["aquisicao-$i"]) ? $_POST["aquisicao-$i"] : '';
             $valor = isset($_POST["valor-$i"]) ? $_POST["valor-$i"] : '';
@@ -61,11 +61,11 @@
             $qtdPol = isset($_POST["qtdPol-$i"]) ? $_POST["qtdPol-$i"] : '';
             $btu = isset($_POST["btu-$i"]) ? $_POST["btu-$i"] : '';
             $addInfo = isset($_POST["addInfo-$i"]) ? $_POST["addInfo-$i"] : '';
-            $chave = isset($_POST["chave-$i"]) ? $_POST["chave-$i"] : '';
+            $chave = isset($_POST["chave-$i"]) ? $_POST["chave-$i"] : '';*/
             $timeStamp = time();
 
             // Insert data into the database
-            $sql = "INSERT INTO patrimonio (id, item, marca, modelo, condicao, localizacao, ue, lastCheck, valor, dataAquisit, cor, largura, undMedLarg, altura, undMedAlt, comprimento, undMedCompr, espessura, undMedEspe, profundidade, undMedProfund, diametro, undMedDiametro, compTampo, undMedCompTampo, espessuraTampo, undMedEspeTampo, largTampo, undMedLargTampo, altPernas, undMedAltPernas, espessuraPernas, undMedEspesPernas, qtdPortas, qtdPrateleiras, qtdGavetas, qtdHelices, qtdVelox, qtdPernas, chaveamento, telaPolegadas, arCondBTU, infoAdd) VALUES ($cod, '$item', '$marca', '$modelo', '$condicao', '$local', '$ue', '$timeStamp', '$valor', '$aquisicao', '$cor', '$largura', '$undMedLarg', '$altura', '$undMedAlt', '$comprimento', '$undMedComp', '$espessura', '$undMedEspe', '$profundidade', '$undMedProfund', '$diametro', '$undMedDiametro', '$compTampo', '$undMedCompTampo', $espessuraTampo, '$undMedEspeTampo', '$largTampo', '$undMedLargTampo', '$altPernas', '$undMedAltPernas', '$espessuraPernas', '$undMedEspesPernas', $qtdPorta, $qtdPrate, $qtdGav, $qtdHelice, $qtdVelox, $qtdPerna, '$chave', $qtdPol, $btu, '$addInfo')";
+            $sql = "INSERT INTO patrimonio (id, item, marca, modelo, condicao, lastCheck) VALUES ($cod, '$item', '$marca', '$modelo', '$condicao', '$timeStamp')";
             if ($conn->query($sql) === TRUE) {
                 echo "Record $i inserted successfully.<br>";
             } else {
