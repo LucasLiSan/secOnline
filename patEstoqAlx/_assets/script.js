@@ -18,6 +18,7 @@ function moreForm() {
 
     morePats.innerHTML = 
     `
+    <input type="hidden" name="formCount" value="${formCount}">
     <div class="rowForm">
         <div class="colForm">
             <label for="cod">CÓDIGO</label><br>
@@ -247,16 +248,11 @@ function moreForm() {
         </div>
     </div>
     <div class="btnForm">
-    <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" value="CADASTRAR"></span>
+    <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" name="submitForm" value="CADASTRAR"></span>
     <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
     <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem(this.form, ${formCount})"></span>
     </div>
     `;
-    const hiddenInput = document.createElement('input');
-    hiddenInput.type = 'hidden';
-    hiddenInput.name = 'formCount';
-    hiddenInput.value = formCount;
-    morePats.appendChild(hiddenInput);
     newForm.appendChild(morePats);
 }
 

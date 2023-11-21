@@ -77,6 +77,7 @@
                 <section id= 'first'>
                     <h1>CADASTRO</h1>
                     <form action="patCadastro.php" id="form-1" class="formCadastro" method="POST">
+                        <input type="hidden" name="formCount" value="1">
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="cod">CÓDIGO</label><br>
@@ -306,10 +307,9 @@
                             </div>
                         </div>
                         <div class="btnForm">
-                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" value="CADASTRAR"></span>
+                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>
                             <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
                         </div>
-                        <input type="hidden" name="formCount" value="1">
                     </form>
                     <div id="newForm"></div>
                 </section>

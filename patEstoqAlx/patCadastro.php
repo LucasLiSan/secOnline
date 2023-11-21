@@ -5,26 +5,29 @@
     $dbname = "pgdatabase";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $mysqli = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($mysqli->connect_error) {
+        die("Connection failed: " . $mysqli->connect_error);
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['submitForm'])) {
         // Loop through each form
 
         //$formCount = isset($_POST['formCount']) ? intval($_POST['formCount']) : 1;
-        $formCount = $_POST['formCount'];
-
-        for ($i = 1; $i <= $formCount; $i++) {
+        //$formCount = $_POST['formCount'];
+        echo '<pre>'; 
+        print_r($_POST); 
+        echo '</pre>';
+        for ($i = 1; $i <= $_POST['formCount']; $i++) {
             // Get data from the form
-            $cod = $_POST["cod-$i"];
-            $item = $_POST["item-$i"];
-            $marca = $_POST["marca-$i"];
-            $modelo = $_POST["modelo-$i"];
-            $condicao = $_POST["condicao-$i"];
+            $cod = isset($_POST['cod-' . $i]) ? $_POST['cod-' . $i] : null;
+            $item = isset($_POST['item-' . $i]) ? $_POST['item-' . $i] : null;
+            $marca = isset($_POST['marca-' . $i]) ? $_POST['marca-' . $i] : null;
+            $modelo = isset($_POST['modelo-' . $i]) ? $_POST['modelo-' . $i] : null;
+            $condicao = isset($_POST['condicao-' . $i]) ? $_POST['condicao-' . $i] : null;
+
             /*$local = $_POST["local-$i"];
             $ue = isset($_POST["ue-$i"]) ? $_POST["ue-$i"] : '';
             $aquisicao = isset($_POST["aquisicao-$i"]) ? $_POST["aquisicao-$i"] : '';
@@ -62,17 +65,24 @@
             $btu = isset($_POST["btu-$i"]) ? $_POST["btu-$i"] : '';
             $addInfo = isset($_POST["addInfo-$i"]) ? $_POST["addInfo-$i"] : '';
             $chave = isset($_POST["chave-$i"]) ? $_POST["chave-$i"] : '';*/
-            $timeStamp = time();
+            //$timeStamp = time();
 
             // Insert data into the database
-            $sql = "INSERT INTO patrimonio (id, item, marca, modelo, condicao, lastCheck) VALUES ($cod, '$item', '$marca', '$modelo', '$condicao', '$timeStamp')";
+            $stmt = $mysqli->prepare("INSERT INTO patrimonio (id, item, marca, modelo, condicao) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("issss", $cod, $item, $marca, $modelo, $condicao);
+            $stmt->execute();
+            $stmt->close();
+
+            /*$sql = "INSERT INTO patrimonio (id, item, marca, modelo, condicao, lastCheck) VALUES ($cod, '$item', '$marca', '$modelo', '$condicao', '$timeStamp')";
             if ($conn->query($sql) === TRUE) {
                 echo "Record $i inserted successfully.<br>";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+            }*/
         }
+        header("Location: patCadastro.php");
+        exit();
     }
 
-    $conn->close();
+    $mysqli->close();
 ?>
