@@ -38,6 +38,8 @@ body {
     --complimentary-color: #88BFB5;
     --contrast-color: #F2E527;
     --light-color: #D2A9D9;
+    --border-map: solid #000000;
+    --border-map-width: 0.25rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -743,4 +745,77 @@ td {
 .tdDescGer {
     width: 500px;
     text-align: justify;
+}
+
+#sixth {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.main-map {
+    position: relative;
+    top: 2rem;
+    margin: 3rem;
+    width: 1120px;
+    height: 928px;
+    display: grid;
+    grid: 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px 32px / 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+    background-color: #fafafa;
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+}
+
+.main-map div {
+    position: relative;
+}
+
+.secretaria {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 15 / span 4;
+    grid-row: 21 / span 5;
+    background-color: #0000ff;
+}
+
+.direcao {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 19 / span 4;
+    grid-row: 21 / span 5;
+    background-color: yellow;
+}
+
+.profs {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 23 / span 4;
+    grid-row: 21 / span 5;
+    background-color: red;
+}
+
+.sala1 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 15 / span 4;
+    grid-row: 21 / span 5;
+    background-color: #0000ff;
+}
+
+.sala2 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 19 / span 4;
+    grid-row: 21 / span 5;
+    background-color: yellow;
+}
+
+.sala3 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 23 / span 4;
+    grid-row: 21 / span 5;
+    background-color: red;
 }

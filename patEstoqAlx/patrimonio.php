@@ -306,12 +306,13 @@
                                 <input type="text" name="addInfo-1" id="addInfo-1">
                             </div>
                         </div>
-                        <div class="btnForm">
-                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>
-                            <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
-                        </div>
                     </form>
                     <div id="newForm"></div>
+                    <div class="btnForm" id="btnChange">
+                        <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>
+                        <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
+                    </div>
+                    
                 </section>
                 
                 <section id= 'second'>

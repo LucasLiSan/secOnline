@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gentona", cursive;
   outline: none;
 }
 
@@ -46,23 +46,6 @@ body {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-}
-
-.back_search {
-  position: relative;
-  right: 100px;
-  bottom: 10px;
-  border-radius: 50px;
-  width: 50px;
-  background-color: #fd1d1d;
-}
-
-.back_search span {
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
 }
 
 .profile_card {
