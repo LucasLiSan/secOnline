@@ -77,7 +77,7 @@
                 <section id= 'first'>
                     <h1>CADASTRO</h1>
                     <form action="patCadastro.php" id="form-1" class="formCadastro" method="POST">
-                        <input type="hidden" name="formCount" value="1">
+                        <input type="hidden" id="formCountHidden" name="formCount" value="1">
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="cod">CÓDIGO</label><br>
@@ -306,13 +306,13 @@
                                 <input type="text" name="addInfo-1" id="addInfo-1">
                             </div>
                         </div>
-                    </form>
-                    <div id="newForm"></div>
-                    <div class="btnForm" id="btnChange">
-                        <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>
-                        <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
-                    </div>
-                    
+                        <div class="newForm"></div>
+                        <div class="btnForm" id="btnChange">
+                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>
+                            <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
+                            <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem()"></span>
+                        </div>
+                    </form>                    
                 </section>
                 
                 <section id= 'second'>

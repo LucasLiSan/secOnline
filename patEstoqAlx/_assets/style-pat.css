@@ -799,7 +799,7 @@ td {
 .sala1 {
     border: var(--border-map);
     border-width: var(--border-map-width);
-    grid-column: 15 / span 4;
+    grid-column: 9 / span 4;
     grid-row: 21 / span 5;
     background-color: #0000ff;
 }
@@ -807,7 +807,7 @@ td {
 .sala2 {
     border: var(--border-map);
     border-width: var(--border-map-width);
-    grid-column: 19 / span 4;
+    grid-column: 5 / span 4;
     grid-row: 21 / span 5;
     background-color: yellow;
 }
@@ -815,7 +815,79 @@ td {
 .sala3 {
     border: var(--border-map);
     border-width: var(--border-map-width);
-    grid-column: 23 / span 4;
+    grid-column: 1 / span 4;
     grid-row: 21 / span 5;
     background-color: red;
+}
+
+.sala4 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 9 / span 4;
+    grid-row: 12 / span 5;
+    background-color: #0000ff;
+}
+
+.sala5 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 5 / span 4;
+    grid-row: 12 / span 5;
+    background-color: yellow;
+}
+
+.sala6 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 1 / span 4;
+    grid-row: 12 / span 5;
+    background-color: red;
+}
+
+.refeitorio {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 15 / span 12;
+    grid-row: 12 / span 5;
+    background-color: #0000ff;
+}
+
+.sala7 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 13 / span 4;
+    grid-row: 5 / span 5;
+    background-color: #0000ff;
+}
+
+.sala8 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 9 / span 4;
+    grid-row: 5 / span 5;
+    background-color: #ff0000;
+}
+
+.sala9 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 5;
+    background-color: #00ff00;
+}
+
+.sala10 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 1 / span 4;
+    grid-row: 5 / span 5;
+    background-color: yellow;
+}
+
+.sala11 {
+    border: var(--border-map);
+    border-width: var(--border-map-width);
+    grid-column: 1 / span 2;
+    grid-row: 8 / span 2;
+    background-color: #0000ff;
 }

@@ -9,16 +9,15 @@ function showHideRow(row) {
 let formCount = 1;
 function moreForm() {
     formCount++;
-    const newForm = document.getElementById('newForm');
-    const morePats = document.createElement('FORM');
-    morePats.method='POST';
-    morePats.action="patCadastro.php";
-    morePats.classList.add('formCadastro');
-    morePats.id = `form-${formCount}`;
-
-    morePats.innerHTML = 
-    `
-    <input type="hidden" name="formCount" value="${formCount}">
+    const newForm = document.getElementsByClassName('newForm')[0];
+    var myInputElement = document.getElementById("formCountHidden");
+    myInputElement.value = formCount;
+    //const morePats = document.createElement('FORM');
+    //morePats.method='POST';
+    //morePats.action="patCadastro.php";
+    //morePats.classList.add('formCadastro');
+    //morePats.id = `form-${formCount}`;
+    newForm.innerHTML += `
     <div class="rowForm">
         <div class="colForm">
             <label for="cod">CÓDIGO</label><br>
@@ -247,12 +246,7 @@ function moreForm() {
             <input type="text" name="addInfo-${formCount}" id="addInfo-${formCount}">
         </div>
     </div>
-    <div class="btnForm">
-    <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" name="submitForm" value="CADASTRAR"></span>
-    <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
-    <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem(this.form, ${formCount})"></span>
-    </div>
     `;
-    newForm.appendChild(morePats);
+    //newForm.appendChild(morePats);
 }
 

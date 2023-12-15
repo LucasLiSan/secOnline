@@ -1,4 +1,51 @@
 <?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Database connection details
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "pgdatabase";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Function to sanitize and validate input
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    // Loop through each form
+    for ($i = 1; $i <= $_POST['formCount']; $i++) {
+        // Sanitize and validate data
+        $cod = test_input($_POST["cod-$i"]);
+        $item = test_input($_POST["item-$i"]);
+        $marca = test_input($_POST["marca-$i"]);
+        $modelo = test_input($_POST["modelo-$i"]);
+        $condicao = test_input($_POST["condicao-$i"]);
+
+        // SQL query to insert data into the database
+        $sql = "INSERT INTO patrimonio (id, item, marca, modelo, condicao) VALUES ('$cod', '$item', '$marca', '$modelo', '$condicao')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Record inserted successfully for Form $i";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    // Close the database connection
+    $conn->close();
+}
+/*
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -64,7 +111,7 @@
             $qtdPol = isset($_POST["qtdPol-$i"]) ? $_POST["qtdPol-$i"] : '';
             $btu = isset($_POST["btu-$i"]) ? $_POST["btu-$i"] : '';
             $addInfo = isset($_POST["addInfo-$i"]) ? $_POST["addInfo-$i"] : '';
-            $chave = isset($_POST["chave-$i"]) ? $_POST["chave-$i"] : '';*/
+            $chave = isset($_POST["chave-$i"]) ? $_POST["chave-$i"] : '';
             //$timeStamp = time();
 
             // Insert data into the database
@@ -78,11 +125,11 @@
                 echo "Record $i inserted successfully.<br>";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
-            }*/
+            }
         }
         header("Location: patCadastro.php");
         exit();
     }
 
-    $mysqli->close();
+    $mysqli->close();*/
 ?>
