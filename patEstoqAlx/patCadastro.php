@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close the database connection
+    header("Location: patrimonio.php");
     $conn->close();
 }
 /*

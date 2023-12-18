@@ -306,6 +306,7 @@
                                 <input type="text" name="addInfo-1" id="addInfo-1">
                             </div>
                         </div>
+                        <hr>
                         <div class="newForm"></div>
                         <div class="btnForm" id="btnChange">
                             <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>

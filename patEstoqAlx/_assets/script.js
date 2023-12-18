@@ -12,12 +12,10 @@ function moreForm() {
     const newForm = document.getElementsByClassName('newForm')[0];
     var myInputElement = document.getElementById("formCountHidden");
     myInputElement.value = formCount;
-    //const morePats = document.createElement('FORM');
-    //morePats.method='POST';
-    //morePats.action="patCadastro.php";
-    //morePats.classList.add('formCadastro');
-    //morePats.id = `form-${formCount}`;
-    newForm.innerHTML += `
+
+    const newRowForm = document.createElement('div');
+    newRowForm.classList.add('nextform');
+    newRowForm.innerHTML = `
     <div class="rowForm">
         <div class="colForm">
             <label for="cod">CÓDIGO</label><br>
@@ -246,7 +244,8 @@ function moreForm() {
             <input type="text" name="addInfo-${formCount}" id="addInfo-${formCount}">
         </div>
     </div>
+    <hr>
     `;
-    //newForm.appendChild(morePats);
+    newForm.appendChild(newRowForm);
 }
 

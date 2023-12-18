@@ -612,6 +612,10 @@ section:target h1 {
     width: 20%;
 }
 
+hr {
+    margin-bottom: 1rem;
+}
+
 .radio {
     display: flex;
     flex-direction: row;
