@@ -318,6 +318,29 @@
                 
                 <section id= 'second'>
                     <h1>Second</h1>
+                    <div class="btnsScan">
+                        <button id="pNumber">COM O Nº DO PATRIMÔNIO</button>
+                        <button id="pScan">SCAN CÓDIGO QR/BARRA</button>
+                    </div>
+                    <div class="searchContainer">
+                        <div class="rowSearch">
+                            <label for="patNumber">Nº PATRIMÔNIO</label>
+                            <input type="text" name="patNumber">
+                        </div>
+                        <div class="resultContainer">
+                            <div id="imgPat"><img src="_assets/13608.avif" alt=""></div>
+                            <input type="text" id="codPat" placeholder="Código">
+                            <input type="text" id="nomePat" placeholder="Descrição rápida">
+                            <input type="text" id="condicaoPat" placeholder="Codição atual">
+                            <input type="text" id="valorPat" placeholder="Valor">
+                            <input type="text" id="localPat" placeholder="Localização">
+                            <input type="text" id="lastCheckPat" placeholder="Última checagem">
+                            <input type="text" id="dataAquisitPat" placeholder="Data da aquisição">
+                            <input type="text" id="nfPat" placeholder="Nota fiscal">
+                            <input type="text" id="descritPat" placeholder="Descrição detalhada">
+                            <input type="text" id="obsPat" placeholder="Observações">
+                        </div>
+                    </div>
                 </section>
                 
                 <section id= 'third'>
@@ -443,7 +466,33 @@
                 </section>
 
                 <section id= 'sixth'>
-                    <h1>sixth</h1>
+                    <h1>MAPA</h1>
+                    <div class="main-map">
+                        <div class="secretaria"></div>
+                        <div class="coord"></div>
+                        <div class="direcao"></div>
+                        <div class="banFM"></div>
+                        <div class="banFF"></div>
+                        <div class="profs"></div>
+                        <div class="sala1"></div>
+                        <div class="sala2"></div>
+                        <div class="sala3"></div>
+                        <div class="sala4"></div>
+                        <div class="sala5"></div>
+                        <div class="sala6"></div>
+                        <div class="refeitorio"></div>
+                        <div class="cozinha"></div>
+                        <div class="despensa"></div>
+                        <div class="banM"></div>
+                        <div class="banF"></div>
+                        <div class="banPCD"></div>
+                        <div class="tanque"></div>
+                        <div class="sala7"></div>
+                        <div class="sala8"></div>
+                        <div class="sala9"></div>
+                        <div class="sala10"></div>
+                        <div class="sala11"></div>
+                    </div>
                 </section>
             </div>
         </body>

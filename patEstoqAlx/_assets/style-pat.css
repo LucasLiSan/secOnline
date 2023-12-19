@@ -616,26 +616,6 @@ hr {
     margin-bottom: 1rem;
 }
 
-.radio {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.radio input {
-    width: 20px;
-}
-
-.inptRadio {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    flex-direction: row;
-}
-
 .desk input {
     width: 35%;
 }
@@ -663,6 +643,11 @@ hr {
     display: flex;
     align-content: center;
     flex-wrap: wrap;
+}
+
+.btnScan {
+    display: flex;
+    flex-direction: row;
 }
 
 .table_show {
@@ -751,12 +736,124 @@ td {
     text-align: justify;
 }
 
-#sixth {
+#sixth, #second {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
     justify-content: flex-start;
+}
+
+#second {
+    flex-wrap: nowrap;
+}
+
+.btnsScan {
+    display: grid;
+    grid-template-columns: 500px 10px 500px;
+    grid-template-rows: 80px;
+    align-items: center;
+    justify-items: center;
+}
+
+.btnsScan button {
+    width: 80%;
+    height: 80%;
+}
+
+#pScan {
+    grid-column: 3;
+}
+
+.resultContainer {
+    position: relative;
+    display: grid;
+    grid: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px/ 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    align-items: center;
+}
+
+.resultContainer div, .resultContainer input {
+    position: relative;
+}
+
+.resultContainer input {
+    height: 90%;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid #ffffff;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+::placeholder {
+    color: #ffffffad;
+    text-transform: uppercase;
+}
+
+.resultContainer input:nth-child(even) {
+    border-right: dashed #ffffff ;
+}
+
+#imgPat {
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 12;
+}
+
+#imgPat img {
+    width: 100%;
+    height: 100%;
+}
+
+#codPat {
+    grid-column: 8 / span 3;
+    grid-row: 2 / span 1;
+}
+
+#nomePat {
+    grid-column: 11 / span 5;
+    grid-row: 2 / span 1;
+}
+
+#condicaoPat {
+    grid-column: 8 / span 4;
+    grid-row: 4 / span 1;
+}
+
+#valorPat {
+    grid-column: 12 / span 4;
+    grid-row: 4 / span 1;
+}
+
+#localPat {
+    grid-column: 8 / span 3;
+    grid-row: 6 / span 1;
+}
+
+#lastCheckPat {
+    grid-column: 11 / span 5;
+    grid-row: 6 / span 1;
+}
+
+#dataAquisitPat {
+    grid-column: 8 / span 3;
+    grid-row: 8 / span 1;
+}
+
+#nfPat {
+    grid-column: 11 / span 5;
+    grid-row: 8 / span 1;
+}
+
+#descritPat {
+    grid-column: 8 / span 8;
+    grid-row: 10 / span 1;
+}
+
+#obsPat {
+    grid-column: 8 / span 8;
+    grid-row: 12 / span 1;
 }
 
 .main-map {
