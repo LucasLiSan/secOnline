@@ -77,26 +77,27 @@
                 <section id= 'first'>
                     <h1>CADASTRO</h1>
                     <form action="patCadastro.php" id="form-1" class="formCadastro" method="POST">
+                        <input type="hidden" id="formCountHidden" name="formCount" value="1">
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="cod">CÓDIGO</label><br>
-                                <input id="cod-1" type="text" name="cod" required>
+                                <input id="cod-1" type="text" name="cod-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="item">ITEM</label><br>
-                                <input type="text" name="item" id="item-1" required>
+                                <input type="text" name="item-1" id="item-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="marca">MARCA</label><br>
-                                <input type="text" name="marca" id="marca-1">
+                                <input type="text" name="marca-1" id="marca-1">
                             </div>
                             <div class="colForm">
                                 <label for="modelo">MODELO</label><br>
-                                <input type="text" name="modelo" id="modelo-1">
+                                <input type="text" name="modelo-1" id="modelo-1">
                             </div>
                             <div class="colForm">
                                 <label for="condicao">CONDIÇÃO</label><br>
-                                <select id="condicao-1" name="condicao">
+                                <select id="condicao-1" name="condicao-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="ÓTIMO" title="ÓTIMO">ÓTIMO</option>
                                     <option value="BOM" title="BOM">BOM</option>
@@ -109,30 +110,30 @@
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="local">LOCAL</label><br>
-                                <input type="text" name="local" id="local-1" required>
+                                <input type="text" name="local-1" id="local-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="ue">UE</label><br>
-                                <input type="text" name="ue" id="ue-1" required>
+                                <input type="text" name="ue-1" id="ue-1" required>
                             </div>
                             <div class="colForm">
                                 <label for="valor">VALOR</label><br>
-                                <input type="text" name="valor" id="valor-1">
+                                <input type="text" name="valor-1" id="valor-1">
                             </div>
                             <div class="colForm">
                                 <label for="dataAquisit">DATA AQUISIÇÃO</label><br>
-                                <input type="date" name="dataAquisit" id="aquisicao-1">
+                                <input type="date" name="aquisicao-1" id="aquisicao-1">
                             </div>
                             <div class="colForm">
                                 <label for="cor">COR</label><br>
-                                <input type="text" name="cor" id="cor-1">
+                                <input type="text" name="cor-1" id="cor-1">
                             </div>
                         </div>
                         <div class="rowForm desk">
                             <div class="colForm">
                                 <label for="largura">Largura</label><br>
-                                <input type="number" name="largura" id="largura-1">
-                                <select name="undMedLarg" id="undMedLarg-1">
+                                <input type="number" name="largura-1" id="largura-1">
+                                <select name="undMedLarg-1" id="undMedLarg-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -142,8 +143,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="altura">Altura</label><br>
-                                <input type="number" name="altura" id="altura-1">
-                                <select name="undMedAlt" id="undMedAlt-1">
+                                <input type="number" name="altura-1" id="altura-1">
+                                <select name="undMedAlt-1" id="undMedAlt-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -153,8 +154,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="comprimento">Comprimento</label><br>
-                                <input type="number" name="comprimento" id="comprimento-1">
-                                <select name="undMedCompr" id="undMedCompr-1">
+                                <input type="number" name="comprimento-1" id="comprimento-1">
+                                <select name="undMedCompr-1" id="undMedCompr-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -164,8 +165,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="espessura">espessura</label><br>
-                                <input type="number" name="espessura" id="espessura-1">
-                                <select name="undMedEspe" id="undMedEspe-1">
+                                <input type="number" name="espessura-1" id="espessura-1">
+                                <select name="undMedEspe-1" id="undMedEspe-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -175,8 +176,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="profundidade">profundidade</label><br>
-                                <input type="number" name="profundidade" id="profundidade-1">
-                                <select name="undMedProfund" id="undMedProfund-1">
+                                <input type="number" name="profundidade-1" id="profundidade-1">
+                                <select name="undMedProfund-1" id="undMedProfund-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -188,8 +189,8 @@
                         <div class="rowForm desk">
                             <div class="colForm">
                                 <label for="diametro">diâmetro</label><br>
-                                <input  type="number" name="diametro" id="diametro-1">
-                                <select name="undMedDiametro" id="undMedDiametro-1">
+                                <input  type="number" name="diametro-1" id="diametro-1">
+                                <select name="undMedDiametro-1" id="undMedDiametro-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -199,8 +200,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="largTampo">largura do tampo</label><br>
-                                <input  type="number" name="largTampo" id="largTampo-1">
-                                <select name="undMedLargTampo" id="undMedLargTampo-1">
+                                <input  type="number" name="largTampo-1" id="largTampo-1">
+                                <select name="undMedLargTampo-1" id="undMedLargTampo-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -210,8 +211,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="compTampo">comprimento do Tampo</label><br>
-                                <input type="number" name="compTampo" id="compTampo-1">
-                                <select name="undMedCompTampo" id="undMedCompTampo-1">
+                                <input type="number" name="compTampo-1" id="compTampo-1">
+                                <select name="undMedCompTampo-1" id="undMedCompTampo-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -221,8 +222,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="espessuraTampo">espessura do tampo</label><br>
-                                <input type="number" name="espessuraTampo" id="espessuraTampo-1">
-                                <select name="undMedEspeTampo" id="undMedEspeTampo-1">
+                                <input type="number" name="espessuraTampo-1" id="espessuraTampo-1">
+                                <select name="undMedEspeTampo-1" id="undMedEspeTampo-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -232,8 +233,8 @@
                             </div>
                             <div class="colForm">
                                 <label for="altPernas">Altura das pernas</label><br>
-                                <input type="number" name="altPernas" id="altPernas-1">
-                                <select name="undMedAltPernas" id="undMedAltPernas-1">
+                                <input type="number" name="altPernas-1" id="altPernas-1">
+                                <select name="undMedAltPernas-1" id="undMedAltPernas-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -245,19 +246,8 @@
                         <div class="rowForm desk">
                             <div class="colForm">
                                 <label for="espessuraPernas">espessura das pernas</label><br>
-                                <input type="number" name="espessuraPernas" id="espessuraPernas-1">
-                                <select name="undMedEspesPernas" id="undMedEspesPernas-1">
-                                    <option value="" title="" selected="selected"></option>
-                                    <option value="mm" title="mm">MM</option>
-                                    <option value="cm" title="cm">CM</option>
-                                    <option value="m" title="m">M</option>
-                                    <option value="km" title="km">KM</option>
-                                </select>
-                            </div>
-                            <div class="colForm">
-                                <label for="largPernas">Largura das pernas</label><br>
-                                <input type="number" name="largPernas" id="largPernas-1">
-                                <select name="undMedLargPernas" id="undMedLargPernas-1">
+                                <input type="number" name="espessuraPernas-1" id="espessuraPernas-1">
+                                <select name="undMedEspesPernas-1" id="undMedEspesPernas-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="mm" title="mm">MM</option>
                                     <option value="cm" title="cm">CM</option>
@@ -269,33 +259,33 @@
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="qtdPernas">qtd. de pernas</label><br>
-                                <input type="number" name="qtdPernas" id="qtdPerna-1">
+                                <input type="number" name="qtdPerna-1" id="qtdPerna-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdPortas">qtd. de portas</label><br>
-                                <input type="number" name="qtdPortas" id="qtdPorta-1">
+                                <input type="number" name="qtdPorta-1" id="qtdPorta-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdPrateleiras">qtd. de prateleiras</label><br>
-                                <input type="number" name="qtdPrateleiras" id="qtdPrate-1">
+                                <input type="number" name="qtdPrate-1" id="qtdPrate-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdGavetas">qtd. de gavetas</label><br>
-                                <input type="number" name="qtdGavetas" id="qtdGav-1">
+                                <input type="number" name="qtdGav-1" id="qtdGav-1">
                             </div>
                             <div class="colForm">
                                 <label for="qtdHelices">qtd. de helices</label><br>
-                                <input type="number" name="qtdHelices" id="qtdHelice-1">
+                                <input type="number" name="qtdHelice-1" id="qtdHelice-1">
                             </div>
                         </div>
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="qtdVelox">qtd. de velocidades</label><br>
-                                <input type="number" name="qtdVelox" id="qtdVelox-1">
+                                <input type="number" name="qtdVelox-1" id="qtdVelox-1">
                             </div>
                             <div class="colForm">
                                 <label for="chave">CHAVE</label><br>
-                                <select id="chave-1" name="chave">
+                                <select id="chave-1" name="chave-1">
                                     <option value="" title="" selected="selected"></option>
                                     <option value="SIM" title="SIM">SIM</option>
                                     <option value="NÃO" title="NÃO">NÃO</option>
@@ -303,29 +293,54 @@
                             </div>
                             <div class="colForm">
                                 <label for="telaPolegadas">Polegadas (tela)</label><br>
-                                <input type="number" name="telaPolegadas" id="qtdPol-1">
+                                <input type="number" name="qtdPol-1" id="qtdPol-1">
                             </div>
                         </div>
                         <div class="rowForm">
                             <div class="colForm">
                                 <label for="arCondBTU">BTUs (Ar condicionado)</label><br>
-                                <input type="number" name="arCondBTU" id="btu-1">
+                                <input type="number" name="btu-1" id="btu-1">
                             </div>
                             <div class="colForm">
                                 <label for="infoAdd">Informação adicional</label><br>
-                                <input type="text" name="infoAdd" id="addInfo-1">
+                                <input type="text" name="addInfo-1" id="addInfo-1">
                             </div>
                         </div>
-                        <div class="btnForm">
-                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" type="submit" value="CADASTRAR"></span>
+                        <hr>
+                        <div class="newForm"></div>
+                        <div class="btnForm" id="btnChange">
+                            <span class="spanBtn"><i class="fas fa-paper-plane"></i><input class="button cadastro" name="submitForm" type="submit" value="CADASTRAR"></span>
                             <span class="spanBtn"><i class="fas fa-plus"></i><input class="button moreItem" type="button" value="+ITEM" onclick="moreForm()"></span>
+                            <span class="spanBtn"><i class="fas fa-file-import"></i><input class="button repeat" type="button" value="REPETIR" onclick="repeatItem()"></span>
                         </div>
-                    </form>
-                    <div id="newForm"></div>
+                    </form>                    
                 </section>
                 
                 <section id= 'second'>
-                    <h1>Second</h1>
+                    <h1>Localizar patrimônio</h1>
+                    <div class="btnsScan">
+                        <button id="pNumber">COM O Nº DO PATRIMÔNIO</button>
+                        <button id="pScan">SCAN CÓDIGO QR/BARRA</button>
+                    </div>
+                    <div class="searchContainer">
+                        <div class="rowSearch">
+                            <label for="patNumber">Nº PATRIMÔNIO</label>
+                            <input type="text" name="patNumber">
+                        </div>
+                        <div class="resultContainer">
+                            <div id="imgPat"><img src="_assets/13608.avif" alt=""></div>
+                            <input type="text" id="codPat" placeholder="Código">
+                            <input type="text" id="nomePat" placeholder="Descrição rápida">
+                            <input type="text" id="condicaoPat" placeholder="Codição atual">
+                            <input type="text" id="valorPat" placeholder="Valor">
+                            <input type="text" id="localPat" placeholder="Localização">
+                            <input type="text" id="lastCheckPat" placeholder="Última checagem">
+                            <input type="text" id="dataAquisitPat" placeholder="Data da aquisição">
+                            <input type="text" id="nfPat" placeholder="Nota fiscal">
+                            <textarea id="descritPat" rows="5" cols="33" placeholder="Descrição detalhada"></textarea>
+                            <textarea id="obsPat" rows="5" cols="33" placeholder="Observações"></textarea>
+                        </div>
+                    </div>
                 </section>
                 
                 <section id= 'third'>

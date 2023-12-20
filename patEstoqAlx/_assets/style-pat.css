@@ -765,18 +765,49 @@ td {
     grid-column: 3;
 }
 
-.resultContainer {
-    position: relative;
-    display: grid;
-    grid: 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px/ 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
 }
 
-.resultContainer div, .resultContainer input {
+.rowSearch {
+    display: grid;
+    grid-template-columns: 150px 10px 250px;
+    grid-template-rows: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.rowSearch input {
+    grid-column: 3;
+    width: 95%;
+    height: 70%;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rowSearch label {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.resultContainer {
+    position: relative;
+    display: grid;
+    grid: 20px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 60px 20px / 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    align-items: center;
+}
+
+.resultContainer div, .resultContainer input,
+.resultContainer textarea {
     position: relative;
 }
 
-.resultContainer input {
+.resultContainer input, textarea {
     height: 90%;
     background-color: transparent;
     border: none;
@@ -792,7 +823,8 @@ td {
     text-transform: uppercase;
 }
 
-.resultContainer input:nth-child(even) {
+.resultContainer input:nth-child(2), .resultContainer input:nth-child(4),
+.resultContainer input:nth-child(6), .resultContainer input:nth-child(8) {
     border-right: dashed #ffffff ;
 }
 

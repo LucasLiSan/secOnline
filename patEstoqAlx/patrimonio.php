@@ -317,7 +317,7 @@
                 </section>
                 
                 <section id= 'second'>
-                    <h1>Second</h1>
+                    <h1>Localizar patrimônio</h1>
                     <div class="btnsScan">
                         <button id="pNumber">COM O Nº DO PATRIMÔNIO</button>
                         <button id="pScan">SCAN CÓDIGO QR/BARRA</button>
@@ -337,8 +337,8 @@
                             <input type="text" id="lastCheckPat" placeholder="Última checagem">
                             <input type="text" id="dataAquisitPat" placeholder="Data da aquisição">
                             <input type="text" id="nfPat" placeholder="Nota fiscal">
-                            <input type="text" id="descritPat" placeholder="Descrição detalhada">
-                            <input type="text" id="obsPat" placeholder="Observações">
+                            <textarea id="descritPat" rows="5" cols="33" placeholder="Descrição detalhada"></textarea>
+                            <textarea id="obsPat" rows="5" cols="33" placeholder="Observações"></textarea>
                         </div>
                     </div>
                 </section>
