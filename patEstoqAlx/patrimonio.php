@@ -319,17 +319,18 @@
                 <section id= 'second'>
                     <h1>Localizar patrimônio</h1>
                     <div class="btnsScan">
-                        <button id="pNumber">COM O Nº DO PATRIMÔNIO</button>
                         <button id="pScan">SCAN CÓDIGO QR/BARRA</button>
                     </div>
                     <div class="searchContainer">
-                        <div class="rowSearch">
-                            <label for="patNumber">Nº PATRIMÔNIO</label>
-                            <input type="text" name="patNumber">
-                        </div>
+                        <form action="patLocate.php" method="POST">
+                            <div class="rowSearch">
+                                <label for="patNumber">Nº PATRIMÔNIO</label>
+                                <input type="text" name="patNumber">
+                            </div>
+                        </form>
                         <div class="resultContainer">
                             <div id="imgPat"><img src="_assets/13608.avif" alt=""></div>
-                            <input type="text" id="codPat" placeholder="Código">
+                            <input type="text" id="codPat" placeholder="Código" value="<?php echo $value1 ?? ''; ?>">
                             <input type="text" id="nomePat" placeholder="Descrição rápida">
                             <input type="text" id="condicaoPat" placeholder="Codição atual">
                             <input type="text" id="valorPat" placeholder="Valor">
